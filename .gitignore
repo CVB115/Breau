@@ -1,0 +1,37 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+*.env
+
+# SQLite databases
+*.sqlite3
+*.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Uvicorn reload artifacts
+*.reload
+
+# Jupyter (if you use notebooks later)
+.ipynb_checkpoints/
+
+# Packaging
+*.egg
+*.egg-info/
+dist/
+build/

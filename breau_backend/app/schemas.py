@@ -163,6 +163,7 @@ class PourStepIn(BaseModel):
 class BrewSuggestRequest(BaseModel):
     goals: Optional[List[WeightedGoal]] = None
     text: Optional[str] = None
+    
 
     brewer: Optional[BrewerSpecIn] = None
     filter: Optional[FilterSpecIn] = None
@@ -177,6 +178,7 @@ class BrewSuggestRequest(BaseModel):
     bypass_g: Optional[conint(ge=0, le=200)] = 0
     bloom_water_g: Optional[conint(ge=0, le=120)] = 30
     bloom_time_s: Optional[conint(ge=0, le=90)] = 35
+    notes: Optional[str] = None
 
 class PredictedNote(BaseModel):
     label: str
