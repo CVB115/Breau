@@ -2,3 +2,8 @@ fastapi
 uvicorn
 sqlmodel
 pydantic
+
+sentence-transformers
+transformers
+torch
+huggingface-hub

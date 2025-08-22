@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from enum import Enum
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Literal  
 from pydantic import BaseModel, Field, conint, confloat
 
 
