@@ -1,19 +1,23 @@
+# tag_taxonomy.yaml
+# Canonical facets and allowed values used across the flavour ontology.
+# Keep all values lowercase for consistent validation.
+
 facets:
-  category: [floral, fruit, spice, sweet, cocoa, nutty, tea_like, herbaceous]
-  volatility: [low, moderate, high]
+  # Core categorical facets
+  category: [floral, fruit, cocoa]
+  volatility: [high, moderate, low]
   stability: [fragile, moderate, robust]
-  density: [thin, juicy, rich, syrupy]
-  texture: [crisp, juicy, silky, chalky, astringent]
-  acidity_family: [malic, citric, tartaric, lactic, phosphoric, acetic]
-  sweetness_type: [honeyed, caramelized, crystalline]
-  colour: [white, green, yellow, orange, red, purple, brown, amber]
-  role: [primary, supporting, modifier]
+  density: [thin, juicy, rich]
+  texture: [crisp, juicy, silky]
+  colour: [white, purple, brown]
+  role: [primary, supporting]
+
+  # Brewing-affinity facets (standardised)
   contact_time_affinity: [short, neutral, long]
-  temp_affinity: [lower, neutral, higher]
-  agitation_affinity: [low, neutral, high]
-  heat_retention_affinity: [low, neutral, high]
-aliases:
-  orange_blossom: [orange flower, orange blossom water]
-  red_grape: [grape, muscat]
-  jasmine: [sampaguita]
-  dark_chocolate: [cacao, cocoa]
+  temp_affinity: [lower, neutral, high]
+  agitation_affinity: [low, neutral, medium, high]
+  heat_retention_affinity: [low, medium, high]
+
+  # Sensory sub-axes
+  sweetness_type: [honeyed, caramelized]
+  acidity_family: [citric, tartaric, malic]

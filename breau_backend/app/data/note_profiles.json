@@ -1,30 +1,102 @@
 {
   "schema_version": "3.1",
+
   "jasmine": {
     "name": "jasmine",
     "aliases": ["sampaguita"],
     "description": "Light floral top character with tea-like delicacy.",
-    "tags": ["category:floral","volatility:high","stability:fragile","density:thin","texture:crisp","colour:white","role:primary","contact_time_affinity:short","temp_affinity:lower","agitation_affinity:low","heat_retention_affinity:low"],
+    "tags": [
+      "category:floral",
+      "volatility:high",
+      "stability:fragile",
+      "density:thin",
+      "texture:crisp",
+      "colour:white",
+      "role:primary",
+      "contact_time_affinity:short",
+      "temp_affinity:lower",
+      "agitation_affinity:low",
+      "heat_retention_affinity:low"
+    ],
     "salience": 0.7,
-    "failure_modes": {"over": ["perfumy","soapy"], "under": ["faint"]},
+    "failure_modes": {
+      "over": ["perfumy", "soapy"],
+      "under": ["faint"]
+    },
     "sub_profiles": {}
   },
+
   "red_grape": {
     "name": "red_grape",
-    "aliases": ["grape","muscat"],
+    "aliases": ["grape", "muscat"],
     "description": "Juicy red-purple fruit that can concentrate toward wine-like under higher extraction.",
-    "tags": ["category:fruit","volatility:moderate","stability:moderate","density:juicy","texture:juicy","acidity_family:tartaric","colour:purple","role:primary","contact_time_affinity:neutral","temp_affinity:neutral","agitation_affinity:neutral","heat_retention_affinity:higher"],
+    "tags": [
+      "category:fruit",
+      "volatility:moderate",
+      "stability:moderate",
+      "density:juicy",
+      "texture:juicy",
+      "acidity_family:tartaric",
+      "colour:purple",
+      "role:primary",
+      "contact_time_affinity:neutral",
+      "temp_affinity:neutral",
+      "agitation_affinity:neutral",
+      "heat_retention_affinity:high"
+    ],
     "salience": 0.6,
-    "failure_modes": {"over": ["raisiny","stewed"], "under": ["watery","hollow"]},
+    "failure_modes": {
+      "over": ["raisiny", "stewed"],
+      "under": ["watery", "hollow"]
+    },
     "sub_profiles": {}
   },
+
   "dark_chocolate": {
     "name": "dark_chocolate",
-    "aliases": ["cacao","cocoa"],
+    "aliases": ["cacao", "cocoa"],
     "description": "Base-like cocoa depth that supports sweetness and body.",
-    "tags": ["category:cocoa","volatility:low","stability:robust","density:rich","texture:silky","colour:brown","role:supporting","contact_time_affinity:long","temp_affinity:higher","agitation_affinity:medium","heat_retention_affinity:high"],
+    "tags": [
+      "category:cocoa",
+      "volatility:low",
+      "stability:robust",
+      "density:rich",
+      "texture:silky",
+      "colour:brown",
+      "role:supporting",
+      "contact_time_affinity:long",
+      "temp_affinity:high",
+      "agitation_affinity:medium",
+      "heat_retention_affinity:high"
+    ],
     "salience": 0.7,
-    "failure_modes": {"over": ["bitter","astringent"], "under": ["dry","dusty"]},
+    "failure_modes": {
+      "over": ["bitter", "astringent"],
+      "under": ["dry", "dusty"]
+    },
     "sub_profiles": {}
-  }
+  },
+  "wine": {
+  "name": "wine",
+  "aliases": ["red_wine"],
+  "description": "Wine-like, fermented red fruit depth with mild tannic structure.",
+  "tags": [
+    "category:fruit",
+    "volatility:low",
+    "stability:robust",
+    "density:rich",
+    "texture:silky",
+    "acidity_family:tartaric",
+    "colour:purple",
+    "role:supporting",
+    "contact_time_affinity:long",
+    "temp_affinity:high",
+    "agitation_affinity:neutral",
+    "heat_retention_affinity:high"
+  ],
+  "salience": 0.6,
+  "failure_modes": { "over": ["stewed"], "under": ["flat"] },
+  "sub_profiles": {}
+}
+
 }

@@ -113,7 +113,7 @@ def build_description(
 ) -> str:
     bits: List[str] = []
     if "increase florality" in goals:
-        bits.append("cooler water and a slightly higher ratio to preserve delicate volatiles")
+        bits.append("cooler water and a slightly high ratio to preserve delicate volatiles")
     if "reduce body" in goals:
         bits.append("gentler late agitation to keep the cup lighter")
     if "increase body" in goals:
