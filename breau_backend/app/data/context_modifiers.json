@@ -1,0 +1,10 @@
+[
+  {
+    "when": { "origin_region": "Ethiopia", "process": "natural" },
+    "tag_weight_deltas": { "acidity_family:tartaric": 0.10, "density:juicy": 0.08, "colour:purple": 0.05 }
+  },
+  {
+    "when": { "process": "yeast" },
+    "tag_weight_deltas": { "sweetness_type:caramelized": 0.10, "density:rich": 0.10, "texture:silky": 0.05 }
+  }
+]
