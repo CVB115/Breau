@@ -1,52 +1,54 @@
-# breau_backend/app/protocol_generator/goal_matcher.py
-from __future__ import annotations
-from typing import Iterable, Optional
+# goal_matcher.py
+from typing import List, Tuple, Dict, Optional
+from ..nlp.anp_extractor import parse_structured_goals
+# if you have semantic helpers, import them; otherwise keep it simple
+try:
+    from ..nlp.semantic import any_matches
+except Exception:
+    def any_matches(query, candidates, threshold=0.55):
+        return []
 
-# absolute imports so uvicorn reload + py3.13 are happy
-from breau_backend.app.services.nlp.anp_extractor import parse_goals
-from breau_backend.app.services.nlp.semantic import any_matches
+def match_goals(explicit_goals: Optional[List[Tuple[str, str]]] = None,
+                free_text: str = "") -> Dict[str, List[Tuple[str, float]]]:
+    """
+    Returns:
+      {
+        "goals":       [(canonical_goal, weight)],
+        "preferences": [(facet:value, weight)],
+        "avoids":      [(facet:value|note:*, weight)]
+      }
+    """
+    goals: List[Tuple[str, float]] = []
+    prefs: List[Tuple[str, float]] = []
+    avoids: List[Tuple[str, float]] = []
 
-DEFAULT_CANDIDATES = [
-    "increase florality","reduce florality",
-    "increase body","reduce body",
-    "increase sweetness","reduce sweetness",
-    "increase acidity","reduce acidity",
-    "reduce bitterness","increase bitterness",
-]
-
-def _canonical(phrase: str) -> Optional[str]:
-    p = (phrase or "").strip().lower()
-    return p if p in DEFAULT_CANDIDATES else None
-
-def match_goals(
-    explicit_goals: Optional[Iterable[tuple[str, str]]] = None,  # [("increase","florality"), ...]
-    free_text: Optional[str] = None,
-    candidates: list[str] = DEFAULT_CANDIDATES,
-) -> list[tuple[str, float]]:
-    merged: dict[str, float] = {}
-
-    # 1) explicit goals (highest weight)
+    # 1) explicit schema goals (strong weight)
     if explicit_goals:
         for direction, trait in explicit_goals:
-            canon = _canonical(f"{direction.strip().lower()} {trait.strip().lower()}")
-            if canon:
-                merged[canon] = max(merged.get(canon, 0.0), 0.90)
+            if direction and trait:
+                goals.append((f"{direction.strip()} {trait.strip()}", 0.9))
 
-    # 2) rules from free text (strong)
-    if free_text:
-        for g in parse_goals(free_text):
-            canon = _canonical(g)
-            if canon:
-                merged[canon] = max(merged.get(canon, 0.0), 0.80)
+    # 2) structured parse from free text (boosts / prefs / avoids)
+    b, p, a = parse_structured_goals(free_text or "")
+    goals.extend(b); prefs.extend(p); avoids.extend(a)
 
-    # 3) semantic (softer)
-    if free_text:
-        for phrase, score in any_matches(free_text, candidates, threshold=0.48)[:3]:
-            canon = _canonical(phrase)
-            if not canon:
-                continue
-            # map cosine score to [0.35, 0.70]
-            w = 0.35 + 0.35 * max(0.0, min(1.0, (score - 0.48) / (0.85 - 0.48)))
-            merged[canon] = max(merged.get(canon, 0.0), w)
+    # 3) (optional) semantic backoff for fuzzy asks
+    candidates = [
+        "increase acidity","reduce acidity","increase body","reduce body",
+        "increase sweetness","increase florality","reduce bitterness"
+    ]
+    for cand, sim in any_matches(free_text or "", candidates, threshold=0.55):
+        goals.append((cand, min(0.8, 0.4 + sim)))
 
-    return sorted(merged.items(), key=lambda kv: kv[1], reverse=True)
+    # de-dupe by max weight
+    def dedupe_max(items: List[Tuple[str, float]]) -> List[Tuple[str, float]]:
+        cache: Dict[str, float] = {}
+        for k, w in items:
+            cache[k] = max(w, cache.get(k, 0.0))
+        return [(k, cache[k]) for k in cache]
+
+    return {
+        "goals": dedupe_max(goals),
+        "preferences": dedupe_max(prefs),
+        "avoids": dedupe_max(avoids),
+    }

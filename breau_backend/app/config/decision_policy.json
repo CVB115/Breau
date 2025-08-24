@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "defaults": {
+    "slurry_offset_c": 3.0
+  },
+  "caps": {
+    "delta_slurry_c_per_session": 1.0,
+    "delta_ratio_den_per_session": 1.0,
+    "agitation_step_per_session": 1
+  },
+  "constraints": {
+    "conical": { "slurry_c_min": 88, "slurry_c_max": 95, "ratio_den_min": 13, "ratio_den_max": 18 },
+    "flat":    { "slurry_c_min": 89, "slurry_c_max": 96, "ratio_den_min": 12, "ratio_den_max": 18 },
+    "hybrid":  { "slurry_c_min": 88, "slurry_c_max": 95, "ratio_den_min": 13, "ratio_den_max": 18 },
+    "immersion": { "slurry_c_min": 85, "slurry_c_max": 96, "ratio_den_min": 12, "ratio_den_max": 18 },
+    "basket":  { "slurry_c_min": 90, "slurry_c_max": 96, "ratio_den_min": 14, "ratio_den_max": 18 }
+  },
+  "goal_variable_matrix": {
+    "florality":   { "slurry_c": -1.0, "agitation_early": -0.7, "filter_speed": 0.4 },
+    "body":        { "ratio_den": -1.0, "agitation_late": 0.7, "pour_segmented": 0.5 },
+    "bitterness":  { "slurry_c": -0.6,  "agitation_late": -0.4 },
+    "acidity":     { "slurry_c": -0.9,  "agitation_early": -0.6,"ratio_den": 0.3},
+    "sweetness":   { "slurry_c": 0.6,  "agitation_early": 0.5 ,"ratio_den": -0.3}
+  },
+  "training": {
+    "mode": "off",
+    "min_rows": 30,
+    "refit_every_rows": 10,
+    "promotion": {
+      "min_alignment_gain": 0.05,
+      "max_clip_increase": 0.00,
+      "min_eval_rows": 20
+    },
+    "alpha_schedule": [0.0, 0.4, 0.7, 1.0]
+  }
+}

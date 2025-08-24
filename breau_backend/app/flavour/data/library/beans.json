@@ -1,0 +1,11 @@
+{
+  "beans": [
+    {
+      "id": "ethiopia_nercafe_2025_01",
+      "process": "washed",
+      "roast_level": "light",
+      "age_days": 10,
+      "baseline_notes": null
+    }
+  ]
+}

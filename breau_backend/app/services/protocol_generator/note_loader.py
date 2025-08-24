@@ -1,5 +1,5 @@
 # app/protocol_generator/note_loader.py
-from typing import Dict, List, Tuple
+from typing import List, Tuple, Dict, Optional
 from breau_backend.app.flavour.store import get_ontology
 
 # ---- 1) Canonical goal -> tag targets (temporary; replace with embedding scorer later)
@@ -132,26 +132,60 @@ def _apply_edges(
 def select_candidate_notes(
     goal_tags: List[str],
     coffee_profile: Dict,
-    top_k: int = 5
+    top_k: int = 5,
+    include_tags: Optional[List[str]] = None,  # preferences (e.g., "acidity_family:citric")
+    exclude_tags: Optional[List[str]] = None   # avoids (e.g., "acidity_family:acetic", "note:vinegar")
 ) -> List[Tuple[str, float, Dict]]:
     """
-    Returns a list of (note_name, score, debug) sorted high→low.
-    debug fields: {"base": float, "salience": float, "context_bonus": float, ...}
+    Score = base_overlap * salience + context_bonus
+            + ALPHA * (# preference tag matches)
+            - BETA  * (# avoid tag matches)
+    Returns top_k [(note_name, score, dbg)] sorted high→low.
     """
+    include_tags = include_tags or []
+    exclude_tags = exclude_tags or []
+
     onto = get_ontology()
-    out = []
+    out: List[Tuple[str, float, Dict]] = []
+
+    inc_set = set(include_tags)
+    exc_set = set(exclude_tags)
+
+    # gentle nudges so ontology remains primary signal
+    ALPHA = 0.05  # preference bonus per match
+    BETA  = 0.08  # avoid penalty per match
+
     for name, note in onto.notes.items():
-        base = _jaccard(goal_tags, note.tags)
-        sal  = 0.4 + 0.6 * float(note.salience)  # scale 0.4..1.0
-        ctx  = _context_bonus(note.tags, coffee_profile)
-        score = base * sal + ctx
-        out.append((name, score, {"base": round(base,3), "salience": round(sal,3), "context_bonus": round(ctx,3)}))
+        base = _jaccard(goal_tags, note.tags)                           # 0..1
+        sal  = 0.4 + 0.6 * float(getattr(note, "salience", 0.6))        # 0.4..1.0
+        ctx  = _context_bonus(note.tags, coffee_profile)                 # −/+
+
+        inc_hits = len(inc_set & set(note.tags))
+        exc_hits = len(exc_set & set(note.tags))
+        if f"note:{name}" in exc_set:
+            exc_hits += 1
+
+        score = base * sal + ctx + (ALPHA * inc_hits) - (BETA * exc_hits)
+        out.append((
+            name,
+            score,
+            {
+                "base": round(base, 3),
+                "salience": round(sal, 3),
+                "context_bonus": round(ctx, 3),
+                "inc_hits": inc_hits,
+                "exc_hits": exc_hits
+            }
+        ))
+
     out.sort(key=lambda x: x[1], reverse=True)
 
-    # NEW: apply edge transformations before final ranking
-    out = _apply_edges(out, coffee_profile)
+    # Edge transforms (continuous blend). If your _apply_edges supports goal_tags, pass them.
+    try:
+        out = _apply_edges(out, coffee_profile, goal_tags=goal_tags)
+    except TypeError:
+        out = _apply_edges(out, coffee_profile)
 
-    # Re-sort after transformations
     out.sort(key=lambda x: x[1], reverse=True)
     return out[:top_k]
 
@@ -170,3 +204,79 @@ def ontology_info() -> Dict:
         "context_rules": len(onto.context),
         "facets": list(onto.taxonomy.facets.keys())
     }
+# ===== 6) Policy / Nudger / Profile wrappers (centralized here) =====
+from pathlib import Path
+import json
+from breau_backend.app.flavour.nudger import Nudger
+from breau_backend.app.flavour.profile import load_profile as _load_profile
+
+_POLICY = None
+_NUDGER = None
+
+def _root_app_dir() -> Path:
+    # note_loader.py lives in app/protocol_generator/, so parents[1] is app/
+    return Path(__file__).resolve().parents[1]
+
+def get_policy() -> dict:
+    global _POLICY
+    if _POLICY is None:
+        cfg = _root_app_dir() / "config" / "decision_policy.json"
+        _POLICY = json.loads(cfg.read_text())
+    return _POLICY
+
+def get_nudger() -> Nudger:
+    global _NUDGER
+    if _NUDGER is None:
+        _NUDGER = Nudger(get_policy())
+    return _NUDGER
+
+def load_user_profile(user_id: str) -> dict:
+    return _load_profile(user_id)
+
+def slurry_offset_c(profile: dict) -> float:
+    policy = get_policy()
+    return float(profile.get("slurry_offset_c",
+                             policy["defaults"]["slurry_offset_c"]))
+
+def canonical_goal_strings_from_vec(goal_vec: dict[str, float]) -> list[str]:
+    # turn {florality:+0.8, body:-0.5} -> ["increase florality","reduce body"]
+    out = []
+    for trait, w in goal_vec.items():
+        if abs(w) < 1e-6:
+            continue
+        out.append(("increase " if w > 0 else "reduce ") + trait)
+    return out
+
+def rank_notes_from_vec(goal_vec: dict, coffee_profile: dict, k: int = 5):
+    canonical_goals = canonical_goal_strings_from_vec(goal_vec)
+    gtags = goals_to_tags(canonical_goals)
+    return select_candidate_notes(gtags, coffee_profile, top_k=k)
+
+from pathlib import Path
+import json
+
+_POLICY = None
+
+def _root_app_dir() -> Path:
+    # note_loader.py lives in app/services/protocol_generator/
+    # parents[0]=protocol_generator, [1]=services, [2]=app, [3]=breau_backend
+    return Path(__file__).resolve().parents[2]  # -> .../app
+
+def get_policy():
+    global _POLICY
+    if _POLICY is not None:
+        return _POLICY
+
+    candidates = [
+        _root_app_dir() / "config" / "decision_policy.json",                          # app/config/decision_policy.json (intended)
+        Path(__file__).resolve().parents[3] / "app" / "config" / "decision_policy.json",  # fallback if tree changes
+    ]
+
+    for cfg in candidates:
+        if cfg.exists():
+            _POLICY = json.loads(cfg.read_text())
+            return _POLICY
+
+    # If we got here, the file isn't where we expect.
+    looked = " | ".join(str(p) for p in candidates)
+    raise FileNotFoundError(f"decision_policy.json not found. Looked at: {looked}")

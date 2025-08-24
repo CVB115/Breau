@@ -111,21 +111,37 @@ def build_description(
     ratio: str,
     agitation_summary: str,
 ) -> str:
+    """
+    Produces a short, goal-aware sentence that matches the protocol we generated.
+    - Prefers acidity/florality wording over sweetness wording (to avoid contradictions).
+    - Uses late/early agitation strategy implicitly via the 'agitation_summary' you pass in.
+    """
+    gset = set(goals or [])
     bits: List[str] = []
-    if "increase florality" in goals:
-        bits.append("cooler water and a slightly high ratio to preserve delicate volatiles")
-    if "reduce body" in goals:
-        bits.append("gentler late agitation to keep the cup lighter")
-    if "increase body" in goals:
-        bits.append("a touch more heat and mid‑pour agitation for a syrupier mouthfeel")
-    if "increase sweetness" in goals:
-        bits.append("warmer water to round out sugars")
-    if "reduce bitterness" in goals:
-        bits.append("slightly cooler water to soften bittering compounds")
-    if not bits:
-        bits.append("balanced settings targeting clarity without over‑extraction")
 
-    return (
-        f"Set temperature {temp_c}°C, ratio {ratio}, {agitation_summary}. "
-        f"This aligns with {'; '.join(bits)}."
-    )
+    # Highest precedence — avoid contradicting with 'warmer water...' later
+    if "increase acidity" in gset:
+        bits.append("slightly cooler water and gentler early agitation to preserve brightness")
+    elif "increase florality" in gset:
+        bits.append("cooler water and a slightly higher ratio to protect delicate aromatics")
+
+    # Body & bitterness (can stack with the above when acidity/florality not chosen)
+    if "increase body" in gset:
+        bits.append("a touch more heat and mid/late agitation to build body")
+    if "reduce bitterness" in gset:
+        bits.append("slightly cooler water and restrained late agitation to soften bittering compounds")
+
+    # Sweetness only if we didn’t already choose an acidity/florality strategy
+    if ("increase sweetness" in gset) and not ({"increase acidity", "increase florality"} & gset):
+        bits.append("warmer water to round out sugars")
+
+    # Lighter cup hint
+    if "reduce body" in gset:
+        bits.append("gentler late agitation to keep the cup lighter")
+
+    if not bits:
+        bits.append("balanced settings targeting clarity without over-extraction")
+
+    strategy = "; ".join(bits)
+    return f"Set temperature {temp_c}°C, ratio {ratio}, {agitation_summary}. {strategy.capitalize()}."
+

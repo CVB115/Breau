@@ -1,7 +1,7 @@
 # [App] Updated: init DB on startup + /debug/db
 from fastapi import FastAPI
 from sqlalchemy import inspect
-from .routers import brew
+from .routers import brew,feedback,library
 from .db.session import init_db, engine
 from .db.seed import seed_defaults
 
@@ -25,3 +25,5 @@ def debug_seed():
     return {"status": seed_defaults()}
 
 app.include_router(brew.router, prefix="/brew", tags=["brew"])
+app.include_router(feedback.router)
+app.include_router(library.router)

@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 from typing import List, Optional, Union, Literal  
-from pydantic import BaseModel, Field, conint, confloat
+from pydantic import BaseModel, Field, conint, confloat, ConfigDict
 
 
 # ===================== Enums =====================
@@ -148,7 +148,7 @@ class BeanInfo(BaseModel):
 
 class WeightedGoal(BaseModel):
     trait: GoalTrait
-    direction: str                        # "increase" | "reduce"
+    direction: Literal["increase", "decrease"]   # <- was plain str with comment
     weight: confloat(ge=0, le=1) = 1.0
 
 class PourStepIn(BaseModel):
@@ -161,9 +161,17 @@ class PourStepIn(BaseModel):
     note: Optional[str] = None
 
 class BrewSuggestRequest(BaseModel):
-    goals: Optional[List[WeightedGoal]] = None
+    # ignore unknown keys instead of 422 if clients send extras
+    model_config = ConfigDict(extra="ignore")
+
+    # NEW: allow brewing by library IDs
+    toolset_id: Optional[str] = None
+    bean_id: Optional[str] = None
+
+    # Goals default to empty list so baseline requests work
+    goals: List[WeightedGoal] = Field(default_factory=list)
+
     text: Optional[str] = None
-    
 
     brewer: Optional[BrewerSpecIn] = None
     filter: Optional[FilterSpecIn] = None
@@ -179,6 +187,7 @@ class BrewSuggestRequest(BaseModel):
     bloom_water_g: Optional[conint(ge=0, le=120)] = 30
     bloom_time_s: Optional[conint(ge=0, le=90)] = 35
     notes: Optional[str] = None
+
 
 class PredictedNote(BaseModel):
     label: str
@@ -197,5 +206,21 @@ class BrewSuggestion(BaseModel):
     pours: List[PourStepIn] = Field(default_factory=list)
     predicted_notes: List[PredictedNote] = Field(default_factory=list)
     notes: Optional[str] = None
+    session_plan: Optional[SessionPlan] = None 
+    toolset_id: Optional[str] = None
+    bean_id: Optional[str] = None
 
-    notes: str
+# --- Brew-along session plan models ---
+class SessionStep(BaseModel):
+    id: str
+    instruction: str
+    gate: Literal["pour_until", "wait_for_bed_ready", "timer"]
+    # Only one of the below will be set depending on the gate:
+    target_water_g: Optional[int] = None
+    timer_s: Optional[int] = None
+    voice_prompt: Optional[str] = None
+    note: Optional[str] = None  # e.g., "Bloom"
+
+class SessionPlan(BaseModel):
+    mode_default: Literal["beginner", "expert"] = "beginner"
+    steps: List[SessionStep]
