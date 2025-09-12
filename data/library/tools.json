@@ -1,0 +1,101 @@
+{
+  "grinders": [
+    {
+      "id": "c40",
+      "model": "Comandante C40",
+      "burr_type": "conical",
+      "scale_type": "numbers",
+      "user_scale_min": 0,
+      "user_scale_max": 40,
+      "calibration_points": [
+        {
+          "setting": 20,
+          "micron": 550
+        },
+        {
+          "setting": 15,
+          "micron": 450
+        }
+      ],
+      "preset_curve": {
+        "a": 200,
+        "b": 18
+      }
+    },
+    {
+      "id": "c40",
+      "model": "Comandante C40",
+      "burr_type": "conical",
+      "scale_type": "numbers",
+      "user_scale_min": 0.0,
+      "user_scale_max": 40.0,
+      "calibration_points": [
+        {
+          "setting": 20.0,
+          "micron": 550.0
+        },
+        {
+          "setting": 15.0,
+          "micron": 450.0
+        }
+      ],
+      "preset_curve": {
+        "a": 200.0,
+        "b": 18.0
+      }
+    }
+  ],
+  "brewers": [
+    {
+      "id": "v60_02",
+      "name": "Hario V60 02",
+      "geometry_type": "conical",
+      "cone_angle_deg": 30,
+      "outlet_profile": "single_large",
+      "inner_diameter_mm": 40,
+      "hole_count": 1,
+      "thermal_mass": "medium"
+    },
+    {
+      "id": "v60_02",
+      "name": "Hario V60 02",
+      "geometry_type": "conical",
+      "cone_angle_deg": 30.0,
+      "outlet_profile": "single_large",
+      "inner_diameter_mm": 40.0,
+      "hole_count": 1,
+      "thermal_mass": "medium"
+    }
+  ],
+  "filters": [
+    {
+      "id": "cafec_fast_thin",
+      "permeability": "fast",
+      "thickness": "thin",
+      "material": "paper_bleached",
+      "pore_size_microns": 5
+    },
+    {
+      "id": "paper_bleached_fast_thin",
+      "permeability": "fast",
+      "thickness": "thin",
+      "material": "paper_bleached",
+      "pore_size_microns": 5.0
+    }
+  ],
+  "waters": [
+    {
+      "id": "sca_target",
+      "profile_preset": "sca_target",
+      "hardness_gh": 100,
+      "alkalinity_kh": 40
+    },
+    {
+      "id": "sca_target",
+      "profile_preset": "sca_target",
+      "hardness_gh": 100.0,
+      "alkalinity_kh": 40.0,
+      "tds": 120.0
+    }
+  ]
+}

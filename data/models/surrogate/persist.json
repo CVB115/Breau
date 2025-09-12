@@ -1,0 +1,10 @@
+{
+  "schema_version": "2025-09-03",
+  "w": {
+    "temp_delta": 0.0,
+    "grind_delta": 0.0,
+    "agitation_delta": 0.0,
+    "hint_clarity": 0.3,
+    "hint_body": 0.0
+  }
+}

@@ -1,140 +1,256 @@
 # breau_backend/app/flavour/library_loader.py
 from __future__ import annotations
-from pathlib import Path
+
 import json
-from typing import Dict, Any, Optional
+import logging
+from functools import lru_cache
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
 
-_DATA_DIR = Path(__file__).resolve().parent / "data" / "library"
-_TOOLS_PATH = _DATA_DIR / "tools.json"
-_BEANS_PATH = _DATA_DIR / "beans.json"
+try:
+    import yaml  # PyYAML
+except Exception as e:  # pragma: no cover
+    yaml = None  # We handle None gracefully for YAML loaders.
 
-_TOOLS_DEFAULT = {"brewers": [], "papers": [], "grinders": [], "waters": [], "toolsets": []}
-_BEANS_DEFAULT = {"beans": []}
+from breau_backend.app.config.paths import (
+    resolve_rules_file,
+    resolve_priors_file,
+)
 
-def _ensure_files() -> None:
-    _DATA_DIR.mkdir(parents=True, exist_ok=True)
-    if not _TOOLS_PATH.exists():
-        _TOOLS_PATH.write_text(json.dumps(_TOOLS_DEFAULT, indent=2))
-    if not _BEANS_PATH.exists():
-        _BEANS_PATH.write_text(json.dumps(_BEANS_DEFAULT, indent=2))
+# -----------------------------------------------------------------------------
+# Logger
+# -----------------------------------------------------------------------------
+log = logging.getLogger("breau.library_loader")
+if not log.handlers:
+    handler = logging.StreamHandler()
+    log.addHandler(handler)
+    log.setLevel(logging.INFO)
 
-def _load_tools() -> Dict[str, Any]:
-    _ensure_files()
+# -----------------------------------------------------------------------------
+# Internal IO helpers
+# -----------------------------------------------------------------------------
+def _read_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+def _load_json_from(path: Path) -> Any:
     try:
-        return json.loads(_TOOLS_PATH.read_text())
-    except Exception:
-        return dict(_TOOLS_DEFAULT)
+        txt = _read_text(path)
+        return json.loads(txt)
+    except FileNotFoundError:
+        raise
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in {path}: {e}") from e
 
-def _save_tools(data: Dict[str, Any]) -> None:
-    _ensure_files()
-    _TOOLS_PATH.write_text(json.dumps(data, indent=2))
-
-def _load_beans() -> Dict[str, Any]:
-    _ensure_files()
+def _load_yaml_from(path: Path) -> Any:
+    if yaml is None:
+        raise RuntimeError(
+            "PyYAML is not installed but a YAML file was requested. "
+            "Install with: pip install pyyaml"
+        )
     try:
-        return json.loads(_BEANS_PATH.read_text())
-    except Exception:
-        return dict(_BEANS_DEFAULT)
+        txt = _read_text(path)
+        return yaml.safe_load(txt)
+    except FileNotFoundError:
+        raise
+    except yaml.YAMLError as e:
+        raise ValueError(f"Invalid YAML in {path}: {e}") from e
 
-def _save_beans(data: Dict[str, Any]) -> None:
-    _ensure_files()
-    _BEANS_PATH.write_text(json.dumps(data, indent=2))
+# -----------------------------------------------------------------------------
+# Public loader API (rules)
+# -----------------------------------------------------------------------------
+@lru_cache(maxsize=64)
+def load_json_rules(filename: str) -> Any:
+    """
+    Load a JSON rulebook from flavour/rules (with legacy fallback handled in paths).
+    Raises FileNotFoundError if not present in either location.
+    """
+    path = resolve_rules_file(filename)
+    if not path.exists():
+        raise FileNotFoundError(f"Rules file not found: {path}")
+    obj = _load_json_from(path)
+    log.info(f"[rules] loaded {filename} from {path}")
+    return obj
 
-# ---------- Upserts ----------
-def upsert_item(bucket: str, item: Dict[str, Any]) -> Dict[str, Any]:
-    tools = _load_tools()
-    items = tools.get(bucket, [])
-    if "id" not in item or not item["id"]:
-        raise ValueError("Item must have an 'id'.")
-    items = [i for i in items if i.get("id") != item["id"]] + [item]
-    tools[bucket] = items
-    _save_tools(tools)
-    return item
+@lru_cache(maxsize=64)
+def load_yaml_rules(filename: str) -> Any:
+    """
+    Load a YAML rulebook from flavour/rules (with legacy fallback handled in paths).
+    Raises FileNotFoundError if not present in either location.
+    """
+    path = resolve_rules_file(filename)
+    if not path.exists():
+        raise FileNotFoundError(f"Rules file not found: {path}")
+    obj = _load_yaml_from(path)
+    log.info(f"[rules] loaded {filename} from {path}")
+    return obj
 
-def upsert_bean(bean: Dict[str, Any]) -> Dict[str, Any]:
-    beans = _load_beans()
-    arr = beans.get("beans", [])
-    if "id" not in bean or not bean["id"]:
-        raise ValueError("Bean must have an 'id'.")
-    arr = [b for b in arr if b.get("id") != bean["id"]] + [bean]
-    beans["beans"] = arr
-    _save_beans(beans)
-    return bean
+# -----------------------------------------------------------------------------
+# Public loader API (priors)
+# -----------------------------------------------------------------------------
+@lru_cache(maxsize=64)
+def load_json_priors(filename: str, *, required: bool = False, default: Any = None) -> Any:
+    """
+    Load a JSON prior from flavour/priors (with legacy fallback handled in paths).
+    If required is False and file is missing, return `default` and log at INFO.
+    If required is True and file is missing, raise FileNotFoundError.
+    """
+    path = resolve_priors_file(filename)
+    if not path.exists():
+        if required:
+            raise FileNotFoundError(f"Priors file not found: {path}")
+        log.info(f"[priors] optional file missing: {filename} (looked at {path}); using default.")
+        return default
+    obj = _load_json_from(path)
+    log.info(f"[priors] loaded {filename} from {path}")
+    return obj
 
-# ---------- Getters ----------
-def _get_by_id(items, _id: str) -> Optional[Dict[str, Any]]:
-    for it in items:
-        if it.get("id") == _id:
-            return it
-    return None
+def has_priors_file(filename: str) -> bool:
+    """
+    True if a priors file exists (after applying legacy fallback in resolver).
+    """
+    path = resolve_priors_file(filename)
+    return path.exists()
 
-def get_brewer(_id: str) -> Dict[str, Any]:
-    item = _get_by_id(_load_tools()["brewers"], _id)
-    if not item: raise KeyError(f"brewer '{_id}' not found")
-    return item
+def has_rules_file(filename: str) -> bool:
+    """
+    True if a rules file exists (after applying legacy fallback in resolver).
+    """
+    path = resolve_rules_file(filename)
+    return path.exists()
 
-def get_paper(_id: str) -> Dict[str, Any]:
-    item = _get_by_id(_load_tools()["papers"], _id)
-    if not item: raise KeyError(f"paper '{_id}' not found")
-    return item
+# -----------------------------------------------------------------------------
+# Convenience accessors for well-known files
+# -----------------------------------------------------------------------------
+_RULES_NOTE_PROFILES = "note_profiles.json"
+_RULES_DECISION_POLICY = "decision_policy.yaml"
+_RULES_DEFAULT_RECIPES = "default_recipes.json"  # optional
 
-def get_grinder(_id: str) -> Dict[str, Any]:
-    item = _get_by_id(_load_tools()["grinders"], _id)
-    if not item: raise KeyError(f"grinder '{_id}' not found")
-    return item
+_PRIORS_NEIGHBORS = "note_neighbors_prior.json"  # optional
+_PRIORS_EDGES = "note_edges.json"                # optional
 
-def get_water(_id: str) -> Dict[str, Any]:
-    item = _get_by_id(_load_tools()["waters"], _id)
-    if not item: raise KeyError(f"water '{_id}' not found")
-    return item
+@lru_cache(maxsize=1)
+def get_note_profiles() -> Dict[str, Any]:
+    """
+    Returns the full note profiles dictionary (required).
+    """
+    return load_json_rules(_RULES_NOTE_PROFILES)
 
-def _clean(d: dict) -> dict:
-    return {k: v for k, v in d.items() if v is not None}
+@lru_cache(maxsize=1)
+def get_decision_policy() -> Dict[str, Any]:
+    """
+    Returns the decision policy structure (required).
+    """
+    return load_yaml_rules(_RULES_DECISION_POLICY)
 
-def get_toolset(_id: str) -> Dict[str, Any]:
-    tools = _load_tools()
-    ts = _get_by_id(tools["toolsets"], _id)
-    if not ts:
-        raise KeyError(f"toolset '{_id}' not found")
+@lru_cache(maxsize=1)
+def get_default_recipes() -> Dict[str, Any]:
+    """
+    Returns default recipes if present, else {}.
+    """
+    return load_json_rules(_RULES_DEFAULT_RECIPES) if has_rules_file(_RULES_DEFAULT_RECIPES) else {}
 
-    brewer  = get_brewer(ts["brewer_id"])
-    paper   = get_paper(ts["paper_id"])
-    grinder = get_grinder(ts["grinder_id"])
-    water   = get_water(ts["water_id"])
+def has_neighbors_prior() -> bool:
+    return has_priors_file(_PRIORS_NEIGHBORS)
 
-    # REQUIRED enum defaults for your Pydantic models:
-    thickness = paper.get("thickness") or "medium"          # Thickness enum
-    material  = paper.get("material")  or "paper_bleached"  # FilterMaterial enum
-    scale     = grinder.get("scale_type") or "numbers"      # GrinderScaleType enum
+def has_note_edges() -> bool:
+    return has_priors_file(_PRIORS_EDGES)
 
+# -----------------------------------------------------------------------------
+# Higher-level helpers for priors (neighbors & edges)
+# -----------------------------------------------------------------------------
+def _norm_note_key(note: str) -> str:
+    # Normalization strategy: lower-case; callers can keep their own mapping if needed.
+    return (note or "").strip().lower()
+
+@lru_cache(maxsize=1)
+def _neighbors_map() -> Dict[str, List[Dict[str, Any]]]:
+    """
+    Schema (recommended):
+    {
+      "jasmine": [{"note":"orange_blossom","w":0.2}, {"note":"bergamot","w":0.15}],
+      ...
+    }
+    """
+    data = load_json_priors(_PRIORS_NEIGHBORS, required=False, default={})
+    # Normalize keys to lowercase for consistent lookup
+    if isinstance(data, dict):
+        return { _norm_note_key(k): v for k, v in data.items() }
+    log.info(f"[priors] neighbors file had unexpected schema; ignoring.")
+    return {}
+
+def get_neighbors(note: str) -> List[Dict[str, Any]]:
+    """
+    Return neighbor list for a note. If the file is missing or schema is unexpected, returns [].
+    """
+    return _neighbors_map().get(_norm_note_key(note), [])
+
+@lru_cache(maxsize=1)
+def _edges_map() -> Dict[str, List[Dict[str, Any]]]:
+    """
+    Schema (recommended, undirected expressed as symmetric lists or handled upstream):
+    {
+      "red_grape": [
+         {"note":"cassis","w":0.1,"label":"shared_family"},
+         {"note":"cinnamon","w":0.05,"label":"supporting"}
+      ],
+      ...
+    }
+    """
+    data = load_json_priors(_PRIORS_EDGES, required=False, default={})
+    if isinstance(data, dict):
+        return { _norm_note_key(k): v for k, v in data.items() }
+    log.info(f"[priors] edges file had unexpected schema; ignoring.")
+    return {}
+
+def edges_for(note: str) -> List[Dict[str, Any]]:
+    """
+    Return conceptual edges for a note. If the file is missing or schema is unexpected, returns [].
+    """
+    return _edges_map().get(_norm_note_key(note), [])
+
+# -----------------------------------------------------------------------------
+# Debug / inventory helpers
+# -----------------------------------------------------------------------------
+def inventory() -> Dict[str, Any]:
+    """
+    Return a light inventory of what’s available. Safe to call from a health or debug route.
+    """
     return {
-        "brewer": _clean({
-            "name": brewer.get("name"),
-            "geometry_type": brewer["geometry_type"],
-            "size_code": brewer.get("size_code"),
-            "outlet_profile": brewer.get("outlet_profile"),
-        }),
-        "filter": {
-            # don't _clean here; we must keep required fields
-            "permeability": paper["permeability"],
-            "thickness": thickness,
-            "material": material,
-            # optional stays dropped if None
-            **_clean({"pore_size_microns": paper.get("pore_size_microns")})
+        "rules": {
+            "note_profiles": has_rules_file(_RULES_NOTE_PROFILES),
+            "decision_policy": has_rules_file(_RULES_DECISION_POLICY),
+            "default_recipes": has_rules_file(_RULES_DEFAULT_RECIPES),
         },
-        "grinder": _clean({
-            "burr_type": grinder["burr_type"],
-            "model": grinder.get("model"),
-            "scale_type": scale
-        }),
-        "water": _clean({
-            "profile_preset": water.get("profile_preset", "sca_target"),
-            "hardness_gh": water.get("hardness_gh"),
-            "alkalinity_kh": water.get("alkalinity_kh"),
-        }),
+        "priors": {
+            "note_neighbors_prior": has_neighbors_prior(),
+            "note_edges": has_note_edges(),
+        },
     }
 
-def get_bean(_id: str) -> Dict[str, Any]:
-    bean = _get_by_id(_load_beans()["beans"], _id)
-    if not bean: raise KeyError(f"bean '{_id}' not found")
-    return bean
+# -----------------------------------------------------------------------------
+# Back-compat shims for older routers expecting demo/toolset helpers.
+# These keep legacy imports alive while you migrate routers to services.data_stores.
+# -----------------------------------------------------------------------------
+def get_toolset(toolset_id: str) -> Dict[str, Any]:
+    """
+    Compatibility shim. Replace with a real implementation
+    (e.g., services.data_stores.get_toolset) when ready.
+    """
+    # You can implement a real lookup here if you want:
+    # from breau_backend.app.services.data_stores import get_toolset as _gt
+    # return _gt(toolset_id)
+    raise KeyError(f"toolset '{toolset_id}' not found")
+
+def get_bean(alias_or_id: str) -> Dict[str, Any]:
+    """
+    Compatibility shim for demo library bean lookup. Replace with
+    a real demo/library fetch if you keep this flow.
+    """
+    # Example of delegating to a user/demos store (uncomment if available):
+    # try:
+    #     from breau_backend.app.services.data_stores import get_bean as _user_bean
+    #     rec = _user_bean(alias_or_id)
+    #     return rec.get('data', {})
+    # except Exception:
+    #     pass
+    raise KeyError(f"demo bean '{alias_or_id}' not found")

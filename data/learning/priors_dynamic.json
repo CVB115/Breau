@@ -1,0 +1,19 @@
+{
+  "notes": {
+    "washed:light:fast": {
+      "jasmine": 78
+    }
+  },
+  "traits": {
+    "washed:light:fast": {
+      "florality": 78.0,
+      "clarity": 78.0
+    }
+  },
+  "rating": {
+    "washed:light:fast": [
+      78,
+      390
+    ]
+  }
+}

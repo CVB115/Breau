@@ -1,0 +1,38 @@
+{
+  "schema_version": "2025-09-03",
+  "user_id": "test_user",
+  "goals": {
+    "increase florality": {
+      "ctx@process=washed|roast=light|ratio=15|temp=91": {
+        "temp_delta": {
+          "m": -0.018750000000000003,
+          "n": 1
+        },
+        "grind_delta": {
+          "m": 0.0,
+          "n": 1
+        },
+        "agitation_delta": {
+          "m": 0.0,
+          "n": 1
+        }
+      }
+    },
+    "less body": {
+      "ctx@process=washed|roast=light|ratio=15|temp=91": {
+        "temp_delta": {
+          "m": -0.018750000000000003,
+          "n": 1
+        },
+        "grind_delta": {
+          "m": 0.0,
+          "n": 1
+        },
+        "agitation_delta": {
+          "m": 0.0,
+          "n": 1
+        }
+      }
+    }
+  }
+}

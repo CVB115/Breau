@@ -1,0 +1,21 @@
+{
+  "schema_version": "2025-09-03",
+  "arms": {
+    "baseline": {
+      "wins": 0,
+      "trials": 0,
+      "avg_rating": 0.0
+    },
+    "shadow": {
+      "wins": 0,
+      "trials": 0,
+      "avg_rating": 0.0
+    },
+    "planner": {
+      "wins": 0,
+      "trials": 0,
+      "avg_rating": 0.0
+    }
+  },
+  "last_decisions": []
+}

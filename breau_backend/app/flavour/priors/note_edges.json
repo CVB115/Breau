@@ -1,0 +1,1244 @@
+[
+  {
+  "type": "transform_tendency",
+  "source": "red_grape",
+  "target": "wine",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:winey", "density:rich", "sweetness_type:caramelized", "texture:silky"], "remove": ["texture:crisp"] },
+  "confidence": 0.60,
+  "notes": "Hot+long with strong heat retention collapses fresh grape toward winey/jammy."
+},
+{
+  "type": "transform_tendency",
+  "source": "blueberry",
+  "target": "jammy_berry",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "heat_retention": "high", "agitation": "modulated" } },
+  "effect": { "add": ["texture:jammy", "sweetness_type:caramelized"], "remove": ["note_layer:top"] },
+  "confidence": 0.65,
+  "notes": "Reduction concentrates berry into jammy sweetness."
+},
+{
+  "type": "transform_tendency",
+  "source": "strawberry",
+  "target": "strawberry_jam",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["texture:jammy", "sweetness_type:caramelized"], "remove": ["volatility:high"] },
+  "confidence": 0.66,
+  "notes": "Long contact deepens sugar profile; fresh top fades."
+},
+{
+  "type": "transform_tendency",
+  "source": "plum",
+  "target": "prune",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:dried_fruit", "sweetness_type:caramelized"], "remove": ["descriptor:fresh_plum"] },
+  "confidence": 0.69,
+  "notes": "Stonefruit concentrates into dried/darker read."
+},
+{
+  "type": "transform_tendency",
+  "source": "red_grape",
+  "target": "raisin",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:dried_fruit"], "remove": ["acidity_tone:malic"] },
+  "confidence": 0.61,
+  "notes": "Extended contact nudges grape toward dried fruit."
+},
+{
+  "type": "transform_tendency",
+  "source": "lemon_zest",
+  "target": "marmalade",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium", "agitation": "modulated", "heat_retention": "medium" } },
+  "effect": { "add": ["prep:candied", "sweetness_type:candied", "peel_bitterness:light"], "remove": ["note_layer:top"] },
+  "confidence": 0.58,
+  "notes": "Controlled reduction turns sharp peel into candied marmalade."
+},
+{
+  "type": "transform_tendency",
+  "source": "orange_zest",
+  "target": "marmalade",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium" } },
+  "effect": { "add": ["prep:candied"], "remove": ["volatility:high"] },
+  "confidence": 0.60,
+  "notes": "Peel-forward citrus shifts to marmalade with moderate reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "jasmine",
+  "target": "muted_floral",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "agitation": "high" } },
+  "effect": { "add": ["mouthfeel_influence:dry"], "remove": ["note_layer:top", "volatility:high"] },
+  "confidence": 0.67,
+  "notes": "Delicate florals collapse under heat + turbulence."
+},
+{
+  "type": "transform_tendency",
+  "source": "orange_blossom",
+  "target": "muted_floral",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["mouthfeel_influence:flat"], "remove": ["note_layer:top"] },
+  "confidence": 0.64,
+  "notes": "OB loses lift with long, hot extraction."
+},
+{
+  "type": "transform_tendency",
+  "source": "lavender",
+  "target": "bitter_green",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "agitation": "high" } },
+  "effect": { "add": ["descriptor:bitter_green"], "remove": ["note_layer:top"] },
+  "confidence": 0.57,
+  "notes": "Overextraction pushes perfumed to green-bitter."
+},
+{
+  "type": "transform_tendency",
+  "source": "coconut",
+  "target": "toasted_coconut",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:caramelized", "mouthfeel_influence:warm"], "remove": ["refreshing"] },
+  "confidence": 0.60,
+  "notes": "Retained heat emphasizes toasted lactone tones."
+},
+{
+  "type": "transform_tendency",
+  "source": "caramel",
+  "target": "molasses",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["sweetness_type:molasses", "texture:syrupy"], "remove": ["sweetness_type:caramelized:light"] },
+  "confidence": 0.62,
+  "notes": "Further reduction deepens caramel to molasses."
+},
+{
+  "type": "transform_tendency",
+  "source": "green_apple",
+  "target": "pear",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["texture:smooth"], "remove": ["acidity_tone:sharp_malic"] },
+  "confidence": 0.55,
+  "notes": "Slight softening moves sharp malic toward rounder pome."
+},
+{
+  "type": "transform_tendency",
+  "source": "grapefruit_zest",
+  "target": "bitter_orange",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium" } },
+  "effect": { "add": ["peel_bitterness:medium", "sweetness_type:candied"], "remove": ["volatility:high"] },
+  "confidence": 0.54,
+  "notes": "Moderate length shifts grapefruit peel toward sweeter bitter orange."
+},
+{
+  "type": "transform_tendency",
+  "source": "white_grape",
+  "target": "raisins_light",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:dried_fruit:light"], "remove": ["texture:crisp"] },
+  "confidence": 0.58,
+  "notes": "Long warm extraction collapses fresh grape to light dried-fruit."
+},
+{
+  "type": "transform_tendency",
+  "source": "black_grape",
+  "target": "wine",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:winey", "density:rich"], "remove": ["note_layer:top"] },
+  "confidence": 0.62,
+  "notes": "Dark skins skew winey under heat + length."
+},
+{
+  "type": "transform_tendency",
+  "source": "raspberry",
+  "target": "jammy_berry",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["texture:jammy"], "remove": ["acidity_tone:sharp_malic"] },
+  "confidence": 0.60,
+  "notes": "Long contact smooths tart spike toward jam."
+},
+{
+  "type": "transform_tendency",
+  "source": "peach",
+  "target": "dried_apricot",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:dried_stonefruit"], "remove": ["descriptor:juicy"] },
+  "confidence": 0.61,
+  "notes": "Stonefruit concentrates into dried/apricot-like tone."
+},
+{
+  "type": "transform_tendency",
+  "source": "pineapple",
+  "target": "candied_pineapple",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["prep:candied", "sweetness_type:candied"], "remove": ["acidity_tone:citric_bright"] },
+  "confidence": 0.58,
+  "notes": "Moderate reduction softens citric edge, reading candied."
+},
+{
+  "type": "transform_tendency",
+  "source": "banana",
+  "target": "overripe_banana",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:ester_heavy"], "remove": ["descriptor:starchy"] },
+  "confidence": 0.59,
+  "notes": "Gentle, long extraction lifts overripe/ester facets."
+},
+{
+  "type": "transform_tendency",
+  "source": "guava",
+  "target": "pink_guava",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["sweetness_type:ripe", "descriptor:floral_tropical"], "remove": ["green_edge"] },
+  "confidence": 0.51,
+  "notes": "Gentle, slightly longer extraction rounds green guava into pink/ripe perception."
+},
+{
+  "type": "transform_tendency",
+  "source": "passionfruit",
+  "target": "tropical_punch",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:blended_tropical"], "remove": ["note_layer:top"] },
+  "confidence": 0.55,
+  "notes": "Longer contact blends distinct PF into composite tropical tones."
+},
+{
+  "type": "transform_tendency",
+  "source": "yuzu",
+  "target": "yuzu_peel",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium", "agitation": "modulated" } },
+  "effect": { "add": ["peel_bitterness:light", "prep:candied_hint"], "remove": ["volatility:high"] },
+  "confidence": 0.52,
+  "notes": "Moderate reduction emphasizes rind over volatile zest brightness."
+},
+{
+  "type": "transform_tendency",
+  "source": "lime",
+  "target": "candied_lime",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium_long" } },
+  "effect": { "add": ["prep:candied", "sweetness_type:candied"], "remove": ["acidity_tone:razor"] },
+  "confidence": 0.54,
+  "notes": "Length tempers razor acidity; reads candied-lime."
+},
+{
+  "type": "transform_tendency",
+  "source": "lemon",
+  "target": "lemon_curd",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium", "agitation": "modulated" } },
+  "effect": { "add": ["sweetness_type:creamy", "descriptor:curd", "texture:soft"], "remove": ["acidity_tone:razor"] },
+  "confidence": 0.53,
+  "notes": "Body + moderate reduction shift sharp lemon to custardy curd."
+},
+{
+  "type": "transform_tendency",
+  "source": "blood_orange",
+  "target": "marmalade",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium_long" } },
+  "effect": { "add": ["prep:candied", "peel_bitterness:light"], "remove": ["note_layer:top"] },
+  "confidence": 0.55,
+  "notes": "Anthocyanin-rich citrus still trends to marmalade under reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "mandarin",
+  "target": "tangerine_candy",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium" } },
+  "effect": { "add": ["sweetness_type:candied", "descriptor:candy_peel"], "remove": ["volatility:high"] },
+  "confidence": 0.50,
+  "notes": "Moderate length and warmth give candied-tangerine read."
+},
+{
+  "type": "transform_tendency",
+  "source": "bergamot",
+  "target": "earl_grey",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:tea_aroma", "note_binding:floral_citrus"], "remove": ["harsh_peel"] },
+  "confidence": 0.50,
+  "notes": "Cool, gentle preserves linalool; reads tea-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "jasmine",
+  "target": "white_tea",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:tea_like", "texture:silky"], "remove": ["bitter_green"] },
+  "confidence": 0.56,
+  "notes": "Handled delicately, jasmine expresses as white tea rather than perfumey."
+},
+{
+  "type": "transform_tendency",
+  "source": "orange_blossom",
+  "target": "honeyed_citrus",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "low" } },
+  "effect": { "add": ["sweetness_type:honeyed", "texture:silky"], "remove": ["note_layer:top:fragile"] },
+  "confidence": 0.55,
+  "notes": "Short, cool extraction yields honeyed-citrus aura."
+},
+{
+  "type": "transform_tendency",
+  "source": "lavender",
+  "target": "perfumey",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:perfumey"], "remove": ["bitter_green"] },
+  "confidence": 0.49,
+  "notes": "Kept cool and short, lavender retains perfumed lift."
+},
+{
+  "type": "transform_tendency",
+  "source": "rose",
+  "target": "rose_jam",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["sweetness_type:confectionary", "texture:lush"], "remove": ["volatility:high"] },
+  "confidence": 0.52,
+  "notes": "Moderate reduction sweetens rose into jammy/confectionary register."
+},
+{
+  "type": "transform_tendency",
+  "source": "hibiscus",
+  "target": "cranberry",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "short_med", "agitation": "early_high" } },
+  "effect": { "add": ["acidity_tone:malic", "descriptor:tart_berry"], "remove": ["floral_only"] },
+  "confidence": 0.51,
+  "notes": "Front-loaded extraction expresses hibiscus as tart cranberry-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "almond",
+  "target": "marzipan",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:marzipan", "sweetness_type:confectionary"], "remove": ["raw_nutty"] },
+  "confidence": 0.58,
+  "notes": "Longer, warmer extraction sweetens almond toward marzipan."
+},
+{
+  "type": "transform_tendency",
+  "source": "hazelnut",
+  "target": "praline",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:praline", "sweetness_type:caramelized"], "remove": ["raw_nutty"] },
+  "confidence": 0.57,
+  "notes": "Nut + caramel pathway reads praline with added reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "vanilla",
+  "target": "custard",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:custard", "sweetness_type:creamy", "texture:soft"], "remove": ["note_layer:top"] },
+  "confidence": 0.50,
+  "notes": "Body/softness push vanilla into custard-like perception."
+},
+{
+  "type": "transform_tendency",
+  "source": "caramel",
+  "target": "toffee",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["sweetness_type:toffee", "bitterness_hint:light"], "remove": ["sweetness_type:caramelized:light"] },
+  "confidence": 0.60,
+  "notes": "Deeper reduction thickens caramel into toffee."
+},
+{
+  "type": "transform_tendency",
+  "source": "toffee",
+  "target": "burnt_sugar",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:burnt_sugar", "bitterness_hint:medium"], "remove": ["sweetness_type:toffee"] },
+  "confidence": 0.55,
+  "notes": "Overshoot on heat/length tips toward bitter burnt sugar."
+},
+{
+  "type": "transform_tendency",
+  "source": "dark_chocolate",
+  "target": "cocoa_nibs",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "medium_long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:roasty_cacao", "bitterness_hint:clean"], "remove": ["sweetness_type:milk_chocolate"] },
+  "confidence": 0.53,
+  "notes": "Slightly longer, calm extraction sharpens cacao into nib-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "cocoa_nibs",
+  "target": "bittersweet_chocolate",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium", "heat_retention": "medium" } },
+  "effect": { "add": ["sweetness_type:bittersweet", "texture:smooth"], "remove": ["dry_dusty"] },
+  "confidence": 0.52,
+  "notes": "Moderate heat/body rounds nibby dryness toward bittersweet chocolate."
+},
+{
+  "type": "transform_tendency",
+  "source": "guava",
+  "target": "pink_guava",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["sweetness_type:ripe", "descriptor:floral_tropical"], "remove": ["green_edge"] },
+  "confidence": 0.51,
+  "notes": "Gentle, slightly longer extraction rounds green guava into pink/ripe perception."
+},
+{
+  "type": "transform_tendency",
+  "source": "passionfruit",
+  "target": "tropical_punch",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:blended_tropical"], "remove": ["note_layer:top"] },
+  "confidence": 0.55,
+  "notes": "Longer contact blends distinct PF into composite tropical tones."
+},
+{
+  "type": "transform_tendency",
+  "source": "yuzu",
+  "target": "yuzu_peel",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium", "agitation": "modulated" } },
+  "effect": { "add": ["peel_bitterness:light", "prep:candied_hint"], "remove": ["volatility:high"] },
+  "confidence": 0.52,
+  "notes": "Moderate reduction emphasizes rind over volatile zest brightness."
+},
+{
+  "type": "transform_tendency",
+  "source": "lime",
+  "target": "candied_lime",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium_long" } },
+  "effect": { "add": ["prep:candied", "sweetness_type:candied"], "remove": ["acidity_tone:razor"] },
+  "confidence": 0.54,
+  "notes": "Length tempers razor acidity; reads candied-lime."
+},
+{
+  "type": "transform_tendency",
+  "source": "lemon",
+  "target": "lemon_curd",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium", "agitation": "modulated" } },
+  "effect": { "add": ["sweetness_type:creamy", "descriptor:curd", "texture:soft"], "remove": ["acidity_tone:razor"] },
+  "confidence": 0.53,
+  "notes": "Body + moderate reduction shift sharp lemon to custardy curd."
+},
+{
+  "type": "transform_tendency",
+  "source": "blood_orange",
+  "target": "marmalade",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium_long" } },
+  "effect": { "add": ["prep:candied", "peel_bitterness:light"], "remove": ["note_layer:top"] },
+  "confidence": 0.55,
+  "notes": "Anthocyanin-rich citrus still trends to marmalade under reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "mandarin",
+  "target": "tangerine_candy",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium" } },
+  "effect": { "add": ["sweetness_type:candied", "descriptor:candy_peel"], "remove": ["volatility:high"] },
+  "confidence": 0.50,
+  "notes": "Moderate length and warmth give candied-tangerine read."
+},
+{
+  "type": "transform_tendency",
+  "source": "bergamot",
+  "target": "earl_grey",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:tea_aroma", "note_binding:floral_citrus"], "remove": ["harsh_peel"] },
+  "confidence": 0.50,
+  "notes": "Cool, gentle preserves linalool; reads tea-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "jasmine",
+  "target": "white_tea",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:tea_like", "texture:silky"], "remove": ["bitter_green"] },
+  "confidence": 0.56,
+  "notes": "Handled delicately, jasmine expresses as white tea rather than perfumey."
+},
+{
+  "type": "transform_tendency",
+  "source": "orange_blossom",
+  "target": "honeyed_citrus",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "low" } },
+  "effect": { "add": ["sweetness_type:honeyed", "texture:silky"], "remove": ["note_layer:top:fragile"] },
+  "confidence": 0.55,
+  "notes": "Short, cool extraction yields honeyed-citrus aura."
+},
+{
+  "type": "transform_tendency",
+  "source": "lavender",
+  "target": "perfumey",
+  "conditions": { "brew": { "temp_max": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:perfumey"], "remove": ["bitter_green"] },
+  "confidence": 0.49,
+  "notes": "Kept cool and short, lavender retains perfumed lift."
+},
+{
+  "type": "transform_tendency",
+  "source": "rose",
+  "target": "rose_jam",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["sweetness_type:confectionary", "texture:lush"], "remove": ["volatility:high"] },
+  "confidence": 0.52,
+  "notes": "Moderate reduction sweetens rose into jammy/confectionary register."
+},
+{
+  "type": "transform_tendency",
+  "source": "hibiscus",
+  "target": "cranberry",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "short_med", "agitation": "early_high" } },
+  "effect": { "add": ["acidity_tone:malic", "descriptor:tart_berry"], "remove": ["floral_only"] },
+  "confidence": 0.51,
+  "notes": "Front-loaded extraction expresses hibiscus as tart cranberry-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "almond",
+  "target": "marzipan",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:marzipan", "sweetness_type:confectionary"], "remove": ["raw_nutty"] },
+  "confidence": 0.58,
+  "notes": "Longer, warmer extraction sweetens almond toward marzipan."
+},
+{
+  "type": "transform_tendency",
+  "source": "hazelnut",
+  "target": "praline",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:praline", "sweetness_type:caramelized"], "remove": ["raw_nutty"] },
+  "confidence": 0.57,
+  "notes": "Nut + caramel pathway reads praline with added reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "vanilla",
+  "target": "custard",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:custard", "sweetness_type:creamy", "texture:soft"], "remove": ["note_layer:top"] },
+  "confidence": 0.50,
+  "notes": "Body/softness push vanilla into custard-like perception."
+},
+{
+  "type": "transform_tendency",
+  "source": "caramel",
+  "target": "toffee",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["sweetness_type:toffee", "bitterness_hint:light"], "remove": ["sweetness_type:caramelized:light"] },
+  "confidence": 0.60,
+  "notes": "Deeper reduction thickens caramel into toffee."
+},
+{
+  "type": "transform_tendency",
+  "source": "toffee",
+  "target": "burnt_sugar",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:burnt_sugar", "bitterness_hint:medium"], "remove": ["sweetness_type:toffee"] },
+  "confidence": 0.55,
+  "notes": "Overshoot on heat/length tips toward bitter burnt sugar."
+},
+{
+  "type": "transform_tendency",
+  "source": "dark_chocolate",
+  "target": "cocoa_nibs",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "medium_long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:roasty_cacao", "bitterness_hint:clean"], "remove": ["sweetness_type:milk_chocolate"] },
+  "confidence": 0.53,
+  "notes": "Slightly longer, calm extraction sharpens cacao into nib-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "cocoa_nibs",
+  "target": "bittersweet_chocolate",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium", "heat_retention": "medium" } },
+  "effect": { "add": ["sweetness_type:bittersweet", "texture:smooth"], "remove": ["dry_dusty"] },
+  "confidence": 0.52,
+  "notes": "Moderate heat/body rounds nibby dryness toward bittersweet chocolate."
+},
+{
+  "type": "transform_tendency",
+  "source": "brown_sugar",
+  "target": "molasses",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["sweetness_type:molasses", "texture:heavy"], "remove": ["sweetness_type:light_brown"] },
+  "confidence": 0.59,
+  "notes": "Browning path deepens light brown sugar toward molasses."
+},
+{
+  "type": "transform_tendency",
+  "source": "honey",
+  "target": "toffee",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:toffee", "texture:syrupy"], "remove": ["sweetness_type:honeyed:light"] },
+  "confidence": 0.58,
+  "notes": "Further reduction thickens honey into toffee-like sweetness."
+},
+{
+  "type": "transform_tendency",
+  "source": "butter",
+  "target": "brown_butter",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:nutty_browned", "sweetness_type:caramelized"], "remove": ["fatty_raw"] },
+  "confidence": 0.57,
+  "notes": "Length/heat induces browned butter notes."
+},
+{
+  "type": "transform_tendency",
+  "source": "brown_butter",
+  "target": "toffee",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["sweetness_type:toffee", "texture:rich"], "remove": ["buttery_only"] },
+  "confidence": 0.55,
+  "notes": "Deeper reduction melds browned butter into toffee."
+},
+{
+  "type": "transform_tendency",
+  "source": "vanilla",
+  "target": "marshmallow",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "heat_retention": "medium" } },
+  "effect": { "add": ["descriptor:marshmallow", "texture:soft"], "remove": ["thin_sweetness"] },
+  "confidence": 0.49,
+  "notes": "Body + warmth push vanilla toward marshmallow softness."
+},
+{
+  "type": "transform_tendency",
+  "source": "cane_sugar",
+  "target": "caramel",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["sweetness_type:caramelized"], "remove": ["sweetness_type:plain"] },
+  "confidence": 0.56,
+  "notes": "Moderate reduction caramelizes plain sugar perception."
+},
+{
+  "type": "transform_tendency",
+  "source": "caramel",
+  "target": "butterscotch",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:butterscotch", "sweetness_type:creamy"], "remove": ["sharp_caramel"] },
+  "confidence": 0.54,
+  "notes": "Softer extraction rounds caramel into butterscotch."
+},
+{
+  "type": "transform_tendency",
+  "source": "milk_chocolate",
+  "target": "dark_chocolate",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["bitterness_hint:medium", "cacao_intensity:up"], "remove": ["sweetness_type:milky"] },
+  "confidence": 0.55,
+  "notes": "Longer heat shifts sweet milk chocolate toward darker cacao."
+},
+{
+  "type": "transform_tendency",
+  "source": "dark_chocolate",
+  "target": "molasses_cacao",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:molasses", "descriptor:treacle"], "remove": ["clean_cacao_only"] },
+  "confidence": 0.52,
+  "notes": "Deep reduction adds treacle/molasses to dark cacao."
+},
+{
+  "type": "transform_tendency",
+  "source": "cocoa_nibs",
+  "target": "roasted_nut",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:roasty_nutty"], "remove": ["dry_dusty"] },
+  "confidence": 0.51,
+  "notes": "Extended calm extraction brings nutty-roast from nibs."
+},
+{
+  "type": "transform_tendency",
+  "source": "hazelnut",
+  "target": "gianduja",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:gianduja", "sweetness_type:confectionary"], "remove": ["raw_nutty"] },
+  "confidence": 0.56,
+  "notes": "Nut + chocolate synergies read as gianduja."
+},
+{
+  "type": "transform_tendency",
+  "source": "almond",
+  "target": "amaretto",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long", "heat_retention": "medium" } },
+  "effect": { "add": ["descriptor:amaretto", "sweetness_type:liqueur_like"], "remove": ["flat_nut"] },
+  "confidence": 0.52,
+  "notes": "Sweetened almond perception leans amaretto under reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "clove",
+  "target": "allspice",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:allspice", "warm_spice_blend"], "remove": ["sharp_clove"] },
+  "confidence": 0.50,
+  "notes": "Moderate smoothing blends clove into allspice-like warmth."
+},
+{
+  "type": "transform_tendency",
+  "source": "cinnamon",
+  "target": "cinnamon_bark",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:woody_spice"], "remove": ["sweet_spice_only"] },
+  "confidence": 0.51,
+  "notes": "Longer contact emphasizes woody bark over sweet dust."
+},
+{
+  "type": "transform_tendency",
+  "source": "nutmeg",
+  "target": "brown_spice",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:brown_spice_blend"], "remove": ["sharp_nutmeg"] },
+  "confidence": 0.49,
+  "notes": "Rounded extraction blends nutmeg into broader brown spice."
+},
+{
+  "type": "transform_tendency",
+  "source": "ginger",
+  "target": "candied_ginger",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "heat_retention": "medium" } },
+  "effect": { "add": ["prep:candied", "sweetness_type:candied"], "remove": ["spicy_bite:sharp"] },
+  "confidence": 0.53,
+  "notes": "Moderate reduction sweetens and softens ginger bite."
+},
+{
+  "type": "transform_tendency",
+  "source": "cardamom",
+  "target": "sweet_cardamom",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:sweet_spice", "floral_hint"], "remove": ["camphor_sharp"] },
+  "confidence": 0.50,
+  "notes": "Gentle extraction emphasizes sweet/floral facets."
+},
+{
+  "type": "transform_tendency",
+  "source": "black_tea",
+  "target": "malty_tea",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:malty", "sweetness_type:caramelized"], "remove": ["tannin_sharp"] },
+  "confidence": 0.55,
+  "notes": "Slightly longer extraction turns tannic tea toward malty-sweet."
+},
+{
+  "type": "transform_tendency",
+  "source": "green_tea",
+  "target": "toasted_rice",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:genmaicha_like", "roasty_grain"], "remove": ["grassy_sharp"] },
+  "confidence": 0.50,
+  "notes": "Warm, calm length steers green tea impressions toward toasted rice."
+},
+{
+  "type": "transform_tendency",
+  "source": "herbal",
+  "target": "bitter_herbal",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "agitation": "high" } },
+  "effect": { "add": ["descriptor:amaro_like"], "remove": ["fresh_herbal"] },
+  "confidence": 0.52,
+  "notes": "Overextraction pushes fresh herbal into bitter/amaro-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "rosemary",
+  "target": "pine_resin",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "agitation": "high" } },
+  "effect": { "add": ["descriptor:pine_resin", "bitterness_hint:herbal"], "remove": ["fresh_herbal"] },
+  "confidence": 0.52,
+  "notes": "Overextraction drives rosemary toward bitter resinous pine tone."
+},
+{
+  "type": "transform_tendency",
+  "source": "thyme",
+  "target": "savory_spice",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:savory", "flavor_class:umami"], "remove": ["green_edge"] },
+  "confidence": 0.49,
+  "notes": "Longer, calm extraction steers thyme toward savory spice register."
+},
+{
+  "type": "transform_tendency",
+  "source": "sage",
+  "target": "dried_sage",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:dried_herb", "bitterness_hint:light"], "remove": ["note_layer:top"] },
+  "confidence": 0.48,
+  "notes": "Time + heat dry out fresh sage tone into dried herbal."
+},
+{
+  "type": "transform_tendency",
+  "source": "basil",
+  "target": "mint",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "short", "agitation": "gentle" } },
+  "effect": { "add": ["descriptor:menthol_like", "refreshing"], "remove": ["green"] },
+  "confidence": 0.50,
+  "notes": "Light contact cools basil tone into mint-adjacent freshness."
+},
+{
+  "type": "transform_tendency",
+  "source": "mint",
+  "target": "menthol",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "short", "agitation": "low" } },
+  "effect": { "add": ["descriptor:menthol", "cooling_effect"], "remove": ["note_layer:top"] },
+  "confidence": 0.51,
+  "notes": "Short, focused extraction emphasizes menthol core of mint."
+},
+{
+  "type": "transform_tendency",
+  "source": "eucalyptus",
+  "target": "menthol",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "short", "agitation": "low" } },
+  "effect": { "add": ["descriptor:menthol", "refreshing"], "remove": ["medicinal"] },
+  "confidence": 0.52,
+  "notes": "Cool, short brewing gives eucalyptus a softer menthol freshness."
+},
+{
+  "type": "transform_tendency",
+  "source": "dill",
+  "target": "green_herbal",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:green_herbal"], "remove": ["flavor_type:sharp"] },
+  "confidence": 0.48,
+  "notes": "Moderate extraction balances dill’s sharper top notes."
+},
+{
+  "type": "transform_tendency",
+  "source": "anise",
+  "target": "licorice",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "heat_retention": "medium" } },
+  "effect": { "add": ["descriptor:licorice", "sweetness_type:root_sweet"], "remove": ["floral_only"] },
+  "confidence": 0.53,
+  "notes": "Extraction length deepens anise into root-sweet licorice."
+},
+{
+  "type": "transform_tendency",
+  "source": "licorice",
+  "target": "molasses_root",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:root_molasses", "sweetness_type:dark"], "remove": ["sharp_root"] },
+  "confidence": 0.50,
+  "notes": "Long extraction softens licorice into molasses-like root sweetness."
+},
+{
+  "type": "transform_tendency",
+  "source": "tamarind",
+  "target": "dried_fruit_tart",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:tart", "descriptor:dried_fruit_like"], "remove": ["wet_acid"] },
+  "confidence": 0.51,
+  "notes": "Heat + reduction steer tamarind into tart dried fruit space."
+},
+{
+  "type": "transform_tendency",
+  "source": "fig",
+  "target": "prune",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:dried_stonefruit", "texture:thick"], "remove": ["fresh_fig"] },
+  "confidence": 0.56,
+  "notes": "Long contact concentrates fig into darker prune tone."
+},
+{
+  "type": "transform_tendency",
+  "source": "date",
+  "target": "molasses",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:molasses", "density:rich"], "remove": ["note_layer:top"] },
+  "confidence": 0.59,
+  "notes": "Dense date sugars deepen into molasses with heat and time."
+},
+{
+  "type": "transform_tendency",
+  "source": "raisin",
+  "target": "prune",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:dried_stonefruit"], "remove": ["brightness"] },
+  "confidence": 0.54,
+  "notes": "Extended brew shifts dried grape into prune-like richness."
+},
+{
+  "type": "transform_tendency",
+  "source": "prune",
+  "target": "molasses_prune",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:molasses", "descriptor:jammy"], "remove": ["acidity_tone:faint"] },
+  "confidence": 0.55,
+  "notes": "Long, hot extractions draw molasses-like syrup from prune base."
+},
+{
+  "type": "transform_tendency",
+  "source": "blackcurrant",
+  "target": "cassis",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:liqueur_blackcurrant", "sweetness_type:thick"], "remove": ["volatility:topnote"] },
+  "confidence": 0.57,
+  "notes": "Moderate body/length smooths blackcurrant into cassis."
+},
+{
+  "type": "transform_tendency",
+  "source": "cassis",
+  "target": "wine",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:winey", "bitterness_hint:low"], "remove": ["sweetness_type:liqueur"] },
+  "confidence": 0.58,
+  "notes": "From liqueur‑like to wine‑like as sweetness reduces and acids rise."
+},
+{
+  "type": "transform_tendency",
+  "source": "elderberry",
+  "target": "mulberry",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:mellow_dried_fruit"], "remove": ["tart_top"] },
+  "confidence": 0.53,
+  "notes": "Reduction softens elderberry to mellow mulberry."
+},
+{
+  "type": "transform_tendency",
+  "source": "boysenberry",
+  "target": "plum_jam",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["texture:jammy", "sweetness_type:caramelized"], "remove": ["berry_tartness"] },
+  "confidence": 0.60,
+  "notes": "Deepened berry becomes more stonefruit-jam-like."
+},
+{
+  "type": "transform_tendency",
+  "source": "jammy_berry",
+  "target": "molasses_berry",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:molasses", "descriptor:deep_jam"], "remove": ["fresh_fruit"] },
+  "confidence": 0.57,
+  "notes": "Further reduction from jammy leads to syrupy molasses-berry impression."
+},
+{
+  "type": "transform_tendency",
+  "source": "strawberry_jam",
+  "target": "plum_preserve",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:stonefruit_jam", "texture:syrupy"], "remove": ["berry_only"] },
+  "confidence": 0.56,
+  "notes": "Jammy berry shifts toward plum preserve under deep reduction."
+},
+{
+  "type": "transform_tendency",
+  "source": "grape_jelly",
+  "target": "concord_jam",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long", "heat_retention": "medium" } },
+  "effect": { "add": ["texture:jammy", "sweetness_type:cooked"], "remove": ["note_layer:top"] },
+  "confidence": 0.55,
+  "notes": "Grape jelly evolves into a deeper Concord-style jam under longer extraction."
+},
+{
+  "type": "transform_tendency",
+  "source": "grape_skin",
+  "target": "red_wine_tannin",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "agitation": "high" } },
+  "effect": { "add": ["tannin_presence:moderate", "descriptor:red_wine_like"], "remove": ["note_layer:top"] },
+  "confidence": 0.58,
+  "notes": "Long, aggressive extraction of skins builds tannin-like structure."
+},
+{
+  "type": "transform_tendency",
+  "source": "grape_must",
+  "target": "fermented_note",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:fermented", "density:rich"], "remove": ["freshness"] },
+  "confidence": 0.60,
+  "notes": "Hot, long contact collapses must into a winey, ferment-like profile."
+},
+{
+  "type": "transform_tendency",
+  "source": "fig",
+  "target": "molasses_fig",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:molasses", "texture:syrupy"], "remove": ["light_fig"] },
+  "confidence": 0.59,
+  "notes": "Hot reduction thickens fig sweetness toward molasses-like intensity."
+},
+{
+  "type": "transform_tendency",
+  "source": "date",
+  "target": "treacle",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:treacle", "texture:heavy"], "remove": ["note_layer:top"] },
+  "confidence": 0.60,
+  "notes": "Long high-retention brews deepen date into heavy treacle impression."
+},
+{
+  "type": "transform_tendency",
+  "source": "raisin",
+  "target": "figgy",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:fig", "texture:thick"], "remove": ["acidity_tone:malic"] },
+  "confidence": 0.54,
+  "notes": "Smooth, long extraction moves raisin into fig-like syrupy weight."
+},
+{
+  "type": "transform_tendency",
+  "source": "prune",
+  "target": "fruitcake",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:dark_fruit_blend", "density:rich"], "remove": ["single_note:prune"] },
+  "confidence": 0.58,
+  "notes": "Deeper reduction blends prune into complex dark fruitcake character."
+},
+{
+  "type": "transform_tendency",
+  "source": "molasses",
+  "target": "burnt_sugar",
+  "conditions": { "brew": { "temp_min": 95, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:burnt_sugar", "bitterness_hint:medium"], "remove": ["sweetness_type:molasses"] },
+  "confidence": 0.57,
+  "notes": "Overshooting molasses leads to bitter burnt sugar under extreme heat/contact."
+},
+{
+  "type": "transform_tendency",
+  "source": "jammy_berry",
+  "target": "fermented_berry",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "agitation": "modulated" } },
+  "effect": { "add": ["descriptor:fermented", "density:rich"], "remove": ["clean_fruit"] },
+  "confidence": 0.56,
+  "notes": "Extended reduction causes a fermenty drift in jammy berries."
+},
+{
+  "type": "transform_tendency",
+  "source": "candied_orange_peel",
+  "target": "marmalade",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "heat_retention": "medium" } },
+  "effect": { "add": ["descriptor:marmalade", "peel_bitterness:light"], "remove": ["prep:candied_only"] },
+  "confidence": 0.55,
+  "notes": "Peel candy evolves into fuller marmalade via moderate brewing."
+},
+{
+  "type": "transform_tendency",
+  "source": "candied_lime",
+  "target": "lime_marmalade",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:marmalade", "peel_bitterness:light"], "remove": ["zest_only"] },
+  "confidence": 0.54,
+  "notes": "Candied lime deepens into marmalade form under added length."
+},
+{
+  "type": "transform_tendency",
+  "source": "pear",
+  "target": "poached_pear",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["descriptor:poached", "sweetness_type:honeyed"], "remove": ["crisp"] },
+  "confidence": 0.57,
+  "notes": "Softening transforms clean pear into poached texture and tone."
+},
+{
+  "type": "transform_tendency",
+  "source": "green_apple",
+  "target": "apple_jam",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:apple_jam", "sweetness_type:caramelized"], "remove": ["acidity_tone:malic"] },
+  "confidence": 0.58,
+  "notes": "Extended brewing caramelizes malic apple into soft jam-like profile."
+},
+{
+  "type": "transform_tendency",
+  "source": "white_grape",
+  "target": "white_wine",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:winey", "texture:lean", "acidity_tone:brisk"], "remove": ["crisp_fruit"] },
+  "confidence": 0.60,
+  "notes": "White grape turns winey under retained heat and time."
+},
+{
+  "type": "transform_tendency",
+  "source": "mango",
+  "target": "passionfruit_blend",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "medium_long", "agitation": "modulated" } },
+  "effect": { "add": ["descriptor:tropical_blend", "acidity_tone:zingy"], "remove": ["mango_only"] },
+  "confidence": 0.56,
+  "notes": "Mango and PF volatiles blur into blended tropical expression under warm extraction."
+},
+{
+  "type": "transform_tendency",
+  "source": "pineapple",
+  "target": "pineapple_jam",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["sweetness_type:caramelized", "descriptor:pineapple_jam"], "remove": ["zest_only"] },
+  "confidence": 0.55,
+  "notes": "Sustained brewing shifts pineapple from bright to dense jam."
+},
+{
+  "type": "transform_tendency",
+  "source": "tropical_punch",
+  "target": "tropical_cordial",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:cordial", "sweetness_type:syrupy"], "remove": ["fresh_tropical"] },
+  "confidence": 0.56,
+  "notes": "Reduction thickens tropical punch into cordial-like sweetness."
+},
+{
+  "type": "transform_tendency",
+  "source": "guava",
+  "target": "guava_jam",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:jammy", "sweetness_type:ripe"], "remove": ["green_note"] },
+  "confidence": 0.55,
+  "notes": "Guava deepens into jammy form with heat and time."
+},
+{
+  "type": "transform_tendency",
+  "source": "jackfruit",
+  "target": "banana_blend",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long", "agitation": "modulated" } },
+  "effect": { "add": ["descriptor:blended_tropical", "texture:smooth"], "remove": ["fibrous"] },
+  "confidence": 0.52,
+  "notes": "Warm, medium brew blends jackfruit toward ripe banana-like profile."
+},
+{
+  "type": "transform_tendency",
+  "source": "papaya",
+  "target": "ripe_mango",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["descriptor:tropical_smooth", "sweetness_type:ripe"], "remove": ["green_edge"] },
+  "confidence": 0.52,
+  "notes": "Calm medium brew shifts papaya toward softer mango-like ripeness."
+},
+{
+  "type": "transform_tendency",
+  "source": "lychee",
+  "target": "candied_lychee",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["sweetness_type:candied", "texture:round"], "remove": ["floral_only"] },
+  "confidence": 0.54,
+  "notes": "Longer brewing sweetens lychee into candy-like expression."
+},
+{
+  "type": "transform_tendency",
+  "source": "longan",
+  "target": "date_like",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "heat_retention": "medium" } },
+  "effect": { "add": ["descriptor:dried_fruit", "texture:thick"], "remove": ["juicy_top"] },
+  "confidence": 0.55,
+  "notes": "Longan darkens toward syrupy, date-like depth under long extraction."
+},
+{
+  "type": "transform_tendency",
+  "source": "melon",
+  "target": "honeydew",
+  "conditions": { "brew": { "temp_min": 90, "contact_time": "medium", "agitation": "low" } },
+  "effect": { "add": ["sweetness_type:cool", "texture:smooth"], "remove": ["green_skin"] },
+  "confidence": 0.51,
+  "notes": "Gentle extraction softens generic melon into honeydew notes."
+},
+{
+  "type": "transform_tendency",
+  "source": "honeydew",
+  "target": "melon_candy",
+  "conditions": { "brew": { "temp_min": 91, "contact_time": "medium_long" } },
+  "effect": { "add": ["sweetness_type:candied", "texture:round"], "remove": ["note_layer:top"] },
+  "confidence": 0.52,
+  "notes": "Longer heat condenses honeydew into a melon-candy tone."
+},
+{
+  "type": "transform_tendency",
+  "source": "cantaloupe",
+  "target": "melon_jam",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:jammy", "sweetness_type:caramelized"], "remove": ["note_layer:top"] },
+  "confidence": 0.53,
+  "notes": "Hot, long extraction reduces cantaloupe into thick melon jam."
+},
+{
+  "type": "transform_tendency",
+  "source": "strawberry_jam",
+  "target": "fig_preserve",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:dark_jam", "texture:thick"], "remove": ["berry_brightness"] },
+  "confidence": 0.56,
+  "notes": "Continued reduction darkens berry jam into fig preserve tone."
+},
+{
+  "type": "transform_tendency",
+  "source": "grape_jelly",
+  "target": "molasses_wine",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["sweetness_type:molasses", "descriptor:winey", "texture:thick"], "remove": ["jelly_fruit"] },
+  "confidence": 0.57,
+  "notes": "Hot retained brew evolves grape jelly into winey/molasses base."
+},
+{
+  "type": "transform_tendency",
+  "source": "floral_melon",
+  "target": "dried_flower",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long", "agitation": "modulated" } },
+  "effect": { "add": ["descriptor:dried_floral"], "remove": ["top_flower"] },
+  "confidence": 0.50,
+  "notes": "Heat and contact reduce florality into dried-flower perception."
+},
+{
+  "type": "transform_tendency",
+  "source": "lavender_honey",
+  "target": "lavender_caramel",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "medium_long" } },
+  "effect": { "add": ["sweetness_type:caramelized", "descriptor:floral_spice"], "remove": ["sweetness_type:honeyed"] },
+  "confidence": 0.54,
+  "notes": "Heated reduction tilts lavender honey toward caramelized complexity."
+},
+{
+  "type": "transform_tendency",
+  "source": "roasted_nut",
+  "target": "nut_skin_bitter",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "agitation": "high" } },
+  "effect": { "add": ["bitterness_hint:roasty", "descriptor:nut_skin"], "remove": ["sweet_nut"] },
+  "confidence": 0.55,
+  "notes": "Overextracted nutty notes expose roasty skin bitterness."
+},
+{
+  "type": "transform_tendency",
+  "source": "sweet_nut",
+  "target": "brown_nut",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long" } },
+  "effect": { "add": ["descriptor:browned_nut", "sweetness_type:deep"], "remove": ["light_nut"] },
+  "confidence": 0.52,
+  "notes": "Longer brewing browns sweet nut tone into deeper roast."
+},
+{
+  "type": "transform_tendency",
+  "source": "light_chocolate",
+  "target": "dark_chocolate",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "medium_long" } },
+  "effect": { "add": ["cacao_intensity:up", "bitterness_hint:medium"], "remove": ["milky_note"] },
+  "confidence": 0.54,
+  "notes": "Cacao balance shifts darker under heat/time."
+},
+{
+  "type": "transform_tendency",
+  "source": "dark_chocolate",
+  "target": "cocoa_nibs",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["descriptor:dry_cacao", "texture:gritty"], "remove": ["smooth_chocolate"] },
+  "confidence": 0.53,
+  "notes": "Dry, long brew tilts dark chocolate into gritty cacao nibs."
+},
+{
+  "type": "transform_tendency",
+  "source": "molasses_berry",
+  "target": "burnt_berry_syrup",
+  "conditions": { "brew": { "temp_min": 95, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["descriptor:burnt_edge", "bitterness_hint:strong"], "remove": ["sweetness_type:molasses"] },
+  "confidence": 0.56,
+  "notes": "Excessive reduction of berry molasses introduces charred bitterness."
+},
+{
+  "type": "transform_tendency",
+  "source": "syrupy_body",
+  "target": "sticky_body",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "agitation": "low" } },
+  "effect": { "add": ["mouthfeel_influence:sticky", "descriptor:coating"], "remove": ["silky_feel"] },
+  "confidence": 0.52,
+  "notes": "Continued concentration thickens syrupy body into sticky mouthfeel."
+},
+{
+  "type": "transform_tendency",
+  "source": "juicy",
+  "target": "jammy",
+  "conditions": { "brew": { "temp_min": 92, "contact_time": "long" } },
+  "effect": { "add": ["texture:jammy", "sweetness_type:reduced_fruit"], "remove": ["refreshing"] },
+  "confidence": 0.55,
+  "notes": "Juiciness compresses into jammy feel under long contact."
+},
+{
+  "type": "transform_tendency",
+  "source": "jammy",
+  "target": "syrupy",
+  "conditions": { "brew": { "temp_min": 93, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["texture:syrupy", "density:high"], "remove": ["berry_texture"] },
+  "confidence": 0.56,
+  "notes": "Jamminess deepens into syrupy consistency via retained heat."
+},
+{
+  "type": "transform_tendency",
+  "source": "syrupy",
+  "target": "thick_extract",
+  "conditions": { "brew": { "temp_min": 94, "contact_time": "long", "heat_retention": "high" } },
+  "effect": { "add": ["texture:thick", "bitterness_hint:medium"], "remove": ["syrup_only"] },
+  "confidence": 0.54,
+  "notes": "Overreduction pushes syrupy mouthfeel into heavy, thick extract."
+}
+]

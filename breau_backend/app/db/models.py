@@ -85,10 +85,10 @@ class NoteProfile(SQLModel, table=True):
     thermal_sensitivity: Optional[float] = None
     flow_sensitivity: Optional[float] = None
     mouthfeel_weight: Optional[float] = None
-    high_extraction_traits: Optional[str] = None
-    low_extraction_traits: Optional[str] = None
-    tags: Optional[str] = None
-    cultural_notes: Optional[str] = None
+    high_extraction_traits: Optional[list] = Field(default=None, sa_column=Column(JSON))
+    low_extraction_traits: Optional[list] = Field(default=None, sa_column=Column(JSON))
+    tags: Optional[list] = Field(default=None, sa_column=Column(JSON))
+    cultural_notes: Optional[list] = Field(default=None, sa_column=Column(JSON))
 
 
 # ---------- Templates & Logs ----------

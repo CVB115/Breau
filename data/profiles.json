@@ -1,0 +1,48 @@
+[
+  {
+    "user_id": "testlab",
+    "created_at": 1756635340.58146,
+    "updated_at": 1756655599.2147527,
+    "data": {
+      "user_id": "testlab",
+      "brewer": {
+        "name": "Hario V60",
+        "geometry_type": "conical",
+        "cone_angle_deg": 30.0,
+        "outlet_profile": "single_large",
+        "size_code": "02",
+        "inner_diameter_mm": 40.0,
+        "hole_count": 1,
+        "thermal_mass": "medium"
+      },
+      "filter": {
+        "permeability": "fast",
+        "thickness": "thin",
+        "material": "paper_bleached",
+        "pore_size_microns": 5.0
+      },
+      "grinder": {
+        "burr_type": "conical",
+        "model": "Comandante C40",
+        "scale_type": "numbers",
+        "user_scale_min": 0,
+        "user_scale_max": 40,
+        "calibration_points": []
+      },
+      "water": {
+        "profile_preset": "sca_target",
+        "hardness_gh": 100.0,
+        "alkalinity_kh": 40.0,
+        "tds": 120.0,
+        "calcium_mg_l": 30.0,
+        "magnesium_mg_l": 10.0,
+        "sodium_mg_l": 10.0,
+        "bicarbonate_mg_l": 70.0
+      },
+      "dose_g": 15,
+      "ratio": "1:15",
+      "bloom_water_g": 30,
+      "bloom_time_s": 35
+    }
+  }
+]

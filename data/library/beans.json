@@ -1,0 +1,22 @@
+{
+  "guji-2025-lot-12": {
+    "id": "guji-2025-lot-12",
+    "created_at": 1756981157.5367167,
+    "updated_at": 1756981157.5367167,
+    "data": {
+      "id": "guji-2025-lot-12",
+      "aliases": [
+        "guji-2025-lot-12",
+        "guji lot12 2025"
+      ],
+      "origin": "Ethiopia",
+      "process": "washed",
+      "roast_level": "light",
+      "solubility_hint": "low",
+      "character_caps": [
+        "no_syrupy_body_max",
+        "no_jammy_heavy"
+      ]
+    }
+  }
+}

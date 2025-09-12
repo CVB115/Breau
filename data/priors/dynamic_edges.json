@@ -1,0 +1,35 @@
+{
+  "schema_version": "2025-09-03",
+  "edges": {
+    "increase florality::temp_delta": {
+      "score": 0.009000000000000001,
+      "pos": 0.07500000000000001,
+      "neg": 0.0
+    },
+    "increase florality::grind_delta": {
+      "score": 0.0,
+      "pos": 0.0,
+      "neg": 0.0
+    },
+    "increase florality::agitation_delta": {
+      "score": 0.0,
+      "pos": 0.0,
+      "neg": 0.0
+    },
+    "less body::temp_delta": {
+      "score": 0.009000000000000001,
+      "pos": 0.07500000000000001,
+      "neg": 0.0
+    },
+    "less body::grind_delta": {
+      "score": 0.0,
+      "pos": 0.0,
+      "neg": 0.0
+    },
+    "less body::agitation_delta": {
+      "score": 0.0,
+      "pos": 0.0,
+      "neg": 0.0
+    }
+  }
+}

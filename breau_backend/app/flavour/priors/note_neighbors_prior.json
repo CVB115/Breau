@@ -1,0 +1,498 @@
+{
+    "blueberry": [
+  { "id": "blackberry", "weight": 0.82, "reasons": ["WCR_cluster:berry", "shared_compound:methyl_anthranilate"] },
+  { "id": "blackcurrant", "weight": 0.78, "reasons": ["SCA_adjacency", "shared_compound:β-damascenone"] },
+  { "id": "cassis", "weight": 0.74, "reasons": ["panel_co_mention"] }
+],
+"blackberry": [
+  { "id": "blueberry", "weight": 0.82, "reasons": ["WCR_cluster:berry", "shared_compound:methyl_anthranilate"] },
+  { "id": "boysenberry", "weight": 0.71, "reasons": ["panel_co_mention"] },
+  { "id": "black_grape", "weight": 0.70, "reasons": ["SCA_adjacency"] }
+],
+"blackcurrant": [
+  { "id": "cassis", "weight": 0.86, "reasons": ["alias_proximity"] },
+  { "id": "blueberry", "weight": 0.78, "reasons": ["SCA_adjacency"] },
+  { "id": "elderberry", "weight": 0.70, "reasons": ["SCA_adjacency"] }
+],
+"cassis": [
+  { "id": "blackcurrant", "weight": 0.86, "reasons": ["alias_proximity"] },
+  { "id": "black_grape", "weight": 0.71, "reasons": ["SCA_adjacency"] },
+  { "id": "blueberry", "weight": 0.74, "reasons": ["panel_co_mention"] }
+],
+"black_grape": [
+  { "id": "red_grape", "weight": 0.69, "reasons": ["same_family:vitis"] },
+  { "id": "blueberry", "weight": 0.70, "reasons": ["SCA_adjacency"] },
+  { "id": "cassis", "weight": 0.71, "reasons": ["panel_co_mention"] }
+],
+"red_grape": [
+  { "id": "white_grape", "weight": 0.72, "reasons": ["same_family:vitis"] },
+  { "id": "black_grape", "weight": 0.69, "reasons": ["same_family:vitis"] },
+  { "id": "raisin", "weight": 0.60, "reasons": ["transformation:drying_chain"] }
+],
+"white_grape": [
+  { "id": "red_grape", "weight": 0.72, "reasons": ["same_family:vitis"] },
+  { "id": "pear", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "green_apple", "weight": 0.64, "reasons": ["acidity_shape:malic"] }
+],
+"elderberry": [
+  { "id": "blackcurrant", "weight": 0.70, "reasons": ["SCA_adjacency"] },
+  { "id": "mulberry", "weight": 0.63, "reasons": ["panel_co_mention"] },
+  { "id": "boysenberry", "weight": 0.63, "reasons": ["panel_co_mention"] }
+],
+"boysenberry": [
+  { "id": "blackberry", "weight": 0.71, "reasons": ["panel_co_mention"] },
+  { "id": "blueberry", "weight": 0.68, "reasons": ["panel_co_mention"] },
+  { "id": "mulberry", "weight": 0.66, "reasons": ["SCA_adjacency"] }
+],
+"mulberry": [
+  { "id": "boysenberry", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "plum", "weight": 0.62, "reasons": ["panel_co_mention"] },
+  { "id": "raisin", "weight": 0.60, "reasons": ["transformation:drying_chain"] }
+],
+"strawberry": [
+  { "id": "raspberry", "weight": 0.74, "reasons": ["SCA_adjacency"] },
+  { "id": "strawberry_jam", "weight": 0.72, "reasons": ["reduction_state:jammy", "furanone:furaneol"] },
+  { "id": "cherry", "weight": 0.64, "reasons": ["panel_co_mention"] }
+],
+"strawberry_jam": [
+  { "id": "strawberry", "weight": 0.72, "reasons": ["reduction_state:jammy", "furanone:furaneol"] },
+  { "id": "jammy_berry", "weight": 0.70, "reasons": ["reduction_state:jammy"] },
+  { "id": "raspberry", "weight": 0.63, "reasons": ["panel_co_mention"] }
+],
+"raspberry": [
+  { "id": "strawberry", "weight": 0.74, "reasons": ["SCA_adjacency"] },
+  { "id": "red_currant", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "cherry", "weight": 0.62, "reasons": ["panel_co_mention"] }
+],
+"cranberry": [
+  { "id": "red_currant", "weight": 0.68, "reasons": ["SCA_adjacency"] },
+  { "id": "sour_cherry", "weight": 0.66, "reasons": ["acidity_shape:malic"] },
+  { "id": "red_grape", "weight": 0.62, "reasons": ["panel_co_mention"] }
+],
+"cherry": [
+  { "id": "sour_cherry", "weight": 0.76, "reasons": ["acidity_shape:malic"] },
+  { "id": "raspberry", "weight": 0.62, "reasons": ["panel_co_mention"] },
+  { "id": "plum", "weight": 0.64, "reasons": ["SCA_adjacency"] }
+],
+"sour_cherry": [
+  { "id": "cherry", "weight": 0.76, "reasons": ["acidity_shape:malic"] },
+  { "id": "cranberry", "weight": 0.66, "reasons": ["acidity_shape:malic"] },
+  { "id": "red_currant", "weight": 0.64, "reasons": ["SCA_adjacency"] }
+],
+"gooseberry": [
+  { "id": "red_currant", "weight": 0.70, "reasons": ["SCA_adjacency"] },
+  { "id": "blackcurrant", "weight": 0.62, "reasons": ["leaf_aroma_link"] },
+  { "id": "green_apple", "weight": 0.60, "reasons": ["acidity_shape:malic"] }
+],
+"red_currant": [
+  { "id": "raspberry", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "cranberry", "weight": 0.68, "reasons": ["SCA_adjacency"] },
+  { "id": "gooseberry", "weight": 0.70, "reasons": ["SCA_adjacency"] }
+],
+"bilberry": [
+  { "id": "blueberry", "weight": 0.83, "reasons": ["alias_family:Vaccinium"] },
+  { "id": "blackberry", "weight": 0.64, "reasons": ["panel_co_mention"] },
+  { "id": "blackcurrant", "weight": 0.63, "reasons": ["panel_co_mention"] }
+],
+"grape_skin": [
+  { "id": "black_grape", "weight": 0.76, "reasons": ["same_family:vitis"] },
+  { "id": "grape_must", "weight": 0.70, "reasons": ["fermentation_precurors"] },
+  { "id": "raisin", "weight": 0.64, "reasons": ["transformation:drying_chain"] }
+],
+"grape_jelly": [
+  { "id": "red_grape", "weight": 0.72, "reasons": ["reduction_state:jammy"] },
+  { "id": "grape_must", "weight": 0.66, "reasons": ["fermentation_precurors"] },
+  { "id": "jammy_berry", "weight": 0.68, "reasons": ["reduction_state:jammy"] }
+],
+"grape_must": [
+  { "id": "winey", "weight": 0.74, "reasons": ["fermentation:early_stage"] },
+  { "id": "grape_skin", "weight": 0.70, "reasons": ["same_matrix:must"] },
+  { "id": "cassis", "weight": 0.63, "reasons": ["panel_co_mention"] }
+],
+"plum": [
+  { "id": "prune", "weight": 0.72, "reasons": ["transformation:oxidation"] },
+  { "id": "fig", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "jammy_berry", "weight": 0.66, "reasons": ["reduction_state:jammy"] }
+],
+"prune": [
+  { "id": "raisin", "weight": 0.76, "reasons": ["oxidation_state:deeper_dry"] },
+  { "id": "fig", "weight": 0.73, "reasons": ["SCA_adjacency"] },
+  { "id": "molasses", "weight": 0.65, "reasons": ["sugar_furans:HMF"] }
+],
+"raisin": [
+  { "id": "red_grape", "weight": 0.60, "reasons": ["transformation:drying_chain"] },
+  { "id": "prune", "weight": 0.76, "reasons": ["oxidation_state:deeper_dry"] },
+  { "id": "fig", "weight": 0.72, "reasons": ["oxidation_state:sugar_polymerization"] }
+],
+"fig": [
+  { "id": "date", "weight": 0.74, "reasons": ["SCA_adjacency"] },
+  { "id": "raisin", "weight": 0.72, "reasons": ["oxidation_state:sugar_polymerization"] },
+  { "id": "prune", "weight": 0.73, "reasons": ["SCA_adjacency"] }
+],
+"date": [
+  { "id": "fig", "weight": 0.74, "reasons": ["SCA_adjacency"] },
+  { "id": "molasses", "weight": 0.66, "reasons": ["sugar_furans:HMF"] },
+  { "id": "brown_sugar", "weight": 0.64, "reasons": ["caramelization_link"] }
+],
+"sultana": [
+  { "id": "raisin", "weight": 0.78, "reasons": ["alias_proximity"] },
+  { "id": "red_grape", "weight": 0.62, "reasons": ["transformation:drying_chain"] },
+  { "id": "prune", "weight": 0.63, "reasons": ["oxidation_path:drying"] }
+],
+"jammy_berry": [
+  { "id": "strawberry_jam", "weight": 0.70, "reasons": ["reduction_state:jammy"] },
+  { "id": "plum", "weight": 0.66, "reasons": ["reduction_state:jammy"] },
+  { "id": "molasses", "weight": 0.62, "reasons": ["sugar_furans:HMF"] }
+],
+"winey": [
+  { "id": "grape_must", "weight": 0.74, "reasons": ["fermentation:early_stage"] },
+  { "id": "cassis", "weight": 0.64, "reasons": ["panel_co_mention"] },
+  { "id": "blackcurrant", "weight": 0.63, "reasons": ["panel_co_mention"] }
+],
+"cranberry_dried": [
+  { "id": "cranberry", "weight": 0.78, "reasons": ["drying_variant"] },
+  { "id": "red_currant", "weight": 0.64, "reasons": ["SCA_adjacency"] },
+  { "id": "raisin", "weight": 0.60, "reasons": ["transformation:drying_chain"] }
+],
+"grape_flower": [
+  { "id": "white_grape", "weight": 0.62, "reasons": ["aroma_crossover:floral"] },
+  { "id": "elderflower", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "orange_blossom", "weight": 0.60, "reasons": ["floral_family:nerolidol/geraniol"] }
+],
+"lemon": [
+  { "id": "lemon_zest", "weight": 0.80, "reasons": ["peel_intensity", "shared_compound:citral"] },
+  { "id": "lime", "weight": 0.70, "reasons": ["SCA_adjacency"] },
+  { "id": "grapefruit", "weight": 0.62, "reasons": ["panel_co_mention"] }
+],
+"lemon_zest": [
+  { "id": "lemon", "weight": 0.80, "reasons": ["peel_intensity", "shared_compound:citral"] },
+  { "id": "grapefruit_zest", "weight": 0.66, "reasons": ["terpene_overlap:limonene"] },
+  { "id": "orange_zest", "weight": 0.64, "reasons": ["terpene_overlap:limonene"] }
+],
+"lime": [
+  { "id": "lime_zest", "weight": 0.80, "reasons": ["peel_intensity"] },
+  { "id": "lemon", "weight": 0.70, "reasons": ["SCA_adjacency"] },
+  { "id": "calamansi", "weight": 0.66, "reasons": ["regional_variant"] }
+],
+"lime_zest": [
+  { "id": "lime", "weight": 0.80, "reasons": ["peel_intensity"] },
+  { "id": "key_lime", "weight": 0.70, "reasons": ["varietal_link"] },
+  { "id": "kaffir_lime_leaf", "weight": 0.64, "reasons": ["terpene_overlap:citrals"] }
+],
+"grapefruit": [
+  { "id": "pink_grapefruit", "weight": 0.82, "reasons": ["varietal_link"] },
+  { "id": "grapefruit_zest", "weight": 0.78, "reasons": ["peel_intensity"] },
+  { "id": "orange", "weight": 0.64, "reasons": ["SCA_adjacency"] }
+],
+"pink_grapefruit": [
+  { "id": "grapefruit", "weight": 0.82, "reasons": ["varietal_link"] },
+  { "id": "blood_orange", "weight": 0.64, "reasons": ["anthocyanin_overlap"] },
+  { "id": "orange", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"grapefruit_zest": [
+  { "id": "grapefruit", "weight": 0.78, "reasons": ["peel_intensity"] },
+  { "id": "lemon_zest", "weight": 0.66, "reasons": ["terpene_overlap:limonene"] },
+  { "id": "orange_zest", "weight": 0.64, "reasons": ["terpene_overlap:limonene"] }
+],
+"orange": [
+  { "id": "sweet_orange", "weight": 0.78, "reasons": ["varietal_link"] },
+  { "id": "mandarin", "weight": 0.70, "reasons": ["SCA_adjacency"] },
+  { "id": "orange_zest", "weight": 0.72, "reasons": ["peel_intensity"] }
+],
+"sweet_orange": [
+  { "id": "orange", "weight": 0.78, "reasons": ["varietal_link"] },
+  { "id": "clementine", "weight": 0.70, "reasons": ["varietal_link"] },
+  { "id": "mandarin", "weight": 0.68, "reasons": ["SCA_adjacency"] }
+],
+"orange_zest": [
+  { "id": "orange", "weight": 0.72, "reasons": ["peel_intensity"] },
+  { "id": "bergamot_zest", "weight": 0.66, "reasons": ["terpene_overlap:linalool/limonene"] },
+  { "id": "candied_orange_peel", "weight": 0.64, "reasons": ["reduction_state:candied"] }
+],
+"mandarin": [
+  { "id": "tangerine", "weight": 0.82, "reasons": ["alias_proximity"] },
+  { "id": "clementine", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "sweet_orange", "weight": 0.68, "reasons": ["SCA_adjacency"] }
+],
+"tangerine": [
+  { "id": "mandarin", "weight": 0.82, "reasons": ["alias_proximity"] },
+  { "id": "clementine", "weight": 0.70, "reasons": ["varietal_link"] },
+  { "id": "orange", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"yuzu": [
+  { "id": "yuzu_peel", "weight": 0.78, "reasons": ["peel_intensity"] },
+  { "id": "sudachi", "weight": 0.70, "reasons": ["regional_variant"] },
+  { "id": "lemon", "weight": 0.64, "reasons": ["citral_overlap"] }
+],
+"yuzu_peel": [
+  { "id": "yuzu", "weight": 0.78, "reasons": ["peel_intensity"] },
+  { "id": "lemon_zest", "weight": 0.66, "reasons": ["terpene_overlap:citral/linalool"] },
+  { "id": "grapefruit_zest", "weight": 0.62, "reasons": ["terpene_overlap:limonene"] }
+],
+"pomelo": [
+  { "id": "grapefruit", "weight": 0.74, "reasons": ["varietal_link"] },
+  { "id": "orange", "weight": 0.62, "reasons": ["SCA_adjacency"] },
+  { "id": "grapefruit_zest", "weight": 0.60, "reasons": ["peel_intensity"] }
+],
+"bergamot": [
+  { "id": "bergamot_zest", "weight": 0.80, "reasons": ["peel_intensity"] },
+  { "id": "orange", "weight": 0.64, "reasons": ["terpene_overlap:linalool"] },
+  { "id": "lemon", "weight": 0.62, "reasons": ["citral_overlap"] }
+],
+"bergamot_zest": [
+  { "id": "bergamot", "weight": 0.80, "reasons": ["peel_intensity"] },
+  { "id": "orange_zest", "weight": 0.66, "reasons": ["terpene_overlap:linalool/limonene"] },
+  { "id": "grapefruit_zest", "weight": 0.64, "reasons": ["terpene_overlap:limonene"] }
+],
+"citron": [
+  { "id": "citron_zest", "weight": 0.80, "reasons": ["peel_intensity"] },
+  { "id": "lemon", "weight": 0.66, "reasons": ["citral_overlap"] },
+  { "id": "lemongrass", "weight": 0.60, "reasons": ["citral_overlap"] }
+],
+"citron_zest": [
+  { "id": "citron", "weight": 0.80, "reasons": ["peel_intensity"] },
+  { "id": "lemon_zest", "weight": 0.66, "reasons": ["citral_overlap"] },
+  { "id": "orange_zest", "weight": 0.60, "reasons": ["terpene_overlap:limonene"] }
+],
+"kumquat": [
+  { "id": "orange_zest", "weight": 0.68, "reasons": ["peel_forward:edible_peel"] },
+  { "id": "mandarin", "weight": 0.64, "reasons": ["SCA_adjacency"] },
+  { "id": "marmalade", "weight": 0.62, "reasons": ["peel_bitterness:preserved"] }
+],
+"calamansi": [
+  { "id": "lime", "weight": 0.66, "reasons": ["regional_variant"] },
+  { "id": "mandarin", "weight": 0.62, "reasons": ["hybrid_lineage"] },
+  { "id": "lemon", "weight": 0.60, "reasons": ["citral_overlap"] }
+],
+"kaffir_lime_leaf": [
+  { "id": "lime_zest", "weight": 0.64, "reasons": ["terpene_overlap:citral"] },
+  { "id": "lemongrass", "weight": 0.66, "reasons": ["citral_overlap"] },
+  { "id": "yuzu_peel", "weight": 0.60, "reasons": ["terpene_overlap:linalool"] }
+],
+"lemongrass": [
+  { "id": "lemon", "weight": 0.66, "reasons": ["shared_compound:citral"] },
+  { "id": "kaffir_lime_leaf", "weight": 0.66, "reasons": ["citral_overlap"] },
+  { "id": "citron", "weight": 0.60, "reasons": ["citral_overlap"] }
+],
+"candied_orange_peel": [
+  { "id": "orange_zest", "weight": 0.64, "reasons": ["reduction_state:candied"] },
+  { "id": "marmalade", "weight": 0.70, "reasons": ["peel_preserve:jammy_bitter"] },
+  { "id": "sweet_orange", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"marmalade": [
+  { "id": "candied_orange_peel", "weight": 0.70, "reasons": ["peel_preserve:jammy_bitter"] },
+  { "id": "orange", "weight": 0.62, "reasons": ["SCA_adjacency"] },
+  { "id": "grapefruit", "weight": 0.60, "reasons": ["peel_bitterness"] }
+],
+"bitter_orange": [
+  { "id": "orange", "weight": 0.68, "reasons": ["varietal_link"] },
+  { "id": "bergamot", "weight": 0.64, "reasons": ["terpene_overlap:linalyl_acetate"] },
+  { "id": "marmalade", "weight": 0.62, "reasons": ["peel_bitterness"] }
+],
+"clementine": [
+  { "id": "mandarin", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "tangerine", "weight": 0.70, "reasons": ["varietal_link"] },
+  { "id": "sweet_orange", "weight": 0.68, "reasons": ["SCA_adjacency"] }
+],
+"blood_orange": [
+  { "id": "orange", "weight": 0.66, "reasons": ["varietal_link"] },
+  { "id": "pink_grapefruit", "weight": 0.64, "reasons": ["anthocyanin_overlap"] },
+  { "id": "orange_zest", "weight": 0.60, "reasons": ["peel_intensity"] }
+],
+"key_lime": [
+  { "id": "lime_zest", "weight": 0.70, "reasons": ["varietal_link"] },
+  { "id": "lime", "weight": 0.74, "reasons": ["varietal_link"] },
+  { "id": "lemon", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"sudachi": [
+  { "id": "yuzu", "weight": 0.70, "reasons": ["regional_variant"] },
+  { "id": "lemon", "weight": 0.62, "reasons": ["citral_overlap"] },
+  { "id": "lime", "weight": 0.62, "reasons": ["SCA_adjacency"] }
+],
+"peach": [
+  { "id": "apricot", "weight": 0.78, "reasons": ["SCA_adjacency", "shared_compound:γ-decalactone"] },
+  { "id": "nectarine", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "yellow_plum", "weight": 0.66, "reasons": ["SCA_adjacency"] }
+],
+"apricot": [
+  { "id": "peach", "weight": 0.78, "reasons": ["SCA_adjacency"] },
+  { "id": "dried_apricot", "weight": 0.74, "reasons": ["transformation:drying_chain"] },
+  { "id": "nectarine", "weight": 0.68, "reasons": ["varietal_link"] }
+],
+"dried_apricot": [
+  { "id": "apricot", "weight": 0.74, "reasons": ["transformation:drying_chain"] },
+  { "id": "raisin", "weight": 0.66, "reasons": ["SCA_adjacency"] },
+  { "id": "fig", "weight": 0.62, "reasons": ["oxidation_state:sugar_polymerization"] }
+],
+"nectarine": [
+  { "id": "peach", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "apricot", "weight": 0.68, "reasons": ["panel_co_mention"] },
+  { "id": "plum", "weight": 0.66, "reasons": ["SCA_adjacency"] }
+],
+"pluot": [
+  { "id": "plum", "weight": 0.72, "reasons": ["varietal_link"] },
+  { "id": "apricot", "weight": 0.64, "reasons": ["hybrid_link"] },
+  { "id": "jammy_berry", "weight": 0.60, "reasons": ["reduction_state:jammy"] }
+],
+"mango": [
+  { "id": "ripe_papaya", "weight": 0.76, "reasons": ["ASEAN_adjacency"] },
+  { "id": "tropical_punch", "weight": 0.72, "reasons": ["flavour_mix:synthetic_tropical"] },
+  { "id": "yellow_peach", "weight": 0.66, "reasons": ["lactone_overlap"] }
+],
+"ripe_papaya": [
+  { "id": "mango", "weight": 0.76, "reasons": ["ASEAN_adjacency"] },
+  { "id": "passionfruit", "weight": 0.66, "reasons": ["shared_compound:benzyl_isothiocyanate"] },
+  { "id": "banana", "weight": 0.62, "reasons": ["tropical_category"] }
+],
+"banana": [
+  { "id": "overripe_banana", "weight": 0.78, "reasons": ["ripeness_continuum"] },
+  { "id": "jackfruit", "weight": 0.70, "reasons": ["ASEAN_adjacency"] },
+  { "id": "mango", "weight": 0.66, "reasons": ["panel_co_mention"] }
+],
+"overripe_banana": [
+  { "id": "banana", "weight": 0.78, "reasons": ["ripeness_continuum"] },
+  { "id": "plantain", "weight": 0.70, "reasons": ["varietal_link"] },
+  { "id": "fermented_fruit", "weight": 0.66, "reasons": ["yeast_precursor:isoamyl_acetate"] }
+],
+"jackfruit": [
+  { "id": "banana", "weight": 0.70, "reasons": ["ASEAN_adjacency"] },
+  { "id": "mango", "weight": 0.68, "reasons": ["tropical_category"] },
+  { "id": "pineapple", "weight": 0.64, "reasons": ["shared_compound:ethyl_butyrate"] }
+],
+"pineapple": [
+  { "id": "green_pineapple", "weight": 0.74, "reasons": ["ripeness_continuum"] },
+  { "id": "passionfruit", "weight": 0.70, "reasons": ["acidity_shape:citric"] },
+  { "id": "mango", "weight": 0.66, "reasons": ["SCA_adjacency"] }
+],
+"green_pineapple": [
+  { "id": "pineapple", "weight": 0.74, "reasons": ["ripeness_continuum"] },
+  { "id": "grapefruit", "weight": 0.66, "reasons": ["acidity_shape:citric"] },
+  { "id": "green_apple", "weight": 0.64, "reasons": ["acidity_shape:malic"] }
+],
+"passionfruit": [
+  { "id": "pineapple", "weight": 0.70, "reasons": ["acidity_shape:citric"] },
+  { "id": "mango", "weight": 0.68, "reasons": ["tropical_overlap"] },
+  { "id": "guava", "weight": 0.64, "reasons": ["ASEAN_adjacency"] }
+],
+"guava": [
+  { "id": "pink_guava", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "passionfruit", "weight": 0.64, "reasons": ["ASEAN_adjacency"] },
+  { "id": "mango", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"pink_guava": [
+  { "id": "guava", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "strawberry", "weight": 0.62, "reasons": ["panel_co_mention"] },
+  { "id": "tropical_punch", "weight": 0.60, "reasons": ["flavour_mix:synthetic_tropical"] }
+],
+"coconut": [
+  { "id": "young_coconut", "weight": 0.78, "reasons": ["ripeness_continuum"] },
+  { "id": "toasted_coconut", "weight": 0.74, "reasons": ["roasting_variant"] },
+  { "id": "vanilla", "weight": 0.64, "reasons": ["lactone_overlap:δ-octalactone"] }
+],
+"young_coconut": [
+  { "id": "coconut", "weight": 0.78, "reasons": ["ripeness_continuum"] },
+  { "id": "aloe_vera", "weight": 0.66, "reasons": ["refreshing_category"] },
+  { "id": "melon", "weight": 0.60, "reasons": ["ASEAN_adjacency"] }
+],
+"toasted_coconut": [
+  { "id": "coconut", "weight": 0.74, "reasons": ["roasting_variant"] },
+  { "id": "brown_sugar", "weight": 0.64, "reasons": ["caramelized_overlap"] },
+  { "id": "hazelnut", "weight": 0.62, "reasons": ["shared_compound:lactones"] }
+],
+"tropical_punch": [
+  { "id": "mango", "weight": 0.72, "reasons": ["flavour_mix:synthetic_tropical"] },
+  { "id": "pink_guava", "weight": 0.60, "reasons": ["flavour_mix"] },
+  { "id": "banana", "weight": 0.60, "reasons": ["tropical_base"] }
+],
+"jasmine": [
+  { "id": "orange_blossom", "weight": 0.78, "reasons": ["shared_compound:linalool"] },
+  { "id": "elderflower", "weight": 0.72, "reasons": ["SCA_adjacency"] },
+  { "id": "lavender", "weight": 0.68, "reasons": ["panel_co_mention"] }
+],
+"orange_blossom": [
+  { "id": "jasmine", "weight": 0.78, "reasons": ["shared_compound:linalool"] },
+  { "id": "neroli", "weight": 0.76, "reasons": ["varietal_link"] },
+  { "id": "grape_flower", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"lavender": [
+  { "id": "jasmine", "weight": 0.68, "reasons": ["panel_co_mention"] },
+  { "id": "bergamot", "weight": 0.66, "reasons": ["floral_terpenes:linalool"] },
+  { "id": "rose", "weight": 0.64, "reasons": ["SCA_adjacency"] }
+],
+"rose": [
+  { "id": "lavender", "weight": 0.64, "reasons": ["SCA_adjacency"] },
+  { "id": "hibiscus", "weight": 0.66, "reasons": ["shared_compound:geraniol"] },
+  { "id": "jasmine", "weight": 0.62, "reasons": ["floral_family:terpenes"] }
+],
+"hibiscus": [
+  { "id": "rose", "weight": 0.66, "reasons": ["shared_compound:geraniol"] },
+  { "id": "cranberry", "weight": 0.62, "reasons": ["acidity_shape:malic"] },
+  { "id": "red_currant", "weight": 0.60, "reasons": ["SCA_adjacency"] }
+],
+"almond": [
+  { "id": "marzipan", "weight": 0.72, "reasons": ["shared_compound:benzaldehyde"] },
+  { "id": "hazelnut", "weight": 0.68, "reasons": ["nutty_group"] },
+  { "id": "cherry", "weight": 0.64, "reasons": ["stonefruit-kernel"] }
+],
+"hazelnut": [
+  { "id": "almond", "weight": 0.68, "reasons": ["nutty_group"] },
+  { "id": "toasted_coconut", "weight": 0.62, "reasons": ["shared_compound:lactones"] },
+  { "id": "brown_butter", "weight": 0.66, "reasons": ["pyrazines/browning"] }
+],
+"marzipan": [
+  { "id": "almond", "weight": 0.72, "reasons": ["shared_compound:benzaldehyde"] },
+  { "id": "vanilla", "weight": 0.64, "reasons": ["sweet_aroma"] },
+  { "id": "butter", "weight": 0.60, "reasons": ["sweet_fatty_link"] }
+],
+"brown_butter": [
+  { "id": "butter", "weight": 0.74, "reasons": ["browning_pathway"] },
+  { "id": "hazelnut", "weight": 0.66, "reasons": ["Maillard/pyrazines"] },
+  { "id": "caramel", "weight": 0.64, "reasons": ["shared_pathway"] }
+],
+"butter": [
+  { "id": "brown_butter", "weight": 0.74, "reasons": ["Maillard_variant"] },
+  { "id": "marzipan", "weight": 0.60, "reasons": ["sweet_fatty_link"] },
+  { "id": "vanilla", "weight": 0.62, "reasons": ["sweetness_pair"] }
+],
+"vanilla": [
+  { "id": "caramel", "weight": 0.68, "reasons": ["sweetness_group"] },
+  { "id": "butter", "weight": 0.62, "reasons": ["pairing_aroma"] },
+  { "id": "marzipan", "weight": 0.64, "reasons": ["sweet_aroma"] }
+],
+"caramel": [
+  { "id": "brown_sugar", "weight": 0.66, "reasons": ["sugar_browning"] },
+  { "id": "vanilla", "weight": 0.68, "reasons": ["sweetness_group"] },
+  { "id": "molasses", "weight": 0.62, "reasons": ["furan_overlap:HMF"] }
+],
+"molasses": [
+  { "id": "caramel", "weight": 0.62, "reasons": ["furan_overlap:HMF"] },
+  { "id": "prune", "weight": 0.65, "reasons": ["sugar_concentration"] },
+  { "id": "fig", "weight": 0.66, "reasons": ["sugar_density"] }
+],
+"brown_sugar": [
+  { "id": "caramel", "weight": 0.66, "reasons": ["sugar_browning"] },
+  { "id": "date", "weight": 0.64, "reasons": ["sugar_rich"] },
+  { "id": "toasted_coconut", "weight": 0.64, "reasons": ["roast_overlap"] }
+],
+"dark_chocolate": [
+  { "id": "cocoa_nibs", "weight": 0.76, "reasons": ["roast_overlap"] },
+  { "id": "bittersweet_chocolate", "weight": 0.72, "reasons": ["cacao_content"] },
+  { "id": "roasted_nut", "weight": 0.66, "reasons": ["Maillard_overlap"] }
+],
+"bittersweet_chocolate": [
+  { "id": "dark_chocolate", "weight": 0.72, "reasons": ["cacao_content"] },
+  { "id": "molasses", "weight": 0.64, "reasons": ["bitterness_pairing"] },
+  { "id": "hazelnut", "weight": 0.62, "reasons": ["flavour_pairing"] }
+],
+"cocoa_nibs": [
+  { "id": "dark_chocolate", "weight": 0.76, "reasons": ["roast_overlap"] },
+  { "id": "roasted_nut", "weight": 0.68, "reasons": ["Maillard_aroma"] },
+  { "id": "coffee", "weight": 0.66, "reasons": ["shared_compound:pyrazines"] }
+],
+"coffee": [
+  { "id": "cocoa_nibs", "weight": 0.66, "reasons": ["shared_compound:pyrazines"] },
+  { "id": "dark_chocolate", "weight": 0.64, "reasons": ["roast_overlap"] },
+  { "id": "brown_spice", "weight": 0.62, "reasons": ["aroma_blend"] }
+]
+
+}

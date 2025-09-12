@@ -4,6 +4,11 @@ sqlmodel
 pydantic
 
 sentence-transformers
+scikit-learn
 transformers
 torch
 huggingface-hub
+
+pyyaml
+pytest
+httpx

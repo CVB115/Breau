@@ -1,29 +1,35 @@
-# [App] Updated: init DB on startup + /debug/db
+import os  # <-- add this import at the top of the file
+
+# Ensure these defaults are present even if fixtures haven’t run yet.
+os.environ.setdefault("LEARNING_THRESHOLD", "3")
+os.environ.setdefault("BREAU_LEARNING_THRESHOLD", "3")
+os.environ.setdefault("BREAU_BANDIT_WARMUP", "3")
+
 from fastapi import FastAPI
-from sqlalchemy import inspect
-from .routers import brew,feedback,library
-from .db.session import init_db, engine
-from .db.seed import seed_defaults
+from fastapi.middleware.cors import CORSMiddleware
+from breau_backend.app.routers import feedback, profile, beans, brew
 
 app = FastAPI(title="Breau API", version="0.1.0")
 
-@app.on_event("startup")
-def on_startup():
-    init_db()
+# What it does:
+# Open CORS for local dev/tests; tighten for prod if needed.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.get("/health")
+# What it does:
+# Health endpoint (tests hit this) and OpenAPI at /openapi.json (auto).
+@app.get("/")
 def health():
-    return {"status": "ok"}
+    return {"ok": True, "service": "breau-backend"}
 
-# Simple smoke test to confirm DB/tables exist
-@app.get("/debug/db")
-def debug_db():
-    return {"tables": inspect(engine).get_table_names()}
-
-@app.post("/debug/seed")
-def debug_seed():
-    return {"status": seed_defaults()}
-
-app.include_router(brew.router, prefix="/brew", tags=["brew"])
+# What it does:
+# Mount the routers the tests look for.
 app.include_router(feedback.router)
-app.include_router(library.router)
+app.include_router(profile.router)
+app.include_router(beans.router)
+app.include_router(brew.router)

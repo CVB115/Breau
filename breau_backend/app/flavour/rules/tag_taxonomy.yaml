@@ -1,0 +1,217 @@
+version: 3.1.0
+updated: 2025-09-01
+
+# === ENUM NAMESPACES ===
+namespaces:
+  sweetness_quality:
+    type: enum
+    values:
+      - honeyed
+      - brown_sugar
+      - caramel
+      - maple
+      - molasses
+      - candied
+      - jammy_sweet
+      - ripe_fruit_sweet
+      - confectionary
+      - burnt_sugar
+      - butterscotch
+
+  sweetness_intensity:
+    type: enum
+    values: [low, medium_low, medium, medium_high, high]
+
+  body_weight:
+    type: enum
+    values: [light, medium, heavy]
+
+  viscosity:
+    type: enum
+    values: [watery, syrupy, thick]
+
+  texture_surface:
+    type: enum
+    values: [silky, creamy, velvety, smooth, oily, chalky, gritty]
+
+  tactile_effect:
+    type: enum
+    values: [clean, coating, drying_astringent, warming, cooling, tingling]
+
+  mouthfeel_contour:
+    type: enum
+    values: [round, soft, linear, spiky]
+
+  acidity_type:
+    type: enum
+    values: [malic, citric, tartaric, phosphoric, lactic, acetic]
+
+  acidity_intensity:
+    type: enum
+    values: [low, medium_low, medium, medium_high, high]
+
+  acidity_shape:
+    type: enum
+    values: [sharp, crisp, bright, round, flat]
+
+  bitterness_quality:
+    type: enum
+    values:
+      - cacao
+      - coffee_roast
+      - herbal_bitter
+      - peel_pith
+      - burnt
+      - ashy
+      - earthy_bitter
+      - quinine
+      - chemical
+
+  bitterness_intensity:
+    type: enum
+    values: [low, medium_low, medium, medium_high, high]
+
+  astringency_level:
+    type: enum
+    values: [none, light, moderate, high]
+
+  volatility:
+    type: enum
+    values: [high, medium, low]
+
+  register:
+    type: enum
+    values: [top, mid, base]
+    flags: [fragile]
+
+# === CONTROLLED DESCRIPTORS ===
+descriptors:
+  fruit:
+    winey: {}
+    raisin: {}
+    prune: {}
+    fig: {}
+    fig_preserve: {}
+    apple_jam: {}
+    pineapple_jam: {}
+    guava_jam: {}
+    molasses_berry: {}
+    burnt_berry_syrup: {}
+  citrus:
+    marmalade: {}
+    bitter_orange: {}
+    candied_lime: {}
+    lime_marmalade: {}
+    lemon_curd: {}
+    candied_pineapple: { parents: [fruit] }
+  floral:
+    perfumey: {}
+    dried_flower: {}
+    honeyed_citrus: { parents: [citrus, floral] }
+    white_tea: { parents: [tea] }
+  tea:
+    tea_aroma: {}
+    malty_tea: {}
+    genmaicha_like: {}
+  nut:
+    praline: {}
+    gianduja: {}
+    nut_skin_bitter: {}
+    brown_nut: {}
+  sweet:
+    butterscotch: {}
+    marshmallow: {}
+    custard: {}
+    toffee: {}
+    treacle: {}
+    burnt_sugar: {}
+  herbal:
+    bitter_green: {}
+    green_herbal: {}
+    savory_spice: {}
+    licorice: {}
+    root_molasses: {}
+  tropical:
+    tropical_punch: {}
+    tropical_cordial: {}
+    banana_blend: {}
+    passionfruit_blend: {}
+  grape_wine:
+    wine: {}
+    white_wine: {}
+    red_wine_tannin: {}
+    grape_must: {}
+  body:
+    syrupy_body: {}
+    sticky_body: {}
+    thick_extract: {}
+
+# === ALIASES ===
+aliases:
+  perfumey: [perfume-y, perfumy]
+  orange_blossom: [OB, "orange blossom"]
+  candied_pineapple: [pineapple_candy]
+  candied_lime: [lime_candy]
+  jammy_sweet: [jam, jammy, jam-like]
+  sticky: [coating]
+  brisk: [crisp]
+  burnt_sugar: [scorched_sugar]
+  brown_sugar: [light_caramel]
+  molasses: [treacle]
+
+# === MIGRATIONS (old → new) ===
+migrations:
+  sweetness_type.honeyed: sweetness_quality.honeyed
+  sweetness_type.caramelized: sweetness_quality.brown_sugar
+  sweetness_type.caramelized_light: sweetness_quality.brown_sugar
+  sweetness_type.caramelized_deep: sweetness_quality.caramel
+  sweetness_type.treacle: sweetness_quality.molasses
+  sweetness_type.treacle_molasses: sweetness_quality.molasses
+  sweetness_type.plain: sweetness_intensity.low
+  sweetness_type.ripe: sweetness_quality.ripe_fruit_sweet
+  sweetness_type.creamy: texture_surface.creamy
+  texture.syrupy: viscosity.syrupy
+  texture.thick: viscosity.thick
+  texture.sticky: tactile_effect.coating
+  texture.gritty: texture_surface.gritty
+  texture.silky: texture_surface.silky
+  texture.smooth: texture_surface.smooth
+  texture.soft: mouthfeel_contour.soft
+  texture.round: mouthfeel_contour.round
+  density.light: body_weight.light
+  density.rich: body_weight.heavy
+  density.high: body_weight.heavy
+  note_layer.top: register.top
+  note_layer.mid: register.mid
+  note_layer.base: register.base
+  mouthfeel_influence.warm: tactile_effect.warming
+  mouthfeel_influence.dry: tactile_effect.drying_astringent
+  mouthfeel_influence.flat: tactile_effect.clean
+  mouthfeel_influence.sticky: tactile_effect.coating
+  tannin_presence.none: astringency_level.none
+  tannin_presence.light: astringency_level.light
+  tannin_presence.moderate: astringency_level.moderate
+  tannin_presence.high: astringency_level.high
+
+# === IMPLICATIONS ===
+implications:
+  - if: { sweetness_quality: [caramel, toffee, molasses, burnt_sugar] }
+    add: { viscosity: [syrupy, thick] }
+
+  - if: { volatility: high, register: top, flags: [fragile] }
+    add: { planner_guardrail: floral_fragile }
+
+# === CONFLICTS (for planner guardrails) ===
+conflicts:
+  - if: { planner_guardrail: floral_fragile }
+    with: { brew.temp_min: ">=92", brew.contact_time: long }
+    action: [warn, downrank_plan]
+
+# === SCORING HINTS (OPTIONAL) ===
+scoring_hints:
+  intensity_scale:
+    low: 0.2
+    medium_low: 0.4
+    medium: 0.6
+    medium_high: 0.8
+    high: 1.0

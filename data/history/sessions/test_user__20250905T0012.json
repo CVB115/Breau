@@ -1,0 +1,41 @@
+{
+  "feedback": {
+    "user_id": "test_user",
+    "session_id": "20250905T0012",
+    "beans_meta": {
+      "roast_level": "light",
+      "process": "washed"
+    },
+    "protocol": {
+      "method": "v60-style",
+      "ratio": "1:15",
+      "temperature_c": 91.0,
+      "grind_label": "medium",
+      "agitation_overall": "moderate"
+    },
+    "ratings": {
+      "overall": 4.5,
+      "clarity": null,
+      "body": null,
+      "acidity": null,
+      "bitterness": null
+    },
+    "goals": [
+      {
+        "tags": [
+          "increase florality",
+          "less body"
+        ]
+      }
+    ],
+    "notes_confirmed": [
+      "jasmine"
+    ],
+    "notes_missing": [
+      "bitterness"
+    ],
+    "free_text": null,
+    "payload": null
+  },
+  "derived": {}
+}

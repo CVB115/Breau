@@ -1,0 +1,362 @@
+{
+"silky": {
+  "description": "Smooth-flowing with soft texture and no stickiness or grit; feels effortless and cohesive.",
+  "tags": ["texture:silky", "mouthfeel_influence:round"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:chalky", "mouthfeel_influence:drying"]
+},
+
+"creamy": {
+  "description": "Rich, smooth mouthfeel with a softness that evokes dairy or full-fat textures.",
+  "tags": ["texture:creamy", "mouthfeel_influence:coating"],
+  "brew_guidance": {
+    "ratio_delta": -0.2,
+    "contact_tendency": "medium",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:thin", "mouthfeel_influence:bright"]
+},
+
+"smooth": {
+  "description": "Clean, balanced, and even-textured with no spikes in body or dryness.",
+  "tags": ["texture:smooth", "mouthfeel_influence:rounded"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:gritty", "mouthfeel_influence:drying"]
+},
+
+"round": {
+  "description": "Soft fullness without sharp acidity or dryness; seamless and gentle on the palate.",
+  "tags": ["texture:round", "mouthfeel_influence:round"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["mouthfeel_influence:astringent", "texture:crisp"]
+},
+
+"buttery": {
+  "description": "Soft, oily-smooth and rounded like melted butter or egg yolk; often found in experimental naturals.",
+  "tags": ["texture:buttery", "mouthfeel_influence:coating"],
+  "brew_guidance": {
+    "ratio_delta": -0.2,
+    "contact_tendency": "long",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:chalky", "mouthfeel_influence:bright"]
+},
+
+"velvety": {
+  "description": "Dense but extremely fine-textured, like thickened milk or heavy cream.",
+  "tags": ["texture:velvety", "mouthfeel_influence:smooth_coating"],
+  "brew_guidance": {
+    "ratio_delta": -0.25,
+    "contact_tendency": "long",
+    "agitation_style": "modulated",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:crisp", "mouthfeel_influence:dry_crusty"]
+},
+
+"rounded": {
+  "description": "No edges or spikes; very even and gentle sensation across the tongue.",
+  "tags": ["texture:rounded", "mouthfeel_influence:neutral"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["mouthfeel_influence:astringent", "texture:powdery"]
+},
+
+"slick": {
+  "description": "Glassy and low-resistance flow; sometimes seen in fast-drawdown brews or fine oils.",
+  "tags": ["texture:slick", "mouthfeel_influence:coating"],
+  "brew_guidance": {
+    "ratio_delta": -0.15,
+    "contact_tendency": "medium",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:gritty", "mouthfeel_influence:drying"]
+},
+
+"mellow": {
+  "description": "Easy-drinking texture with no harshness or extremes; soft and quiet on the palate.",
+  "tags": ["texture:mellow", "mouthfeel_influence:rounded"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["mouthfeel_influence:sharp", "texture:chalky"]
+},
+
+"balanced": {
+  "description": "Textural harmony with even density and flow; no part of the brew dominates.",
+  "tags": ["texture:balanced", "mouthfeel_influence:neutral"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:heavy", "texture:thin"]
+},
+
+"chalky": {
+  "description": "Dry and powder-like sensation; sticks to the tongue with a fine particulate feel.",
+  "tags": ["texture:chalky", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.05,
+    "contact_tendency": "long",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:silky", "mouthfeel_influence:coating"]
+},
+
+"powdery": {
+  "description": "Fine-grit texture similar to cocoa powder; often due to over-agitation or muddy beds.",
+  "tags": ["texture:powdery", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.05,
+    "contact_tendency": "long",
+    "agitation_style": "higher_early",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:creamy", "mouthfeel_influence:smooth_coating"]
+},
+
+"gritty": {
+  "description": "Coarse texture with detectable particles; can feel rustic or underfiltered.",
+  "tags": ["texture:gritty", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.1,
+    "contact_tendency": "long",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:clean", "mouthfeel_influence:smooth"]
+},
+
+"dry": {
+  "description": "Dries the mouth noticeably after swallowing; can be linked to roast, acidity, or flow issues.",
+  "tags": ["texture:dry", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.05,
+    "contact_tendency": "medium",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["mouthfeel_influence:coating", "texture:buttery"]
+},
+
+"astringent": {
+  "description": "Strong drying and puckering sensation, especially at the finish.",
+  "tags": ["texture:astringent", "mouthfeel_influence:astringent"],
+  "brew_guidance": {
+    "ratio_delta": 0.1,
+    "contact_tendency": "long",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:round", "mouthfeel_influence:smooth"]
+},
+
+"dry_floral": {
+  "description": "Structured and perfumey dryness often linked to lavender, rose, or high-clarity florals.",
+  "tags": ["texture:dry_floral", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.0,
+    "contact_tendency": "short",
+    "agitation_style": "low",
+    "temp_hint": "lower"
+  },
+  "conflicts": ["texture:syrupy", "mouthfeel_influence:sticky"]
+},
+
+"structured": {
+  "description": "Intentional dryness or edge in texture; supports high-acid or floral coffees with shape.",
+  "tags": ["texture:structured", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.0,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:chewy", "mouthfeel_influence:sticky"]
+},
+
+"crumbling": {
+  "description": "Sensation of texture breaking apart or dispersing quickly, like dry pastry.",
+  "tags": ["texture:crumbling", "mouthfeel_influence:dry_crusty"],
+  "brew_guidance": {
+    "ratio_delta": 0.1,
+    "contact_tendency": "short",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:slick", "mouthfeel_influence:coating"]
+},
+
+"dry_crusty": {
+  "description": "Bread crust-like texture with no moisture or fluidity; often from roast or agitation issues.",
+  "tags": ["texture:dry_crusty", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "modulated",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:velvety", "mouthfeel_influence:smooth_coating"]
+},
+
+"sharp": {
+  "description": "Not gritty or dry, but aggressive; like tactile acidity or harsh contrast in mouthfeel.",
+  "tags": ["texture:sharp", "mouthfeel_influence:bright"],
+  "brew_guidance": {
+    "ratio_delta": 0.0,
+    "contact_tendency": "medium",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:rounded", "mouthfeel_influence:smooth"]
+},
+
+"oily_slick": {
+  "description": "Dense, low-resistance texture with gliding flow and emulsified oils.",
+  "tags": ["texture:oily", "mouthfeel_influence:coating"],
+  "brew_guidance": {
+    "ratio_delta": -0.2,
+    "contact_tendency": "long",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:chalky", "mouthfeel_influence:dry_crusty"]
+},
+
+"slick_but_light": {
+  "description": "Unusual fast-flowing texture that’s both weightless and coating; slippery without thickness.",
+  "tags": ["texture:slick", "mouthfeel_influence:clean"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "low",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:powdery", "texture:dense"]
+},
+
+"meaty": {
+  "description": "Savory or broth-like thickness; often from long ferment or ultra-dense brews.",
+  "tags": ["texture:meaty", "mouthfeel_influence:heavy"],
+  "brew_guidance": {
+    "ratio_delta": -0.3,
+    "contact_tendency": "long",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:crisp", "mouthfeel_influence:bright"]
+},
+
+"spiky": {
+  "description": "Uneven mouthfeel with abrupt shifts in density or dryness; not clean or rounded.",
+  "tags": ["texture:spiky", "mouthfeel_influence:sharp"],
+  "brew_guidance": {
+    "ratio_delta": 0.0,
+    "contact_tendency": "medium",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:rounded", "mouthfeel_influence:smooth"]
+},
+
+"layered": {
+  "description": "Perceived shift between soft and sharp textures mid-sip; complex and structured.",
+  "tags": ["texture:layered", "mouthfeel_influence:complex"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:flat", "mouthfeel_influence:monotone"]
+},
+
+"crystalline": {
+  "description": "Fine-tuned clarity with textured precision, like ice or sugar crystal; rare and elegant.",
+  "tags": ["texture:crystalline", "mouthfeel_influence:clean"],
+  "brew_guidance": {
+    "ratio_delta": 0.0,
+    "contact_tendency": "short",
+    "agitation_style": "low",
+    "temp_hint": "lower"
+  },
+  "conflicts": ["texture:sticky", "mouthfeel_influence:coating"]
+},
+
+"grainy": {
+  "description": "Textural hint of cereal-like grit; not as harsh as chalky, but not clean.",
+  "tags": ["texture:grainy", "mouthfeel_influence:drying"],
+  "brew_guidance": {
+    "ratio_delta": 0.1,
+    "contact_tendency": "long",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:creamy", "mouthfeel_influence:coating"]
+},
+
+"tingly": {
+  "description": "Light effervescent or sharp mouthfeel; may be caused by acidity or fermentation gas.",
+  "tags": ["texture:tingly", "mouthfeel_influence:bright"],
+  "brew_guidance": {
+    "ratio_delta": 0.0,
+    "contact_tendency": "short",
+    "agitation_style": "low",
+    "temp_hint": "lower"
+  },
+  "conflicts": ["texture:round", "mouthfeel_influence:coating"]
+},
+
+"bouncy": {
+  "description": "Uncommon, dynamic mouthfeel that feels elastic or springy between sips.",
+  "tags": ["texture:bouncy", "mouthfeel_influence:rounded"],
+  "brew_guidance": {
+    "ratio_delta": -0.1,
+    "contact_tendency": "medium",
+    "agitation_style": "modulated",
+    "temp_hint": "medium"
+  },
+  "conflicts": ["texture:dry", "mouthfeel_influence:gritty"]
+},
+
+"muddy": {
+  "description": "Texturally incoherent, soft but thick; often a result of poor drawdown or turbidity.",
+  "tags": ["texture:muddy", "mouthfeel_influence:unclean"],
+  "brew_guidance": {
+    "ratio_delta": 0.1,
+    "contact_tendency": "long",
+    "agitation_style": "higher_early",
+    "temp_hint": "higher"
+  },
+  "conflicts": ["texture:clear", "mouthfeel_influence:crisp"]
+}
+
+}

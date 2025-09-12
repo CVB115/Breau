@@ -1,0 +1,15 @@
+{
+  "schema_version": "2025-09-03",
+  "user_id": "test_user",
+  "note_sensitivity": {
+    "jasmine": 0.1875,
+    "bitterness": -0.0125
+  },
+  "trait_response": {
+    "increase florality": 0.1875,
+    "less body": 0.1875
+  },
+  "overrides": {},
+  "history_count": 1,
+  "last_seen_iso": "2025-09-03T18:01:54.211365"
+}

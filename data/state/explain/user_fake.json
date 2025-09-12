@@ -1,0 +1,9 @@
+{
+  "why": "Small tweaks applied for goal [history]",
+  "trace": {
+    "prior": 0.0,
+    "history": 0.30000000000000004,
+    "edge": 0.0
+  },
+  "arm": "compose"
+}

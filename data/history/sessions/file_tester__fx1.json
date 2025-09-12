@@ -1,0 +1,33 @@
+{
+  "feedback": {
+    "user_id": "file_tester",
+    "session_id": "fx1",
+    "beans_meta": null,
+    "protocol": {
+      "method": "v60-style",
+      "ratio": "1:15",
+      "temperature_c": 91.0,
+      "grind_label": "medium",
+      "agitation_overall": "moderate"
+    },
+    "ratings": {
+      "overall": 4.0,
+      "clarity": null,
+      "body": null,
+      "acidity": null,
+      "bitterness": null
+    },
+    "goals": [
+      {
+        "tags": [
+          "increase florality"
+        ]
+      }
+    ],
+    "notes_confirmed": null,
+    "notes_missing": null,
+    "free_text": null,
+    "payload": null
+  },
+  "derived": {}
+}

@@ -1,0 +1,54 @@
+{
+  "profiles": {
+    "tester": {
+      "user_id": "tester"
+    },
+    "local": {
+      "user_id": "local",
+      "grinder": {
+        "burr_type": "conical",
+        "model": "C2"
+      },
+      "filter": {
+        "permeability": "fast",
+        "material": "paper_bleached"
+      },
+      "water": {
+        "profile_preset": "sca_target"
+      },
+      "brewer": {
+        "name": "Hario V60",
+        "geometry_type": "conical",
+        "cone_angle_deg": 30,
+        "outlet_profile": "single_large",
+        "size_code": "02",
+        "inner_diameter_mm": 40,
+        "hole_count": 1,
+        "thermal_mass": "medium"
+      }
+    },
+    "u1": {
+      "trait_response": {
+        "floral": 0.6,
+        "body": -0.3
+      },
+      "note_sensitivity": {
+        "jasmine": 0.9
+      },
+      "updated_at": "2025-09-11T00:00:00Z",
+      "history_count": 5,
+      "user_id": "u1"
+    },
+    "u2": {
+      "trait_response": {
+        "body": -0.2
+      },
+      "note_sensitivity": {
+        "cocoa": 0.5
+      },
+      "updated_at": "2025-09-10T00:00:00Z",
+      "history_count": 5,
+      "user_id": "u2"
+    }
+  }
+}

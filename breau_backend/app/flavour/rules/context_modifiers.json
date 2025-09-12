@@ -1,0 +1,788 @@
+{
+  "baked": {
+  "phrases": ["baked", "pie-like", "pastry-like", "oven-baked fruit"],
+  "emit_tags": ["prep:baked", "sweetness_type:honeyed", "texture:round"],
+  "note_bias": ["baked_apple", "brown_sugar", "cinnamon_top"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Round, dessert-like sweetness with softened edges."
+},
+
+"stewed": {
+  "phrases": ["stewed", "compote", "cooked down", "poached fruit"],
+  "emit_tags": ["prep:stewed", "sweetness_type:honeyed", "texture:silky"],
+  "note_bias": ["plum", "stewed_berry", "prune"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Gently cooked fruit vibe; fuller sweetness without stickiness."
+},
+
+"jammy": {
+  "phrases": ["jammy", "reduced", "compoted", "confit"],
+  "emit_tags": ["prep:jammy", "sweetness_type:caramelized", "texture:jammy"],
+  "note_bias": ["blueberry", "blackberry", "plum"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Concentrated fruit and thicker texture from deeper extraction."
+},
+
+"caramelized": {
+  "phrases": ["caramelized", "toffee-like", "burnt sugar edge"],
+  "emit_tags": ["prep:caramelized", "sweetness_type:caramelized", "texture:syrupy"],
+  "note_bias": ["caramel", "toffee", "brown_sugar"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "higher_early", "temp_hint": "medium"},
+  "explain": "Browned-sugar sweetness and weight via longer contact."
+},
+
+"molasses_like": {
+  "phrases": ["molasses-like", "treacle", "blackstrap"],
+  "emit_tags": ["sweetness_type:molasses", "texture:syrupy"],
+  "note_bias": ["molasses", "dark_caramel"],
+  "brew_bias": {"ratio_delta": -0.35, "contact_tendency": "long", "agitation_style": "higher_early", "temp_hint": "higher"},
+  "explain": "Very deep, slow-flowing sweetness with heavy body."
+},
+
+"candied": {
+  "phrases": ["candied", "candied peel", "glacé", "sugar-glazed"],
+  "emit_tags": ["prep:candied", "sweetness_type:candied", "texture:smooth"],
+  "note_bias": ["candied_orange", "lemon_zest", "orange_peel"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Clean, glassy sweetness with bright top notes."
+},
+
+"macerated": {
+  "phrases": ["macerated", "sugar-macerated", "soaked in syrup"],
+  "emit_tags": ["prep:macerated", "sweetness_type:honeyed", "texture:silky"],
+  "note_bias": ["strawberry", "raspberry", "peach"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Soft, perfumed fruit with gentle sweetness."
+},
+
+"fresh_pressed": {
+  "phrases": ["fresh-pressed", "juiced", "cider-like"],
+  "emit_tags": ["prep:pressed", "sweetness_type:fruity", "texture:juicy", "acidity_tone:malic"],
+  "note_bias": ["green_apple", "white_grape", "pear"],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Fresh, zippy fruit and high clarity."
+},
+
+"zesty": {
+  "phrases": ["zesty", "zingy", "peel-bright", "citrus pop"],
+  "emit_tags": ["texture:crisp", "mouthfeel_influence:bright"],
+  "note_bias": ["lemon_zest", "grapefruit_zest", "yuzu"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Keeps top-note brightness and crisp edges."
+},
+
+"glazed": {
+  "phrases": ["glazed", "sugar glaze", "donut glaze"],
+  "emit_tags": ["sweetness_type:candied", "texture:smooth"],
+  "note_bias": ["vanilla", "orange_peel"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Shiny, sweet coating feel without heaviness."
+},
+
+"toasted": {
+  "phrases": ["toasted", "lightly toasted", "golden-brown"],
+  "emit_tags": ["mouthfeel_influence:warm", "texture:rounded"],
+  "note_bias": ["hazelnut", "almond", "toasted_sugar"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Warm, rounded edge—keeps sweetness tidy."
+},
+
+"smoked_hint": {
+  "phrases": ["smoked hint", "smoky edge", "wisp of smoke"],
+  "emit_tags": ["mouthfeel_influence:warm", "texture:dry_crusty"],
+  "note_bias": ["cocoa_nib", "toasted_coconut"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Adds warmth without over-browning sweetness."
+},
+
+"spiced_dessert": {
+  "phrases": ["spiced dessert", "spiced crumble", "holiday spiced"],
+  "emit_tags": ["sweetness_type:caramelized"],
+  "note_bias": ["cinnamon_top", "nutmeg", "brown_sugar"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Dessert-like spice warmth and deeper sweetness."
+},
+
+"creamed": {
+  "phrases": ["creamed", "creamier", "like cream"],
+  "emit_tags": ["texture:creamy", "mouthfeel_influence:coating"],
+  "note_bias": ["vanilla", "milk_chocolate"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Softer, cream-like texture with rounded edges."
+},
+
+"honeyed": {
+  "phrases": ["honeyed", "honey-sweet", "acacia honey"],
+  "emit_tags": ["sweetness_type:honeyed", "texture:silky"],
+  "note_bias": ["acacia", "orange_blossom", "white_floral"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Silky, clean sweetness—less heavy than caramel."
+},
+
+"butterscotch": {
+  "phrases": ["butterscotch", "toffee butter", "soft caramel"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:round"],
+  "note_bias": ["toffee", "caramel"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Soft caramel tone with rounded feel."
+},
+
+"poached": {
+  "phrases": ["poached", "poached pear", "poached apple"],
+  "emit_tags": ["prep:stewed", "sweetness_type:honeyed", "texture:silky"],
+  "note_bias": ["pear", "apple_peel", "white_grape"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Gentle, clean cooked-fruit sweetness."
+},
+
+"candied_citrus": {
+  "phrases": ["candied citrus", "candied orange", "candied lemon"],
+  "emit_tags": ["prep:candied", "sweetness_type:candied", "texture:crisp"],
+  "note_bias": ["orange_peel", "lemon_zest", "yuzu"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Bright sugared peel: sweet but still zippy."
+},
+
+"glacé_cherry": {
+  "phrases": ["glacé cherry", "maraschino vibe", "candied cherry"],
+  "emit_tags": ["sweetness_type:candied", "texture:syrupy"],
+  "note_bias": ["cherry", "red_currant"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Candy-like red fruit with syrupy feel."
+},
+
+"soften_edges": {
+  "phrases": ["soften edges", "round out", "smooth it out"],
+  "emit_tags": ["mouthfeel_influence:round"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Rounds sharpness; favors smoother texture."
+},
+
+"juiced": {
+  "phrases": ["juiced", "fruit juice-like", "like cold-pressed"],
+  "emit_tags": ["prep:pressed", "sweetness_type:fruity", "texture:juicy", "acidity_tone:malic"],
+  "note_bias": ["pear", "white_grape", "green_apple"],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Juicy, malic fruit feel — think fresh-pressed apple or pear."
+},
+
+"bright_fresh": {
+  "phrases": ["bright fresh", "fresh-fruited", "tangy"],
+  "emit_tags": ["sweetness_type:fruity", "texture:crisp", "mouthfeel_influence:bright"],
+  "note_bias": ["white_grape_skin", "lemon_zest", "pear_skin"],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Keeps top-note clarity and malic brightness."
+},
+
+"fresh_cut": {
+  "phrases": ["fresh cut", "sliced fruit", "raw juicy"],
+  "emit_tags": ["prep:pressed", "texture:crisp", "mouthfeel_influence:clean"],
+  "note_bias": ["green_apple", "grape_flower"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Clean and zippy — like raw fruit slices."
+},
+
+"sherbet_like": {
+  "phrases": ["sherbet-like", "tangy-sweet", "citrus fizz"],
+  "emit_tags": ["sweetness_type:candied", "mouthfeel_influence:bright"],
+  "note_bias": ["lemon_zest", "yuzu", "white_grape"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Crisp citrus sweetness with bright acidity."
+},
+
+"candy_shell": {
+  "phrases": ["candy shell", "hard sugar coating", "crunchy candy"],
+  "emit_tags": ["sweetness_type:candied", "texture:crisp"],
+  "note_bias": ["orange_peel", "lemon_zest"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Bright, crunchy-sugar mouthfeel and candied peel tone."
+},
+
+"dessert_like": {
+  "phrases": ["dessert-like", "dessert cup", "sweet finish"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:rounded"],
+  "note_bias": ["plum", "caramel", "baked_apple"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Dessert-style smoothness and mellow sweetness."
+},
+
+"spice_baked": {
+  "phrases": ["spiced pie", "holiday spice", "baking spice"],
+  "emit_tags": ["prep:baked", "sweetness_type:caramelized"],
+  "note_bias": ["cinnamon_top", "nutmeg", "molasses"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Baked sweetness with warm spice edges."
+},
+
+"fermented_red": {
+  "phrases": ["fermented red fruit", "boozy berry", "anaerobic red"],
+  "emit_tags": ["acidity_tone:tartaric", "sweetness_type:caramelized", "texture:jammy"],
+  "note_bias": ["cherry", "blackberry", "winey"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Ferment-heavy berries with red wine edges."
+},
+
+"sake_estery": {
+  "phrases": ["sake-like", "ester-y", "sake aroma"],
+  "emit_tags": ["prep:ferment", "texture:slick", "mouthfeel_influence:bright"],
+  "note_bias": ["sake_ester", "jasmine", "white_grape"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Funky-bright top notes and ferment esters."
+},
+
+"winey": {
+  "phrases": ["winey", "red wine", "dry wine", "cabernet vibe"],
+  "emit_tags": ["acidity_tone:tartaric", "mouthfeel_influence:round"],
+  "note_bias": ["plum", "black_grape", "cranberry"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Wine-like acidity with layered fruit weight."
+},
+
+"balance_up": {
+  "phrases": ["balance it out", "clean up", "remove muddiness"],
+  "emit_tags": ["mouthfeel_influence:clean"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Boosts structural clarity and removes muddy feel."
+},
+
+"soften_tannin": {
+  "phrases": ["soften tannin", "less astringent", "rounder"],
+  "emit_tags": ["mouthfeel_influence:round", "texture:smooth"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Reduces dry edge for a smoother feel."
+},
+
+"crystallized": {
+  "phrases": ["crystallized", "sugar crystal", "hard sugar"],
+  "emit_tags": ["texture:crisp", "sweetness_type:candied"],
+  "note_bias": ["lemon_zest", "candy_shell"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Sharp sugar texture with clean finish."
+},
+
+"melted_center": {
+  "phrases": ["melted center", "molten", "lava cake"],
+  "emit_tags": ["texture:jammy", "sweetness_type:caramelized"],
+  "note_bias": ["chocolate", "plum", "caramel"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Rich syrupy core with dessert-style flow."
+},
+
+"brighten": {
+  "phrases": ["brighten up", "add lift", "make it livelier"],
+  "emit_tags": ["mouthfeel_influence:bright", "acidity_tone:citric"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Adds acidic lift and sparkle to the cup."
+},
+
+"brownie_fudge": {
+  "phrases": ["fudge", "brownie", "baked chocolate"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:heavy"],
+  "note_bias": ["chocolate", "molasses", "roast"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Dense, sweet, and heavy like a fudge finish."
+},
+
+"lighten": {
+  "phrases": ["lighten up", "less heavy", "make it airier"],
+  "emit_tags": ["texture:light", "mouthfeel_influence:clean"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.1, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Moves body toward lightness and clarity."
+},
+
+"soft_cooked": {
+  "phrases": ["soft cooked", "gently stewed", "barely cooked"],
+  "emit_tags": ["prep:stewed", "texture:silky", "sweetness_type:honeyed"],
+  "note_bias": ["poached_pear", "apple"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Gentle dessert-style texture and softness."
+},
+
+"add_body": {
+  "phrases": ["add body", "boost body", "heavier please"],
+  "emit_tags": ["texture:coating", "mouthfeel_influence:heavy"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Increases extraction and weight for a fuller mouthfeel."
+},
+
+"reduce_body": {
+  "phrases": ["reduce body", "too thick", "thin it out"],
+  "emit_tags": ["texture:light", "mouthfeel_influence:clean"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.1, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Shortens contact and dilutes to feel lighter and clearer."
+},
+
+"airy": {
+  "phrases": ["airy", "light as air", "weightless"],
+  "emit_tags": ["texture:airy", "mouthfeel_influence:light"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.1, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Enhances clarity and reduces heaviness for a floating feel."
+},
+
+"crystalline": {
+  "phrases": ["crystalline", "gem-like", "crisp and clear"],
+  "emit_tags": ["texture:crystalline", "mouthfeel_influence:clean", "acidity_tone:citric"],
+  "note_bias": ["white_grape", "lemon_zest"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Delivers a sharp, clean brightness with fine clarity."
+},
+
+"glasslike": {
+  "phrases": ["glasslike", "glass clarity", "shiny clean"],
+  "emit_tags": ["texture:clean", "mouthfeel_influence:bright"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Polishes the mouthfeel to be crisp and transparent."
+},
+
+"toasty": {
+  "phrases": ["toasty", "like toast", "lightly roasted"],
+  "emit_tags": ["prep:toasted", "texture:rounded", "mouthfeel_influence:warm"],
+  "note_bias": ["hazelnut", "almond", "brown_sugar"],
+  "brew_bias": {"ratio_delta": -0.1, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Adds warmth and roundness with a toasted edge."
+},
+
+"browned": {
+  "phrases": ["browned", "golden crust", "Maillard"],
+  "emit_tags": ["prep:baked", "texture:dry_crusty", "sweetness_type:caramelized"],
+  "note_bias": ["molasses", "brown_sugar"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "higher_early", "temp_hint": "higher"},
+  "explain": "Caramelized warmth with a structured dry finish."
+},
+
+"floral_soft": {
+  "phrases": ["soft floral", "delicate floral", "pale blossom"],
+  "emit_tags": ["note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "note_bias": ["jasmine", "orange_blossom", "freesia"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Enhances volatile florals without heaviness."
+},
+
+"perfumed": {
+  "phrases": ["perfumed", "fragrant", "aromatic"],
+  "emit_tags": ["note_layer:top", "volatility:high", "mouthfeel_influence:dry_floral"],
+  "note_bias": ["rose", "lavender", "bergamot"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Protects high aromatics and floral structure."
+},
+
+"dried_fruit": {
+  "phrases": ["dried fruit", "raisin-like", "dehydrated fruit"],
+  "emit_tags": ["prep:stewed", "texture:powdery", "sweetness_type:caramelized"],
+  "note_bias": ["raisin", "fig", "prune"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Mimics sweet, oxidized notes of dried fruit."
+},
+
+"oxidized_berry": {
+  "phrases": ["oxidized berry", "dried berry", "old blueberry"],
+  "emit_tags": ["texture:dry", "sweetness_type:caramelized"],
+  "note_bias": ["blueberry", "blackberry"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Adds weight and reduces top-fruit sharpness."
+},
+
+"funky_estery": {
+  "phrases": ["funky", "funky ester", "wild fermentation"],
+  "emit_tags": ["mouthfeel_influence:bright", "texture:slick"],
+  "note_bias": ["sake_ester", "pandan_flower", "jasmine"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Preserves bright, ferment-forward top notes."
+},
+
+"floral_candied": {
+  "phrases": ["candied floral", "sugar flower", "glacé blossom"],
+  "emit_tags": ["sweetness_type:candied", "note_layer:top", "texture:crisp"],
+  "note_bias": ["orange_blossom", "white_grape_skin", "jasmine"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "short", "agitation_style": "modulated", "temp_hint": "lower"},
+  "explain": "Gives florals a sugar-glazed edge without heaviness."
+},
+
+"sharp_floral": {
+  "phrases": ["sharp floral", "floral acid", "perfumed bite"],
+  "emit_tags": ["note_layer:top", "acidity_tone:tartaric", "mouthfeel_influence:dry_floral"],
+  "note_bias": ["lavender", "bergamot"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Emphasizes structured, high-tone florality."
+},
+
+"roasted_nutty": {
+  "phrases": ["roasted nutty", "light roast almond", "soft roast profile"],
+  "emit_tags": ["prep:toasted", "texture:rounded", "mouthfeel_influence:warm"],
+  "note_bias": ["hazelnut", "almond", "macadamia"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Nutty warmth with soft roast integration."
+},
+
+"softened_acid": {
+  "phrases": ["softened acid", "low acid", "less brightness"],
+  "emit_tags": ["mouthfeel_influence:round"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Rounds off the acidity without muting clarity."
+},
+
+"golden_edge": {
+  "phrases": ["golden edge", "amber-toned", "honey crisp"],
+  "emit_tags": ["sweetness_type:honeyed", "texture:crisp"],
+  "note_bias": ["baked_apple", "orange_blossom"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Honey-sweet edge with brightness and clarity."
+},
+
+"cleaned_up": {
+  "phrases": ["cleaned up", "tidier", "cleaner profile"],
+  "emit_tags": ["mouthfeel_influence:clean", "texture:crisp"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Clears muddiness and polishes structure."
+},
+
+"floral_float": {
+  "phrases": ["floral float", "floral lift", "top floral"],
+  "emit_tags": ["note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "note_bias": ["freesia", "white_tea", "bergamot"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Maximizes the floating volatile floral notes."
+},
+
+"dark_edge": {
+  "phrases": ["dark edge", "dark finish", "dark toned"],
+  "emit_tags": ["texture:heavy", "sweetness_type:caramelized"],
+  "note_bias": ["molasses", "black_grape", "cocoa"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Adds body and richness to build darker tone."
+},
+
+"leathery_hint": {
+  "phrases": ["leathery hint", "leather edge", "mature dried"],
+  "emit_tags": ["texture:dry", "mouthfeel_influence:drying"],
+  "note_bias": ["dried_berry", "raisin"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Adds mature structure through soft oxidation."
+},
+
+"tropical_cooked": {
+  "phrases": ["cooked pineapple", "baked tropical", "sweet mango compote"],
+  "emit_tags": ["prep:stewed", "sweetness_type:honeyed", "texture:round"],
+  "note_bias": ["pineapple", "mango", "passionfruit"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Delivers warm, rounded tropical sweetness."
+},
+
+"pineapple_jam": {
+  "phrases": ["pineapple jam", "cooked tropical jam"],
+  "emit_tags": ["prep:jammy", "sweetness_type:caramelized", "texture:syrupy"],
+  "note_bias": ["pineapple", "passionfruit"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Builds sticky tropical weight with cooked edge."
+},
+
+"syrupy_fruit": {
+  "phrases": ["syrupy fruit", "fruited syrup", "thick berry syrup"],
+  "emit_tags": ["texture:syrupy", "sweetness_type:caramelized"],
+  "note_bias": ["plum", "blackberry", "cherry"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Concentrated syrupy texture with deep fruit weight."
+},
+
+"reduced_fruit": {
+  "phrases": ["reduced fruit", "concentrated jam", "slow-cooked fruit"],
+  "emit_tags": ["prep:jammy", "texture:heavy", "sweetness_type:caramelized"],
+  "note_bias": ["plum", "cherry", "fig"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "higher_early", "temp_hint": "medium"},
+  "explain": "Concentration and thickness from long extraction."
+},
+
+"fermented_tropical": {
+  "phrases": ["fermented tropical", "anaerobic pineapple", "yeast-ferment fruit"],
+  "emit_tags": ["prep:ferment", "mouthfeel_influence:bright", "texture:slick"],
+  "note_bias": ["pineapple", "sake_ester", "pandan_flower"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Bright tropicals with volatile esters preserved."
+},
+
+"pandan_slick": {
+  "phrases": ["pandan slick", "pandan gloss", "sweet green ester"],
+  "emit_tags": ["texture:slick", "sweetness_type:honeyed", "prep:ferment"],
+  "note_bias": ["pandan_flower", "sake_ester"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Preserves pandan or ester-like florals with smooth glide."
+},
+
+"herbal_dry": {
+  "phrases": ["herbal dry", "green and dry", "spicy-herbal structure"],
+  "emit_tags": ["mouthfeel_influence:drying", "texture:chalky"],
+  "note_bias": ["thyme", "sage", "eucalyptus"],
+  "brew_bias": {"ratio_delta": 0.1, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Leans into the herbal structure and dryness."
+},
+
+"bitter_structure": {
+  "phrases": ["bitter structure", "bittersweet edge", "dark finish"],
+  "emit_tags": ["texture:dry", "mouthfeel_influence:drying"],
+  "note_bias": ["cocoa", "molasses", "cinnamon_leaf"],
+  "brew_bias": {"ratio_delta": 0.05, "contact_tendency": "long", "agitation_style": "higher_early", "temp_hint": "higher"},
+  "explain": "Builds grip and dry structure in the finish."
+},
+
+"spicy_acid": {
+  "phrases": ["spicy acid", "acidity bite", "spiced brightness"],
+  "emit_tags": ["acidity_tone:sharp", "texture:crisp", "mouthfeel_influence:bright"],
+  "note_bias": ["bergamot", "ginger_hint"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "modulated", "temp_hint": "lower"},
+  "explain": "Delivers lift and bite to acid-leaning notes."
+},
+
+"cold_tea": {
+  "phrases": ["cold tea", "ice tea-like", "clean tea"],
+  "emit_tags": ["texture:tea_like", "mouthfeel_influence:clean"],
+  "note_bias": ["white_tea", "green_tea", "grape_skin"],
+  "brew_bias": {"ratio_delta": 0.1, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Enhances tea-like clarity and gentle fruit."
+},
+
+"dry_honey": {
+  "phrases": ["dry honey", "crystallized honey", "honey edge"],
+  "emit_tags": ["sweetness_type:honeyed", "texture:dry_floral"],
+  "note_bias": ["orange_blossom", "lavender"],
+  "brew_bias": {"ratio_delta": -0.1, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Light sweetness with dry, floral finish."
+},
+
+"sharp_clarity": {
+  "phrases": ["sharp clarity", "edge definition", "structured clean"],
+  "emit_tags": ["texture:crisp", "mouthfeel_influence:bright"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Precision clarity, best for washed high-elevation cups."
+},
+
+"floral_bitterness": {
+  "phrases": ["floral bitterness", "dry violet", "lavender edge"],
+  "emit_tags": ["mouthfeel_influence:dry_floral", "texture:sharp"],
+  "note_bias": ["lavender", "violet", "rose"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Preserves edgy floral texture without rounding it."
+},
+
+"burnt_sugar": {
+  "phrases": ["burnt sugar", "caramel crust", "torched"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:dry_crusty"],
+  "note_bias": ["caramel", "brown_sugar", "molasses"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "higher"},
+  "explain": "Deep caramel depth with dry backbone."
+},
+
+"toasted_sugar": {
+  "phrases": ["toasted sugar", "browned sugar", "sugar crust"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:rounded"],
+  "note_bias": ["caramel", "toffee"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Warm, sweet depth without bitter weight."
+},
+
+"maple_hint": {
+  "phrases": ["maple hint", "maple syrup edge"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:syrupy"],
+  "note_bias": ["caramel", "plum"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Syrupy sweet texture with smooth body."
+},
+
+"salted_caramel": {
+  "phrases": ["salted caramel", "salty sweet", "butterscotch edge"],
+  "emit_tags": ["sweetness_type:caramelized", "texture:rounded"],
+  "note_bias": ["toffee", "butter"],
+  "brew_bias": {"ratio_delta": -0.20, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Rich caramel depth with softened mid-tone texture."
+},
+
+"funky_green": {
+  "phrases": ["funky green", "green funk", "wild green"],
+  "emit_tags": ["prep:ferment", "texture:sharp", "mouthfeel_influence:pungent_green"],
+  "note_bias": ["lemongrass", "eucalyptus", "green_grape"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Light ferment funk without heaviness."
+},
+
+"wild_anaerobic": {
+  "phrases": ["wild anaerobic", "super anaerobic", "overripe edge"],
+  "emit_tags": ["prep:ferment", "texture:jammy", "sweetness_type:caramelized"],
+  "note_bias": ["blackberry", "cherry", "tropical_ferment"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "higher_early", "temp_hint": "medium"},
+  "explain": "Rich, funky anaerobic saturation with fruit depth."
+},
+
+"clean_funk": {
+  "phrases": ["clean funk", "controlled ferment", "funky but clean"],
+  "emit_tags": ["prep:ferment", "mouthfeel_influence:bright", "texture:crisp"],
+  "note_bias": ["white_grape", "pineapple", "sake_ester"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Adds slight funk without losing clarity."
+},
+
+"crisp_toast": {
+  "phrases": ["crisp toast", "light toast crunch", "roasted crust"],
+  "emit_tags": ["prep:toasted", "texture:dry_crusty", "mouthfeel_influence:clean"],
+  "note_bias": ["almond", "toasted_grain", "hazelnut"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Creates dry warmth with clean edges."
+},
+
+"roasty_clarity": {
+  "phrases": ["roasty clarity", "clean roast", "structured roast"],
+  "emit_tags": ["mouthfeel_influence:clean", "texture:rounded"],
+  "note_bias": ["cocoa", "roast", "brown_sugar"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Keeps roast character while avoiding muddiness."
+},
+
+"stonefruit_jam": {
+  "phrases": ["stonefruit jam", "apricot compote", "jammy peach"],
+  "emit_tags": ["prep:jammy", "sweetness_type:caramelized", "texture:jammy"],
+  "note_bias": ["peach", "plum", "apricot"],
+  "brew_bias": {"ratio_delta": -0.25, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Juicy stonefruit with deep sweetness and thicker body."
+},
+
+"orange_acid": {
+  "phrases": ["orange acid", "mandarin tang", "citrusy edge"],
+  "emit_tags": ["acidity_tone:citric", "mouthfeel_influence:bright"],
+  "note_bias": ["orange", "mandarin", "lemon"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Keeps juicy citrus acidity without sourness."
+},
+
+"balanced_sweet": {
+  "phrases": ["balanced sweetness", "not too sweet", "smoothly sweet"],
+  "emit_tags": ["sweetness_type:honeyed", "mouthfeel_influence:round"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Gentle sweetness without heaviness or stickiness."
+},
+
+"round_acid": {
+  "phrases": ["round acid", "soft acidity", "integrated acid"],
+  "emit_tags": ["acidity_tone:malic", "mouthfeel_influence:rounded"],
+  "note_bias": ["green_apple", "pear"],
+  "brew_bias": {"ratio_delta": -0.05, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Softens acidity into a juicy, rounded form."
+},
+
+"flash_floral": {
+  "phrases": ["flash floral", "quick floral hit", "fleeting florals"],
+  "emit_tags": ["note_layer:top", "volatility:high", "texture:fleet"],
+  "note_bias": ["jasmine", "white_tea"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Maximizes short-lived floral top notes quickly."
+},
+
+"spice_sharp": {
+  "phrases": ["spice sharp", "spicy edge", "aromatic bite"],
+  "emit_tags": ["texture:sharp", "mouthfeel_influence:bright"],
+  "note_bias": ["cinnamon_top", "clove_hint"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Preserves aromatic spice lift and top-end brightness."
+},
+
+"soft_finish": {
+  "phrases": ["soft finish", "smooth finish", "no afterbite"],
+  "emit_tags": ["mouthfeel_influence:round", "texture:smooth"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Creates an easy, quiet finish with no astringency."
+},
+
+"clear_sweet": {
+  "phrases": ["clear sweetness", "sweet but not sticky", "clean-sweet"],
+  "emit_tags": ["sweetness_type:honeyed", "mouthfeel_influence:clean"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Sweetness with no syrupy residue or muddiness."
+},
+
+"fruit_punch": {
+  "phrases": ["fruit punch", "punchy fruit", "bright-fruit blend"],
+  "emit_tags": ["sweetness_type:fruity", "texture:juicy", "mouthfeel_influence:bright"],
+  "note_bias": ["cherry", "pineapple", "berry_mix"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Bright, colorful fruit clarity with juicy flow."
+},
+
+"soft_tart": {
+  "phrases": ["soft tart", "gentle tartness", "tart but smooth"],
+  "emit_tags": ["acidity_tone:malic", "texture:rounded"],
+  "note_bias": ["red_grape", "cranberry", "lychee"],
+  "brew_bias": {"ratio_delta": -0.05, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Balancing gentle tartness with smooth flow."
+},
+
+"chocolate_body": {
+  "phrases": ["chocolate body", "choco-heavy", "cocoa weight"],
+  "emit_tags": ["texture:coating", "sweetness_type:caramelized"],
+  "note_bias": ["chocolate", "cocoa", "molasses"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Heavy chocolatey weight with soft density."
+},
+
+"zingy_floral": {
+  "phrases": ["zingy floral", "bright floral", "punchy blossom"],
+  "emit_tags": ["note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "note_bias": ["bergamot", "jasmine", "grapefruit_zest"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Floral top note with acid lift and sparkle."
+},
+
+"liquid_candy": {
+  "phrases": ["liquid candy", "candy cup", "sweet like candy"],
+  "emit_tags": ["sweetness_type:candied", "texture:syrupy"],
+  "note_bias": ["orange_peel", "cherry", "candied_lemon"],
+  "brew_bias": {"ratio_delta": -0.30, "contact_tendency": "long", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Sticky-sweet and vivid like dissolved candy."
+},
+
+"soft_flavor": {
+  "phrases": ["soft flavor", "gentle cup", "easy drinking"],
+  "emit_tags": ["mouthfeel_influence:rounded", "texture:smooth"],
+  "note_bias": [],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "medium", "agitation_style": "low", "temp_hint": "medium"},
+  "explain": "Tames high tones for a soft, comfortable experience."
+},
+
+"spice_round": {
+  "phrases": ["rounded spice", "soft spice", "not sharp spice"],
+  "emit_tags": ["texture:rounded", "mouthfeel_influence:coating"],
+  "note_bias": ["cinnamon", "nutmeg"],
+  "brew_bias": {"ratio_delta": -0.15, "contact_tendency": "medium", "agitation_style": "modulated", "temp_hint": "medium"},
+  "explain": "Spice is present but integrated and smooth."
+},
+
+"weightless_floral": {
+  "phrases": ["weightless floral", "floating blossom", "light floral touch"],
+  "emit_tags": ["note_layer:top", "texture:fleeting", "volatility:high"],
+  "note_bias": ["freesia", "white_grape_skin"],
+  "brew_bias": {"ratio_delta": 0.0, "contact_tendency": "short", "agitation_style": "low", "temp_hint": "lower"},
+  "explain": "Preserves delicate florals without adding body."
+},
+
+"light_dessert": {
+  "phrases": ["light dessert", "like a sorbet", "clean dessert"],
+  "emit_tags": ["sweetness_type:fruity", "texture:crisp", "mouthfeel_influence:bright"],
+  "note_bias": ["raspberry", "lemon", "pear"],
+  "brew_bias": {"ratio_delta": -0.10, "contact_tendency": "short", "agitation_style": "modulated", "temp_hint": "lower"},
+  "explain": "A refreshing dessert-like feel—sweet, crisp, clean."
+}
+
+
+
+}

@@ -1,0 +1,34 @@
+{
+  "feedback": {
+    "user_id": "tester",
+    "session_id": "s002",
+    "beans_meta": null,
+    "protocol": {
+      "method": "v60-style",
+      "ratio": "1:15",
+      "temperature_c": 91.0,
+      "grind_label": "medium",
+      "agitation_overall": "moderate"
+    },
+    "ratings": {
+      "overall": 3.8,
+      "clarity": null,
+      "body": null,
+      "acidity": null,
+      "bitterness": null
+    },
+    "goals": [
+      {
+        "tags": [
+          "increase florality",
+          "less body"
+        ]
+      }
+    ],
+    "notes_confirmed": null,
+    "notes_missing": null,
+    "free_text": null,
+    "payload": null
+  },
+  "derived": {}
+}

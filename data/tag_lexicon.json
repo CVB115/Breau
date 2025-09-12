@@ -1,0 +1,34 @@
+{
+  "floral": {
+    "aliases": ["florality", "flowers", "jasmine", "blossom", "tea-like"],
+    "traits": {"clarity": 0.6, "acidity": 0.2, "body": -0.2}
+  },
+  "jammy": {
+    "aliases": ["compote", "cooked fruit", "reduced fruit", "thick sweetness"],
+    "traits": {"sweetness": 0.4, "body": 0.3, "acidity": -0.2}
+  },
+  "syrupy": {
+    "aliases": ["viscous", "dense", "heavy mouthfeel"],
+    "traits": {"body": 0.6, "clarity": -0.2}
+  },
+  "clean": {
+    "aliases": ["cleaner", "transparent", "crisp"],
+    "traits": {"clarity": 0.7, "body": -0.2}
+  },
+  "bright": {
+    "aliases": ["brighter", "sparkling", "lively"],
+    "traits": {"acidity": 0.6, "clarity": 0.2}
+  },
+  "less bitter": {
+    "aliases": ["reduce bitterness", "softer bitterness", "not bitter"],
+    "traits": {"bitterness": -0.8}
+  },
+  "silky": {
+    "aliases": ["smooth", "round", "polished texture"],
+    "traits": {"body": 0.2, "clarity": 0.2, "bitterness": -0.1}
+  },
+  "chocolatey": {
+    "aliases": ["cocoa", "cacao", "choc"],
+    "traits": {"sweetness": 0.3, "bitterness": 0.1, "clarity": -0.1}
+  }
+}

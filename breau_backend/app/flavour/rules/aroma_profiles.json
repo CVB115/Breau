@@ -1,0 +1,554 @@
+{
+"jasmine": {
+  "description": "Intensely floral and perfumey aroma with high volatility; prominent in high-grown Ethiopians and Geshas.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["white_grape", "orange_blossom", "green_tea"]
+},
+
+"orange_blossom": {
+  "description": "Sweet citrus-floral scent with a bright, delicate structure; volatile and easily lost to heat.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "white_grape_skin", "bergamot"]
+},
+
+"lavender": {
+  "description": "Aromatic floral-herbal note with sharp volatility; prone to fading or turning bitter under harsh brewing.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:dry_floral"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "plum", "bergamot"]
+},
+
+"rose": {
+  "description": "Classic perfumey floral associated with Turkish delight and delicate teas; sensitive to temperature.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:smooth_coating"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["hibiscus", "white_tea", "strawberry"]
+},
+
+"bergamot": {
+  "description": "Citrus-floral volatile reminiscent of Earl Grey; appears in certain Kenyan and Ethiopian profiles.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["black_tea", "jasmine", "orange_blossom"]
+},
+
+"freesia": {
+  "description": "Delicate floral with hints of citrus and clean brightness; subtle but highly aromatic.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["white_grape_skin", "jasmine", "pear"]
+},
+
+"hibiscus": {
+  "description": "Tart floral note often perceived as red-fruited with slight herbal lift; volatile in water.",
+  "tags": ["category:floral", "note_layer:top", "volatility:medium", "mouthfeel_influence:pungent_green"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["cranberry", "rose", "blackcurrant"]
+},
+
+"lilac": {
+  "description": "Soft spring floral with powdery overtones; fades quickly if brewed too hot or long.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:powdery"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["lavender", "freesia", "plum"]
+},
+
+"violet": {
+  "description": "Sweet, perfumed floral with soft earthy edges; delicate and commonly masked in darker roasts.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:rounded"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["lavender", "rose", "black_tea"]
+},
+
+"honeysuckle": {
+  "description": "Lightly sweet floral with fruity undertones; tends to vanish with long contact or excessive agitation.",
+  "tags": ["category:floral", "note_layer:top", "volatility:medium", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "freesia", "white_tea"]
+},
+
+"lemon_zest": {
+  "description": "Bright and sharp citrus peel aroma; rich in limonene and easily lost with high temperatures.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["white_grape_skin", "bergamot", "green_tea"]
+},
+
+"grapefruit_zest": {
+  "description": "Bitter-citrus aromatic with top-end sharpness and quick decay in prolonged brews.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["lemon_zest", "white_tea", "hibiscus"]
+},
+
+"citron": {
+  "description": "Citrusy-floral aromatic with a sweet peel tone and high volatility; similar to lemon zest but softer.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:clean"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "bergamot", "orange_blossom"]
+},
+
+"yuzu": {
+  "description": "Aromatic citrus peel with floral overtones; found in Japanese washed lots and floral naturals.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["lemon_zest", "jasmine", "green_tea"]
+},
+
+"lime_zest": {
+  "description": "Tart citrus aroma, sharper and greener than lemon; volatile and easily muted by bloom turbulence.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:pungent_green"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["grapefruit_zest", "white_grape_skin", "bergamot"]
+},
+
+"mandarin_zest": {
+  "description": "Sweet-orange zest aromatic with floral undertones; less volatile than lemon but still top-layer.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["short", "medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["orange_blossom", "citron", "cinnamon_top"]
+},
+
+"blood_orange": {
+  "description": "Deeper citrus aromatic with berry complexity; fragile and aromatic especially in naturals.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:round"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["plum", "blackberry", "bergamot"]
+},
+
+"sudachi": {
+  "description": "Japanese citrus zest, highly aromatic and sharp; rarely detected but notable in select lots.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["yuzu", "white_tea", "citron"]
+},
+
+"orange_peel": {
+  "description": "Dried orange peel aroma with volatile top and spice-toned base; depends on roast level.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["cinnamon_top", "brown_sugar", "bergamot"]
+},
+
+"tangerine_zest": {
+  "description": "Soft citrus peel aroma with a rounder sweetness than lemon; delicate and top-layered.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["mandarin_zest", "orange_blossom", "freesia"]
+},
+
+"white_tea": {
+  "description": "Delicate and clean tea aromatics with floral nuance and very high volatility.",
+  "tags": ["category:tea", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "freesia", "green_tea"]
+},
+
+"green_tea": {
+  "description": "Dry, volatile tea note with light herbal complexity and crisp floral overlap.",
+  "tags": ["category:tea", "note_layer:top", "volatility:medium", "mouthfeel_influence:clean"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["short", "medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["white_tea", "lemongrass", "apple_peel"]
+},
+
+"oolong": {
+  "description": "Semi-oxidized tea character with floral and nutty aromatics; moderate volatility.",
+  "tags": ["category:tea", "note_layer:top", "volatility:medium", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["milk_tea", "vanilla", "rose"]
+},
+
+"black_tea": {
+  "description": "Aromatic tea note with dry tannin edge and subtle floral volatility.",
+  "tags": ["category:tea", "note_layer:top", "volatility:medium", "mouthfeel_influence:drying"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["bergamot", "rose", "malt"]
+},
+
+"milk_tea": {
+  "description": "Soft, creamy tea aroma with blended floral and caramel undertones.",
+  "tags": ["category:tea", "note_layer:top", "volatility:medium", "mouthfeel_influence:rounded"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low", "medium"]
+  },
+  "pairs_with": ["oolong", "vanilla", "brown_sugar"]
+},
+
+"lemongrass": {
+  "description": "Lemony herbal top note with green citrus edges and high aromatic volatility.",
+  "tags": ["category:herbal", "note_layer:top", "volatility:high", "mouthfeel_influence:pungent_green"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["green_tea", "citron", "yuzu"]
+},
+
+"mint": {
+  "description": "Sharp cooling aromatic; intensely volatile and easily overpowered.",
+  "tags": ["category:herbal", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["eucalyptus", "white_grape_skin", "green_tea"]
+},
+
+"eucalyptus": {
+  "description": "Cool, camphoraceous aroma; aromatic lift in anaerobics or naturals with herbal complexity.",
+  "tags": ["category:herbal", "note_layer:top", "volatility:high", "mouthfeel_influence:cooling"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["mint", "lemongrass", "spice_hint"]
+},
+
+"thyme": {
+  "description": "Sharp green-herbal aromatic; volatile and prone to bitter expression under excessive heat.",
+  "tags": ["category:herbal", "note_layer:top", "volatility:medium", "mouthfeel_influence:drying"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["green_tea", "citrus_zest", "eucalyptus"]
+},
+
+"sage": {
+  "description": "Earthy-green volatile top note with dry herbal edges; typically found in anaerobics.",
+  "tags": ["category:herbal", "note_layer:top", "volatility:medium", "mouthfeel_influence:drying"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["thyme", "mint", "plum"]
+},
+
+"white_grape_skin": {
+  "description": "Delicate, zesty skin aroma with clean aromatic lift and high volatility; typical of SL28 and Gesha.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:clean"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "pear_skin", "green_apple"]
+},
+
+"apple_peel": {
+  "description": "Crisp peel aroma with a volatile top layer that can disappear quickly with excess contact time.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:crisp"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["green_apple", "white_grape_skin", "pear_skin"]
+},
+
+"pear_skin": {
+  "description": "Clean, light fruity aromatic; often contributes to brightness and volatile sweetness.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:clean"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["apple_peel", "white_tea", "jasmine"]
+},
+
+"grape_flower": {
+  "description": "Volatile white floral with faint fruity sweetness; a crossover between grape skin and florals.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["white_grape_skin", "jasmine", "green_tea"]
+},
+
+"stone_fruit_skin": {
+  "description": "Peach/plum skin aromatics with slight fuzz and tang; light top-layer note prone to fade.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:rounded"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["plum", "peach", "lavender"]
+},
+
+"nectarine_skin": {
+  "description": "Softer, smoother stone-fruit peel with floral overtones and volatile behaviour.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "plum", "peach"]
+},
+
+"melon_rind": {
+  "description": "Green-aromatic layer found in light-extracted or underdeveloped brews; fragile and volatile.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:neutral"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["green_tea", "cucumber", "white_grape"]
+},
+
+"lychee_skin": {
+  "description": "Tropical-sweet volatile aroma with floral lift and aromatic depth; can become cloying if overdone.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:medium", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short", "medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "longan", "white_grape"]
+},
+
+"cucumber": {
+  "description": "Clean, crisp aromatic with high water-like volatility; usually found in high-grown washed coffees.",
+  "tags": ["category:vegetal", "note_layer:top", "volatility:high", "mouthfeel_influence:clean"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["green_tea", "melon_rind", "white_tea"]
+},
+
+"white_peach_skin": {
+  "description": "Delicate fruity-floral peel note with soft top-layer sweetness and very limited volatility tolerance.",
+  "tags": ["category:fruity", "note_layer:top", "volatility:high", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "nectarine_skin", "pear"]
+},
+
+"cinnamon_top": {
+  "description": "Light, aromatic spice volatile with perfumey lift; distinct from heavier ground cinnamon.",
+  "tags": ["category:spice", "note_layer:top", "volatility:high", "mouthfeel_influence:drying"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["orange_peel", "brown_sugar", "nutmeg"]
+},
+
+"nutmeg": {
+  "description": "Warm aromatic spice with strong top-note volatility; can become sharp with high temp.",
+  "tags": ["category:spice", "note_layer:top", "volatility:high", "mouthfeel_influence:warm"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["cinnamon_top", "baked_apple", "brown_sugar"]
+},
+
+"clove_hint": {
+  "description": "Sharp spice aromatic often found in naturals and ferment-heavy coffees; extremely volatile.",
+  "tags": ["category:spice", "note_layer:top", "volatility:high", "mouthfeel_influence:pungent_green"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["nutmeg", "osmanthus", "ferment_ester"]
+},
+
+"osmanthus": {
+  "description": "Delicate Asian floral with sweet fruity-floral scent; rarely stable in high-temp brews.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:smooth"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "lychee_skin", "white_tea"]
+},
+
+"pandan_flower": {
+  "description": "Floral-herbal aromatic from pandan blooms; rare but distinctive in SEA naturals or anaerobics.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:rounded"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["coconut_hint", "sake_ester", "green_tea"]
+},
+
+"sake_ester": {
+  "description": "Funky, volatile fermentation ester with floral-fruity aroma; delicate and heat-sensitive.",
+  "tags": ["category:fermented", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["grape_flower", "osmanthus", "coconut_hint"]
+},
+
+"coconut_hint": {
+  "description": "Aromatic sweet volatile, sometimes perceived in anaerobics or unique tropical naturals.",
+  "tags": ["category:other", "note_layer:top", "volatility:medium", "mouthfeel_influence:rounded"],
+  "aroma_affinities": {
+    "needs_temp_band": ["medium"],
+    "needs_contact_band": ["short", "medium"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["pandan_flower", "brown_sugar", "white_peach"]
+},
+
+"cardamom_top": {
+  "description": "Dry aromatic top-note of cardamom with citrus-floral spice edge; volatile and nuanced.",
+  "tags": ["category:spice", "note_layer:top", "volatility:high", "mouthfeel_influence:clean"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["bergamot", "white_tea", "orange_peel"]
+},
+
+"elderflower": {
+  "description": "European-style floral with citrus-honey overlay; delicate and volatile in washed coffees.",
+  "tags": ["category:floral", "note_layer:top", "volatility:high", "mouthfeel_influence:bright"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["jasmine", "pear_skin", "green_tea"]
+},
+
+"cinnamon_leaf": {
+  "description": "Greener, brighter aromatic from cinnamon leaves — less sweet, more herbal in tone.",
+  "tags": ["category:spice", "note_layer:top", "volatility:medium", "mouthfeel_influence:pungent_green"],
+  "aroma_affinities": {
+    "needs_temp_band": ["lower", "medium"],
+    "needs_contact_band": ["short"],
+    "agitation": ["low"]
+  },
+  "pairs_with": ["thyme", "clove_hint", "apple_peel"]
+}
+
+
+
+}
