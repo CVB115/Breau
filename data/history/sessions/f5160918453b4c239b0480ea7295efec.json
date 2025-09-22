@@ -1,0 +1,129 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "f5160918453b4c239b0480ea7295efec",
+  "user_id": "default-user",
+  "created_utc": 1758483553,
+  "status": "in_progress",
+  "mode": "manual",
+  "source": "ui",
+  "bean": null,
+  "gear": {
+    "label": "Default Combo",
+    "brewer": {
+      "name": "Brewer"
+    },
+    "grinder": {
+      "name": "Grinder"
+    },
+    "filter": {
+      "name": "Filter"
+    },
+    "water": {
+      "name": "Water",
+      "temp_c": 96
+    }
+  },
+  "recipe": {
+    "brew_name": "Manual brew",
+    "dose_g": 20,
+    "ratio": 15,
+    "ratio_str": "1:15",
+    "water_g": 300,
+    "temperature_c": 96,
+    "grind_text": "22 clicks",
+    "steps": [
+      {
+        "id": "bloom",
+        "label": "Bloom",
+        "type": "bloom",
+        "water_to": 30,
+        "pour_style": "center",
+        "plan_start": "",
+        "plan_end": ""
+      },
+      {
+        "id": "p1",
+        "label": "Pour 1",
+        "type": "pour",
+        "water_to": 300,
+        "pour_style": "spiral",
+        "plan_start": "",
+        "plan_end": ""
+      }
+    ],
+    "bean": {
+      "id": "cd08d061-a45a-4ea5-8278-be856e3e1aec",
+      "name": "Kenya Ndiaini",
+      "roaster": "NYLON",
+      "origin": "Kenya",
+      "variety": "Variety Sl 26, $L94, Ruiru 13, Batian",
+      "process": "natural"
+    },
+    "gear": {
+      "display": "Hario V60-02 • Comandante C40 MK4 • SCA-ish Brew Water",
+      "brewer": "Hario V60-02",
+      "grinder": "Comandante C40 MK4",
+      "grinder_brand": "Comandante",
+      "grinder_model": "C40 MK4",
+      "water": "SCA-ish Brew Water",
+      "raw": {
+        "id": null,
+        "label": "Hario V60-02 • Comandante C40 MK4 • SCA-ish Brew Water",
+        "brewer": {
+          "id": "hario_v60_02",
+          "name": "Hario V60-02",
+          "method": "pour_over"
+        },
+        "grinder": {
+          "id": "comandante_c40_mk4",
+          "brand": "Comandante",
+          "model": "C40 MK4",
+          "burr_type": "conical"
+        },
+        "filter": {
+          "id": "cafec_abaca_02",
+          "name": "CAFEC Abaca (V60 02)",
+          "material": "abaca",
+          "thickness": "std"
+        },
+        "water": {
+          "id": "water_sca",
+          "name": "SCA-ish Brew Water",
+          "style": "sca",
+          "minerals": {
+            "Ca": 17,
+            "Mg": 5,
+            "HCO3": 40,
+            "Na": 5,
+            "K": 2,
+            "SO4": 20,
+            "Cl": 10,
+            "TDS": 120
+          }
+        }
+      }
+    },
+    "grind_target_micron": 800.0,
+    "grind_setting": 39.0,
+    "grind_label": "Grinder ≈ 39 marks (~800 µm)",
+    "grind_scale": {
+      "type": "numbers",
+      "min": 0,
+      "max": 40,
+      "step": 1
+    }
+  },
+  "pours": [],
+  "events": [],
+  "rating": null,
+  "notes": null,
+  "finished_utc": null,
+  "summary": {
+    "bean": null,
+    "roaster": null,
+    "brewer": "Brewer",
+    "dose_g": 20,
+    "water_g": 300,
+    "ratio": 15
+  }
+}

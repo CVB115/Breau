@@ -1,0 +1,47 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "29c819f8e4ef4bb68e8a6d4b17b7bd6f",
+  "user_id": "introspect",
+  "created_utc": 1758391154,
+  "status": "finished",
+  "mode": "manual",
+  "source": "ui",
+  "bean": null,
+  "gear": {
+    "brewer": {
+      "name": "Any"
+    }
+  },
+  "recipe": {
+    "grind_target_micron": 800.0,
+    "grind_setting": 39.0,
+    "grind_label": "Grinder ≈ 39 marks (~800 µm)",
+    "grind_scale": {
+      "type": "numbers",
+      "min": 0,
+      "max": 40,
+      "step": 1
+    }
+  },
+  "pours": [
+    {
+      "type": "pour",
+      "to_g": 50.0,
+      "at_ms": 1758391154294,
+      "style": null,
+      "note": null
+    }
+  ],
+  "events": [],
+  "rating": 4,
+  "notes": null,
+  "finished_utc": 1758391154,
+  "summary": {
+    "bean": null,
+    "roaster": null,
+    "brewer": "Any",
+    "dose_g": null,
+    "water_g": null,
+    "ratio": null
+  }
+}

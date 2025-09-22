@@ -35,3 +35,7 @@ Thumbs.db
 *.egg-info/
 dist/
 build/
+
+# Frontend env
+breau_frontend/app/.env
+node_modules

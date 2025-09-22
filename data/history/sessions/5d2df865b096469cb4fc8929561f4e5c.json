@@ -1,0 +1,83 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "5d2df865b096469cb4fc8929561f4e5c",
+  "user_id": "pytest-user",
+  "created_utc": 1758390451,
+  "status": "finished",
+  "mode": "manual",
+  "source": "ui",
+  "bean": {
+    "name": "Test Bean",
+    "roaster": "Py Roasters"
+  },
+  "gear": {
+    "brewer": {
+      "name": "V60 02"
+    },
+    "grinder": {
+      "model": "C40"
+    }
+  },
+  "recipe": {
+    "dose_g": 15,
+    "total_water_g": 240,
+    "ratio_pretty": "1:16",
+    "bloom": {
+      "water_g": 40
+    },
+    "grind_target_micron": 800.0,
+    "grind_setting": 39.0,
+    "grind_label": "C40 ≈ 39 clicks (~800 µm)",
+    "grind_scale": {
+      "type": "clicks",
+      "min": 0,
+      "max": 45,
+      "step": 1
+    }
+  },
+  "pours": [
+    {
+      "type": "bloom",
+      "to_g": null,
+      "at_ms": 1758390451907,
+      "style": "center"
+    },
+    {
+      "type": "pour",
+      "to_g": null,
+      "at_ms": 1758390476907,
+      "style": "spiral",
+      "note": null
+    },
+    {
+      "type": "pour",
+      "to_g": null,
+      "at_ms": 1758390496907,
+      "style": "center",
+      "note": null
+    }
+  ],
+  "events": [
+    {
+      "event": "swirl",
+      "at_ms": 1758390481907,
+      "meta": {
+        "meta": {
+          "note": "gentle"
+        }
+      }
+    }
+  ],
+  "rating": 4,
+  "notes": "tasty!",
+  "finished_utc": 1758390451,
+  "summary": {
+    "bean": "Test Bean",
+    "roaster": "Py Roasters",
+    "brewer": "V60 02",
+    "dose_g": 15,
+    "water_g": null,
+    "ratio": null
+  },
+  "feedback": {}
+}

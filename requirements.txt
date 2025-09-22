@@ -3,6 +3,7 @@ uvicorn
 sqlmodel
 pydantic
 
+
 sentence-transformers
 scikit-learn
 transformers
@@ -12,3 +13,22 @@ huggingface-hub
 pyyaml
 pytest
 httpx
+
+python-multipart
+orjson
+
+# OCR
+easyocr
+opencv-python-headless
+Pillow
+pillow pytesseract
+
+# STT
+faster-whisper
+ffmpeg-python
+
+# TTS (cloud; quick)
+edge-tts
+
+# uploads
+python-multipart

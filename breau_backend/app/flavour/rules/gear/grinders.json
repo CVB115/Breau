@@ -1,0 +1,94 @@
+{
+  "grinders": [
+    {
+      "id": "comandante_c40_mk4",
+      "brand": "Comandante",
+      "model": "C40 MK4",
+      "burr_type": "conical",
+      "scale": { "type": "clicks", "min": 0, "max": 45, "step": 1 },
+      "a": 200.0, "b": 18.0,
+      "aliases": ["C40", "C40 MK4", "Comandante"]
+    },
+    {
+      "id": "1zpresso_k_ultra",
+      "brand": "1Zpresso",
+      "model": "K-Ultra",
+      "burr_type": "conical",
+      "scale": { "type": "clicks", "min": 0, "max": 200, "step": 1 },
+      "a": 180.0, "b": 20.0,
+      "aliases": ["K Ultra", "K-Ultra", "1Z K-Ultra"]
+    },
+    {
+      "id": "fellow_ode_gen2",
+      "brand": "Fellow",
+      "model": "Ode Gen 2",
+      "burr_type": "flat",
+      "scale": { "type": "numbers", "min": 1, "max": 31, "step": 1 },
+      "a": 160.0, "b": 10.0,
+      "aliases": ["Ode v2", "Ode Gen2"]
+    },
+    {
+      "id": "baratza_encore_esp",
+      "brand": "Baratza",
+      "model": "Encore ESP",
+      "burr_type": "conical",
+      "scale": { "type": "numbers", "min": 1, "max": 40, "step": 1 },
+      "a": 180.0, "b": 11.5,
+      "aliases": ["Encore", "Encore ESP"]
+    },
+    {
+      "id": "eureka_mignon_specialita",
+      "brand": "Eureka",
+      "model": "Mignon Specialità",
+      "burr_type": "flat",
+      "scale": { "type": "dial", "min": 0, "max": 100, "step": 0.5 },
+      "a": 120.0, "b": 8.0,
+      "aliases": ["Mignon Specialita", "Specialità"]
+    },
+    {
+      "id": "df64_gen2",
+      "brand": "DF64",
+      "model": "Gen 2",
+      "burr_type": "flat",
+      "scale": { "type": "numbers", "min": 0, "max": 90, "step": 0.5 },
+      "a": 150.0, "b": 9.0,
+      "aliases": ["DF64", "G-iota"]
+    },
+    {
+      "id": "optiono_lagom_p64",
+      "brand": "Option-O",
+      "model": "Lagom P64",
+      "burr_type": "flat",
+      "scale": { "type": "dial", "min": 0, "max": 100, "step": 0.5 },
+      "a": 130.0, "b": 8.0,
+      "aliases": ["Lagom P64", "P64"]
+    },
+    {
+      "id": "niche_zero",
+      "brand": "Niche",
+      "model": "Zero",
+      "burr_type": "conical",
+      "scale": { "type": "dial", "min": 0, "max": 100, "step": 1 },
+      "a": 180.0, "b": 11.0,
+      "aliases": ["Niche", "Zero"]
+    },
+    {
+      "id": "ek_ring",
+      "brand": "Mahlkönig",
+      "model": "EK (ring scale)",
+      "burr_type": "flat",
+      "scale": { "type": "ring", "min": 0, "max": 11, "step": 0.1 },
+      "a": 120.0, "b": 12.0,
+      "aliases": ["EK43", "EK ring"]
+    },
+    {
+      "id": "timemore_chestnut_c3",
+      "brand": "Timemore",
+      "model": "Chestnut C3",
+      "burr_type": "conical",
+      "scale": { "type": "clicks", "min": 0, "max": 60, "step": 1 },
+      "a": 190.0, "b": 15.5,
+      "aliases": ["Timemore C3", "C3"]
+    }
+  ]
+}

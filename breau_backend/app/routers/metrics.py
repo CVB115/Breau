@@ -1,7 +1,7 @@
 from __future__ import annotations
 from fastapi import APIRouter, HTTPException, status
 from pathlib import Path
-from ..breau_backend.app.utils.storage import read_json
+from breau_backend.app.utils.storage import read_json
 
 router = APIRouter(prefix="/metrics", tags=["metrics"])
 

@@ -1,0 +1,21 @@
+{
+  "feedback": {
+    "user_id": null,
+    "session_id": "71375c528ee3731d",
+    "beans_meta": null,
+    "protocol": null,
+    "ratings": null,
+    "goals": null,
+    "notes_confirmed": null,
+    "notes_missing": null,
+    "free_text": null,
+    "payload": null,
+    "rating": 4,
+    "perceived_notes": [
+      "floral",
+      "chocolate"
+    ],
+    "comments": "yum"
+  },
+  "derived": {}
+}

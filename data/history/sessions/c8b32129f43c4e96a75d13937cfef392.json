@@ -1,0 +1,89 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "c8b32129f43c4e96a75d13937cfef392",
+  "user_id": "default-user",
+  "created_utc": 1758533470,
+  "status": "in_progress",
+  "mode": "suggested",
+  "source": "ui",
+  "bean": {
+    "id": "cd08d061-a45a-4ea5-8278-be856e3e1aec",
+    "name": "Kenya Ndiaini",
+    "roaster": "NYLON",
+    "origin": "Kenya",
+    "process": "natural",
+    "variety": "Variety Sl 26, $L94, Ruiru 13, Batian",
+    "roastLevel": "light",
+    "notes": [
+      "Black Grapes",
+      "Blackberry",
+      "Dried Pineapple",
+      "Grapes",
+      "Pineapple",
+      "Raisin",
+      "Rum"
+    ]
+  },
+  "gear": {
+    "label": "Default Combo",
+    "brewer": {
+      "name": "Brewer"
+    },
+    "grinder": {
+      "name": "Grinder"
+    },
+    "filter": {
+      "name": "Filter"
+    },
+    "water": {
+      "name": "Water",
+      "temp_c": 96
+    }
+  },
+  "recipe": {
+    "brew_name": "Suggested brew",
+    "dose_g": 15,
+    "ratio": "1:15",
+    "water_g": 225,
+    "temperature_c": 96,
+    "steps": [
+      {
+        "type": "bloom",
+        "label": "Bloom",
+        "water_to_g": 30
+      },
+      {
+        "type": "pour",
+        "label": "Pour 1",
+        "water_to_g": 150
+      },
+      {
+        "type": "pour",
+        "label": "Pour 2",
+        "water_to_g": 225
+      }
+    ],
+    "grind_target_micron": 824.0,
+    "grind_setting": 40.0,
+    "grind_label": "Grinder ≈ 40 marks (~824 µm)",
+    "grind_scale": {
+      "type": "numbers",
+      "min": 0,
+      "max": 40,
+      "step": 1
+    }
+  },
+  "pours": [],
+  "events": [],
+  "rating": null,
+  "notes": null,
+  "finished_utc": null,
+  "summary": {
+    "bean": "Kenya Ndiaini",
+    "roaster": "NYLON",
+    "brewer": "Brewer",
+    "dose_g": 15,
+    "water_g": 225,
+    "ratio": "1:15"
+  }
+}

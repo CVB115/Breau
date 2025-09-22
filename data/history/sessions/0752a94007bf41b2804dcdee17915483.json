@@ -1,0 +1,81 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "0752a94007bf41b2804dcdee17915483",
+  "user_id": "local",
+  "created_utc": 1758537570,
+  "status": "finished",
+  "mode": "manual",
+  "source": "ui",
+  "bean": null,
+  "gear": {
+    "label": "Default Combo",
+    "brewer": {
+      "name": "Brewer"
+    },
+    "grinder": {
+      "name": "Grinder"
+    },
+    "filter": {
+      "name": "Filter"
+    },
+    "water": {
+      "name": "Water",
+      "temp_c": 96
+    }
+  },
+  "recipe": {
+    "brew_name": "Suggested brew",
+    "dose": 15,
+    "ratio": "1:15",
+    "total_water": 225,
+    "temperature_c": 96,
+    "steps": [
+      {
+        "id": "bloom",
+        "label": "Bloom",
+        "water_to": 30,
+        "plan_start_s": 0,
+        "plan_end_s": 30,
+        "type": "bloom"
+      },
+      {
+        "id": "pour_1",
+        "label": "Pour 1",
+        "water_to": 150,
+        "plan_start_s": 30,
+        "plan_end_s": 50,
+        "type": "pour"
+      },
+      {
+        "id": "pour_2",
+        "label": "Pour 2",
+        "water_to": 225,
+        "plan_start_s": 50,
+        "plan_end_s": 70,
+        "type": "pour"
+      }
+    ],
+    "grind_target_micron": 800.0,
+    "grind_setting": 39.0,
+    "grind_label": "Grinder ≈ 39 marks (~800 µm)",
+    "grind_scale": {
+      "type": "numbers",
+      "min": 0,
+      "max": 40,
+      "step": 1
+    }
+  },
+  "pours": [],
+  "events": [],
+  "rating": 5,
+  "notes": "(Brew name: Manual brew)",
+  "finished_utc": 1758537755,
+  "summary": {
+    "bean": null,
+    "roaster": null,
+    "brewer": "Brewer",
+    "dose_g": null,
+    "water_g": null,
+    "ratio": "1:15"
+  }
+}

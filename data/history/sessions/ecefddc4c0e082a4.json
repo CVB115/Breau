@@ -1,0 +1,61 @@
+{
+  "id": "ecefddc4c0e082a4",
+  "user_id": "local",
+  "created_utc": 1757939290,
+  "status": "in_progress",
+  "mode": "manual",
+  "source": "ui",
+  "bean": {
+    "id": "bean_896801bb",
+    "name": "Plum Season in Sindoro",
+    "roaster": "Uberall Roastery",
+    "origin": "Indonesia, Mount Sindoro",
+    "process": "Experimental Honey with Brew Yeast",
+    "variety": "Typica",
+    "notes": "Jasmine, Orange, Plum, Lychee, Melon, Lavender.",
+    "roast_level": "Light"
+  },
+  "gear": {
+    "brewer": {
+      "id": "br-v60",
+      "name": "Hario V60 02",
+      "method": "Pour-over"
+    },
+    "grinder": {
+      "id": "gr-commandante",
+      "brand": "Comandante",
+      "model": "C40 MK4",
+      "burrs": "Conical"
+    },
+    "filter": {
+      "id": "fi-v60",
+      "name": "V60-02 Paper",
+      "material": "Paper",
+      "size": "02"
+    },
+    "water": {
+      "id": "wa-sca",
+      "name": "SCA Target",
+      "tds": 150,
+      "alkalinity": 40
+    }
+  },
+  "recipe": {
+    "dose_g": 15,
+    "water_g": 240,
+    "temp_c": 96,
+    "ratio": "1:16",
+    "grind": "",
+    "bloom_g": 29,
+    "bloom_s": 35
+  },
+  "pours": [],
+  "summary": {
+    "bean": "Plum Season in Sindoro",
+    "roaster": "Uberall Roastery",
+    "brewer": "Hario V60 02",
+    "dose_g": 15,
+    "water_g": 240,
+    "ratio": "1:16"
+  }
+}

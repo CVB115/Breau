@@ -1,34 +1,46 @@
-# schemas.py  (Improvement set: geometry/materials/grinder scale/water/beans)
-
+# schemas.py
 from __future__ import annotations
+
 from enum import Enum
-from typing import List, Optional, Union, Literal, Dict, Any
-from pydantic import BaseModel, Field, conint, confloat, ConfigDict
+from typing import Any, Dict, List, Literal, Optional, Union
+
+from pydantic import (
+    BaseModel,
+    Field,
+    ConfigDict,
+    conint,
+    confloat,
+    field_validator,
+)
 
 
 # ===================== Enums =====================
 
 class BrewerGeometryType(str, Enum):
-    CONICAL = "conical"          # e.g., V60, Orea UFO (angle varies)
-    FLAT = "flat"                # e.g., Kalita Wave
-    HYBRID = "hybrid"            # e.g., flared/basket-like hybrids
-    IMMERSION = "immersion"      # e.g., Clever (with drain)
-    BASKET = "basket"            # e.g., large flat baskets
+    CONICAL = "conical"          # e.g. V60, Orea UFO (angle varies)
+    FLAT = "flat"                # e.g. Kalita Wave
+    HYBRID = "hybrid"            # e.g. flared/basket-like hybrids
+    IMMERSION = "immersion"      # e.g. Clever (with drain)
+    BASKET = "basket"            # e.g. large flat baskets
+
 
 class OutletProfile(str, Enum):
     SINGLE_LARGE = "single_large"
     MULTI_SMALL = "multi_small"
     MESH = "mesh"                # metal mesh base/side
 
+
 class Permeability(str, Enum):
     FAST = "fast"
     MEDIUM = "medium"
     SLOW = "slow"
 
+
 class Thickness(str, Enum):
     THIN = "thin"
     MEDIUM = "medium"
     THICK = "thick"
+
 
 class FilterMaterial(str, Enum):
     PAPER_BLEACHED = "paper_bleached"
@@ -40,10 +52,12 @@ class FilterMaterial(str, Enum):
     CLOTH_COTTON = "cloth_cotton"
     SYNTHETIC_POLY = "synthetic_poly"
 
+
 class BurrType(str, Enum):
     CONICAL = "conical"
     FLAT = "flat"
     GHOST = "ghost"
+
 
 class GrinderScaleType(str, Enum):
     NUMBERS = "numbers"
@@ -51,17 +65,21 @@ class GrinderScaleType(str, Enum):
     CLICKS_FROM_TIGHT = "clicks_from_tight"
     MICRONS_ESTIMATE = "microns_estimate"
 
+
 class PourStyle(str, Enum):
+    # NOTE: "segmented" removed by request.
+    # Old payloads reading "segmented" will be coerced to SPIRAL in PourStepIn.
     SPIRAL = "spiral"
     CENTER = "center"
-    SEGMENTED = "segmented"
     PULSE = "pulse"
+
 
 class Agitation(str, Enum):
     NONE = "none"
     GENTLE = "gentle"
     MODERATE = "moderate"
-    HIGH = "high"
+    HIGH = "high"  # some code maps "robust" -> HIGH defensively
+
 
 class GoalTrait(str, Enum):
     ACIDITY = "acidity"
@@ -71,6 +89,7 @@ class GoalTrait(str, Enum):
     BODY = "body"
     CLARITY = "clarity"
     AFTERTASTE = "aftertaste"
+
 
 class WaterPreset(str, Enum):
     SCA_TARGET = "sca_target"
@@ -82,14 +101,13 @@ class WaterPreset(str, Enum):
 # ===================== Specs =====================
 
 class BrewerSpecIn(BaseModel):
-    name: Optional[str] = None                  # e.g., "Hario V60-02", "Orea V3 UFO"
+    name: Optional[str] = None                  # e.g. "Hario V60-02", "Orea V3 UFO"
     geometry_type: BrewerGeometryType
-    cone_angle_deg: Optional[confloat(ge=30, le=100)] = None   # only meaningful if conical/flared
+    cone_angle_deg: Optional[confloat(ge=30, le=100)] = None   # only if conical/flared
     outlet_profile: Optional[OutletProfile] = None
     size_code: Optional[str] = None             # "01","02","03" or "small/medium/large"
     inner_diameter_mm: Optional[confloat(ge=40, le=150)] = None
-    hole_count: Optional[int] = None
-    thermal_mass: Optional[str] = None          # "low","medium","high"
+
 
 class FilterSpecIn(BaseModel):
     permeability: Permeability
@@ -97,9 +115,11 @@ class FilterSpecIn(BaseModel):
     material: FilterMaterial
     pore_size_microns: Optional[confloat(ge=5, le=200)] = None
 
+
 class GrinderCalibrationPoint(BaseModel):
-    label: str          # e.g., "filter medium-fine"
+    label: str          # e.g. "filter medium-fine"
     value: Union[int, float]
+
 
 class GrinderSpecIn(BaseModel):
     burr_type: BurrType
@@ -111,6 +131,7 @@ class GrinderSpecIn(BaseModel):
     calibration_points: Optional[List[GrinderCalibrationPoint]] = None
     user_scale_min: Optional[int] = None
     user_scale_max: Optional[int] = None
+
 
 class WaterProfileIn(BaseModel):
     profile_preset: WaterPreset = WaterPreset.SCA_TARGET
@@ -124,11 +145,13 @@ class WaterProfileIn(BaseModel):
     sodium_mg_l: Optional[confloat(ge=0, le=200)] = None
     bicarbonate_mg_l: Optional[confloat(ge=0, le=400)] = None
 
+
 class BeanComponent(BaseModel):
     origin: Optional[str] = None
     variety: Optional[str] = None
     process: Optional[str] = None
     percent: Optional[confloat(ge=0, le=100)] = None
+
 
 class BeanInfo(BaseModel):
     roaster: Optional[str] = None
@@ -148,8 +171,9 @@ class BeanInfo(BaseModel):
 
 class WeightedGoal(BaseModel):
     trait: GoalTrait
-    direction: Literal["increase", "decrease"]   # <- was plain str with comment
+    direction: Literal["increase", "decrease"]
     weight: confloat(ge=0, le=1) = 1.0
+
 
 class PourStepIn(BaseModel):
     water_g: conint(ge=1)
@@ -160,7 +184,30 @@ class PourStepIn(BaseModel):
     wait_for_bed_ready: bool = True
     note: Optional[str] = None
 
+    # --- Normalizers & backwards-compatibility ---
+    @field_validator("pour_style", mode="before")
+    @classmethod
+    def _coerce_pour_style(cls, v: Any) -> Any:
+        """
+        Accepts legacy strings and aliases:
+          - "straight" / "centre" => "center"
+          - "segmented" (deprecated) => "spiral"
+        Keeps Enum instances as-is.
+        """
+        if isinstance(v, PourStyle):
+            return v
+        s = str(v or "").strip().lower()
+        if s in ("straight", "center", "centre"):
+            return PourStyle.CENTER
+        if s == "segmented":
+            return PourStyle.SPIRAL
+        if s in ("spiral", "pulse"):
+            return s  # pydantic will cast to Enum
+        return s
+
+
 # --- REQUEST ---
+
 class BrewSuggestRequest(BaseModel):
     # ignore unknown keys instead of 422 if clients send extras
     model_config = ConfigDict(extra="ignore")
@@ -169,12 +216,13 @@ class BrewSuggestRequest(BaseModel):
     toolset_id: Optional[str] = None
     bean_id: Optional[str] = None
 
-    # NEW: user may request a specific note (e.g., "jasmine")
+    # Optional note target (e.g. "jasmine")
     note_target: Optional[str] = None
 
     # Goals default to empty list so baseline requests work
     goals: List[WeightedGoal] = Field(default_factory=list)
 
+    # Optional free text (can be parsed upstream)
     text: Optional[str] = None
 
     brewer: Optional[BrewerSpecIn] = None
@@ -194,7 +242,7 @@ class BrewSuggestRequest(BaseModel):
 
     user_id: Optional[str] = "default"
 
-# Lightweight alternative option the API can return alongside the primary recipe
+
 # Lightweight alternative option the API can return alongside the primary recipe
 class BrewSuggestionVariant(BaseModel):
     method: str
@@ -207,17 +255,20 @@ class BrewSuggestionVariant(BaseModel):
     pours: List[PourStepIn] = Field(default_factory=list)
     notes: Optional[Union[str, List[str]]] = None
 
-    # NEW: mirror the primary's brew-along guide
+    # Mirror the primary's brew-along guide
     session_plan: Optional["SessionPlan"] = None
     variant_label: Optional[str] = None  # "body_plus" | "clarity_plus"
     grind_label: Optional[str] = None
+
 
 class PredictedNote(BaseModel):
     label: str
     confidence: confloat(ge=0, le=1)
     rationale: Optional[str] = None
 
+
 # --- RESPONSE ---
+
 class BrewSuggestion(BaseModel):
     method: str
     ratio: str
@@ -232,22 +283,23 @@ class BrewSuggestion(BaseModel):
     notes: Optional[Union[str, List[str]]] = None
 
     # Brew-along
-    session_plan: Optional["SessionPlan"] = None  # forward ref OK (you already have __future__.annotations)
+    session_plan: Optional["SessionPlan"] = None  # forward ref
 
     # Echo IDs used (if any)
     toolset_id: Optional[str] = None
     bean_id: Optional[str] = None
 
-    # NEW: note-goal gating fields
+    # Note-goal gating fields
     note_target: Optional[str] = None                 # what the user asked for
     note_goal_downgraded: bool = False                # true if we downgraded to a trait
-    goal_explanation: Optional[str] = None            # short rationale for the downgrade/accept
+    goal_explanation: Optional[str] = None            # short rationale
 
-    # NEW: optional A/B alternative recipe
+    # Optional A/B alternative recipe
     alternative: Optional["BrewSuggestionVariant"] = None
 
 
 # --- Brew-along session plan models ---
+
 class SessionStep(BaseModel):
     id: str
     instruction: str
@@ -256,20 +308,23 @@ class SessionStep(BaseModel):
     target_water_g: Optional[int] = None
     timer_s: Optional[int] = None
     voice_prompt: Optional[str] = None
-    note: Optional[str] = None  # e.g., "Bloom"
+    note: Optional[str] = None  # e.g. "Bloom"
+
 
 class SessionPlan(BaseModel):
     mode_default: Literal["beginner", "expert"] = "beginner"
     steps: List[SessionStep]
+
 
 # --- Feedback API ---
 
 class BrewFeedbackIn(BaseModel):
     """
     Minimal feedback the app can send after a brew.
-    We aggregate by the same cluster as builder (process + roast + filter permeability).
+    Aggregated by the same cluster as builder (process + roast + filter permeability).
     """
     user_id: Optional[str] = None
+    session_id: Optional[str] = None
 
     # cluster ingredients (all optional; blank falls back to "default")
     bean_process: Optional[str] = None         # e.g. "washed" | "natural" | "honey"
@@ -279,8 +334,8 @@ class BrewFeedbackIn(BaseModel):
     # which plan did they brew?
     variant_used: Optional[Literal["primary", "alternative"]] = None
 
-    # quick signal
-    rating: conint(ge=1, le=5)
+    # quick signal (allow halves)
+    rating: confloat(ge=0, le=5)
 
     # what worked / didn’t
     notes_positive: List[str] = Field(default_factory=list)   # e.g. ["jasmine","bergamot"]
@@ -298,7 +353,8 @@ class FeedbackAck(BaseModel):
     # optional debug snapshot (counts/weights); only returned if router sets it
     updated_counts: Optional[dict] = None
 
-# --- User Profile API ---
+
+# ===================== Profile / Beans (storage wrappers) =====================
 
 class UserProfileIn(BaseModel):
     """
@@ -317,14 +373,15 @@ class UserProfileOut(BaseModel):
     user_id: str
     profile: Dict[str, Any]
 
+
 class BeanIn(BaseModel):
     # Optional id lets you supply a stable id if you want; otherwise auto-generated.
     id: Optional[str] = None
 
-    # NEW: human-friendly handle
+    # human-friendly handle
     alias: Optional[str] = None          # e.g. "guji-2025-lot12"
 
-    # NEW: free-form tags for searching/filtering later
+    # free-form tags for searching/filtering later
     tags: Optional[List[str]] = None
 
     # Permissive; we really only *need* process/roast_level for clustering.
@@ -340,16 +397,19 @@ class BeanIn(BaseModel):
     age_days: Optional[int] = None
     components: Optional[List[Dict[str, Any]]] = None  # [{origin, variety, process, percent}]
 
+
 class BeanOut(BaseModel):
     id: str
     created_at: float
     updated_at: float
     data: Dict[str, Any]
 
+
 class BeanListOut(BaseModel):
     items: List[BeanOut]
 
-# ===================== Profiles =====================
+
+# ===================== Profiles (rich) =====================
 
 class ProfileIn(BaseModel):
     # Who this profile belongs to
@@ -377,3 +437,9 @@ class ProfileOut(BaseModel):
     created_at: float
     updated_at: float
     data: ProfileIn
+
+
+# ---------- Rebuild forward refs (pydantic v2) ----------
+BrewSuggestionVariant.model_rebuild()
+BrewSuggestion.model_rebuild()
+SessionPlan.model_rebuild()

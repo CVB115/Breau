@@ -1,0 +1,17 @@
+{
+  "feedback": {
+    "user_id": null,
+    "session_id": "e00b13a9555d405582c5cdebbc2a7601",
+    "beans_meta": null,
+    "protocol": null,
+    "ratings": null,
+    "goals": null,
+    "notes_confirmed": null,
+    "notes_missing": null,
+    "free_text": null,
+    "payload": null,
+    "suggest_rating": 5,
+    "suggest_comment": "yum"
+  },
+  "derived": {}
+}

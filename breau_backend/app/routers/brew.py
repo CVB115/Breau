@@ -1,92 +1,99 @@
+# app/routers/brew.py
 from __future__ import annotations
 from typing import Any, Dict
-
 from fastapi import APIRouter
 
-from breau_backend.app.schemas import (
-    BrewSuggestRequest,
-    # BrewFeedbackIn,  # ← not used directly anymore to avoid 422 on flat test payloads
-)
-
+from breau_backend.app.schemas import BrewSuggestRequest
 from breau_backend.app.services.router_helpers import brew_helpers as H
 
+
+# ---- tolerant schema import ----
+try:
+    from app.schemas import BrewSuggestRequest
+except Exception:
+    from breau_backend.app.schemas import BrewSuggestRequest  # fallback
+
+# ---- tolerant helper import ----
+try:
+    # same module you uploaded (has suggest/resolve_goals/plan/etc.)
+    from app.services.router_helpers import brew_helpers as H
+except Exception:
+    from breau_backend.app.services.router_helpers import brew_helpers as H  # fallback
+
+# optional recommender
+try:
+    from app.services.router_helpers.grind_recommender import recommend_grind
+except Exception:
+    try:
+        from breau_backend.app.services.router_helpers.grind_recommender import recommend_grind
+    except Exception:
+        recommend_grind = None  # type: ignore
+
+# optional active-gear helper
+try:
+    from app.services.router_helpers.profile_helpers import get_active_gear  # type: ignore
+except Exception:
+    try:
+        from breau_backend.app.services.router_helpers.profile_helpers import get_active_gear  # type: ignore
+    except Exception:
+        get_active_gear = None  # type: ignore
+
 router = APIRouter(prefix="/brew", tags=["brew"])
-
-
-# ----------------------------------------------------------------------
-# Suggestion endpoints
-# ----------------------------------------------------------------------
 
 @router.post("/suggest")
 def suggest(req: BrewSuggestRequest):
     """
-    Build a full brewing suggestion (notes, pours, temps, etc.)
-    via the protocol generator. Returns 500 on unexpected errors.
+    Returns a recipe suggestion. If grinder/brewer/filter/bean info is available,
+    enrich the recipe with:
+      - recipe.grind_target_micron (float)
+      - recipe.grind_setting (float)
+      - recipe.grind_label (e.g., "C40 ≈ 22 clicks (~820 µm)")
+      - recipe.grind_scale (dial metadata if available)
     """
-    return H.suggest(req)
+    res = H.suggest(req)
 
+    # Ensure we have a dict with a recipe map we can extend
+    if not isinstance(res, dict):
+        return res
+    recipe: Dict[str, Any] = dict(res.get("recipe") or {})
+    bean = getattr(req, "bean", None)  # FE sends a snapshot now
+    gear = getattr(req, "gear", None)
+
+    if gear is None and get_active_gear is not None:
+        try:
+            gear = get_active_gear(req.user_id)  # type: ignore
+        except Exception:
+            gear = None
+
+    if recommend_grind and gear:
+        try:
+            rec = recommend_grind(bean, gear)
+            recipe["grind_target_micron"] = rec["target_micron"]
+            recipe["grind_setting"] = rec["setting"]
+            recipe["grind_label"] = rec["label"]
+            recipe["grind_scale"] = rec.get("scale")
+            res["recipe"] = recipe
+        except Exception:
+            # keep suggestion working even if recommender fails
+            pass
+
+    return res
 
 @router.post("/resolve")
 def resolve_goals(payload: Dict[str, Any]):
-    """
-    Free‑text -> structured goals (best‑effort), plus a cluster preview string.
-    Tests assert 'resolved.goals' exists and the preview looks like 'washed:light:fast'.
-    """
     return H.resolve_goals(payload)
 
-
-@router.post("/plan")
-def plan(payload: Dict[str, Any]):
+@router.get("/priors")
+def read_priors(cluster: str, top_k: int = 5):
     """
-    Convert pour dictionaries into validated PourStepIn items and
-    produce a session plan. Returns 400 for malformed inputs.
+    Returns priors set (static & dynamic) for UI visualization.
     """
-    return H.plan(payload)
-
-
-@router.get("/fallback")
-def fallback():
-    """
-    Minimal, safe suggestion (used when builder is not fully wired).
-    """
-    return H.fallback()
-
-
-# ----------------------------------------------------------------------
-# Feedback endpoint (updates dynamic priors / learning)
-# ----------------------------------------------------------------------
-
-@router.post("/feedback")
-def post_feedback(payload: Dict[str, Any]):
-    """
-    Record post‑brew feedback. Tolerates both the flat test payload shape
-    and richer shapes. The helper will validate minimally and return 4xx
-    for clearly invalid payloads (e.g., empty user_id/session_id).
-    """
-    return H.feedback_any(payload)
-
-
-# ----------------------------------------------------------------------
-# Priors endpoints (both 'cluster' and 'path' forms)
-# ----------------------------------------------------------------------
-
-@router.get("/priors/{cluster}")
-def read_priors_by_cluster(cluster: str, top_k: int = 5):
-    """
-    Inspect learned+static priors for a cluster key, e.g. 'washed:light:fast'.
-    Response includes:
-      - dynamic_notes_top
-      - static_notes
-      - dynamic_traits
-    """
-    return H.priors_by_cluster(cluster, top_k=top_k)
-
+    return H.read_dynamic_priors(cluster, top_k=top_k)
 
 @router.get("/priors/{process}/{roast}/{permeability}")
 def read_priors_by_path(process: str, roast: str, permeability: str, top_k: int = 5):
     """
     Path-form variant used by tests:
       /brew/priors/washed/light/fast
-    Returns the same keys as read_priors_by_cluster(..).
     """
     return H.priors_by_path(process, roast, permeability, top_k=top_k)

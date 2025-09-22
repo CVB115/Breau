@@ -1,0 +1,37 @@
+{
+  "id": "71375c528ee3731d",
+  "user_id": "local",
+  "created_utc": 1757885604,
+  "status": "in_progress",
+  "recipe": {
+    "method": "manual",
+    "ratio": {
+      "coffee_g": 15,
+      "water_g": 240
+    },
+    "steps": [
+      {
+        "id": "1",
+        "label": "Bloom",
+        "water_to": 24,
+        "note": "30–45s"
+      },
+      {
+        "id": "2",
+        "label": "Pour to half",
+        "water_to": 120
+      },
+      {
+        "id": "3",
+        "label": "Finish pour",
+        "water_to": 240
+      }
+    ],
+    "water_temp_c": 93
+  },
+  "pours": [
+    {},
+    {},
+    {}
+  ]
+}

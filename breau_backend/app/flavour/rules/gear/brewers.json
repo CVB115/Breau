@@ -1,0 +1,14 @@
+{
+  "brewers": [
+    { "id": "hario_v60_02",      "name": "Hario V60-02",        "geometry": "conical",  "method": "pour_over",   "flow_factor": 1.00 },
+    { "id": "kalita_wave_185",   "name": "Kalita Wave 185",     "geometry": "flatbed",  "method": "pour_over",   "flow_factor": 0.92 },
+    { "id": "chemex_6cup",       "name": "Chemex 6-cup",        "geometry": "conical",  "method": "pour_over",   "flow_factor": 0.88 },
+    { "id": "origami_m",         "name": "Origami M",           "geometry": "conical",  "method": "pour_over",   "flow_factor": 1.02 },
+    { "id": "april_brewer",      "name": "April Brewer",        "geometry": "flatbed",  "method": "pour_over",   "flow_factor": 0.95 },
+    { "id": "orea_v3",           "name": "Orea V3",             "geometry": "flatbed",  "method": "pour_over",   "flow_factor": 1.05 },
+    { "id": "hario_switch_02",   "name": "Hario Switch 02",     "geometry": "conical",  "method": "immersion",   "flow_factor": 0.80 },
+    { "id": "fellow_stagg_xf",   "name": "Fellow Stagg [XF]",   "geometry": "flatbed",  "method": "pour_over",   "flow_factor": 0.93 },
+    { "id": "tricolate",         "name": "Tricolate Brewer",    "geometry": "flatbed",  "method": "pour_over",   "flow_factor": 0.85 },
+    { "id": "clever_dripper",    "name": "Clever Dripper",      "geometry": "conical",  "method": "immersion",   "flow_factor": 0.78 }
+  ]
+}

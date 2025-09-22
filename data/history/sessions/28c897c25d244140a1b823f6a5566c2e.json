@@ -1,0 +1,95 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "28c897c25d244140a1b823f6a5566c2e",
+  "user_id": "local",
+  "created_utc": 1758508769,
+  "status": "finished",
+  "mode": "manual",
+  "source": "ui",
+  "bean": null,
+  "gear": {
+    "id": null,
+    "label": "Hario V60-02 • Comandante C40 MK4 • SCA-ish Brew Water",
+    "brewer": {
+      "id": "hario_v60_02",
+      "name": "Hario V60-02",
+      "method": "pour_over"
+    },
+    "grinder": {
+      "id": "comandante_c40_mk4",
+      "brand": "Comandante",
+      "model": "C40 MK4",
+      "burr_type": "conical"
+    },
+    "filter": {
+      "id": "cafec_abaca_02",
+      "name": "CAFEC Abaca (V60 02)",
+      "material": "abaca",
+      "thickness": "std"
+    },
+    "water": {
+      "id": "water_sca",
+      "name": "SCA-ish Brew Water",
+      "style": "sca",
+      "minerals": {
+        "Ca": 17,
+        "Mg": 5,
+        "HCO3": 40,
+        "Na": 5,
+        "K": 2,
+        "SO4": 20,
+        "Cl": 10,
+        "TDS": 120
+      }
+    }
+  },
+  "recipe": {
+    "brew_name": "Suggested brew",
+    "dose": 15,
+    "ratio": "1:15",
+    "total_water": 225,
+    "temperature_c": 96,
+    "steps": [
+      {
+        "id": "bloom",
+        "label": "Bloom",
+        "water_to": 30,
+        "type": "bloom"
+      },
+      {
+        "id": "pour_1",
+        "label": "Pour 1",
+        "water_to": 150,
+        "type": "pour"
+      },
+      {
+        "id": "pour_2",
+        "label": "Pour 2",
+        "water_to": 225,
+        "type": "pour"
+      }
+    ],
+    "grind_target_micron": 800.0,
+    "grind_setting": 33.0,
+    "grind_label": "C40 MK4 ≈ 33 clicks (~800 µm)",
+    "grind_scale": {
+      "type": "clicks",
+      "min": 0,
+      "max": 45,
+      "step": 1
+    }
+  },
+  "pours": [],
+  "events": [],
+  "rating": null,
+  "notes": null,
+  "finished_utc": 1758508801,
+  "summary": {
+    "bean": null,
+    "roaster": null,
+    "brewer": "Hario V60-02",
+    "dose_g": null,
+    "water_g": null,
+    "ratio": "1:15"
+  }
+}

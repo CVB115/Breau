@@ -1,0 +1,106 @@
+{
+  "schema_version": "2025-09-18",
+  "id": "26b3aa726ac34be0bd41204829b04f84",
+  "user_id": "local",
+  "created_utc": 1758539698,
+  "status": "finished",
+  "mode": "manual",
+  "source": "ui",
+  "bean": null,
+  "gear": {
+    "label": "Default Combo",
+    "brewer": {
+      "name": "Brewer"
+    },
+    "grinder": {
+      "name": "Grinder"
+    },
+    "filter": {
+      "name": "Filter"
+    },
+    "water": {
+      "name": "Water",
+      "temp_c": 96
+    }
+  },
+  "recipe": {
+    "brew_name": "Manual brew",
+    "dose": 20,
+    "ratio": "1:15",
+    "total_water": 300,
+    "temperature_c": 96,
+    "grind_text": "11",
+    "steps": [
+      {
+        "id": "bloom",
+        "label": "Bloom",
+        "type": "bloom",
+        "water_to": 60,
+        "pour_style": "center",
+        "kettle_temp_c": 96,
+        "plan_start": "0:00",
+        "plan_end": "0:40",
+        "plan_start_s": 0,
+        "plan_end_s": 30
+      },
+      {
+        "id": "p1",
+        "label": "Pour 1",
+        "type": "pour",
+        "water_to": 140,
+        "pour_style": "spiral",
+        "kettle_temp_c": 96,
+        "plan_start": "0:40",
+        "plan_end": "1:00",
+        "plan_start_s": 30,
+        "plan_end_s": 50
+      },
+      {
+        "id": "p2",
+        "label": "Pour 2",
+        "type": "pour",
+        "water_to": 220,
+        "pour_style": "spiral",
+        "kettle_temp_c": 96,
+        "plan_start": "1:10",
+        "plan_end": "1:30",
+        "plan_start_s": 50,
+        "plan_end_s": 70
+      },
+      {
+        "id": "p3",
+        "label": "Pour 3",
+        "type": "pour",
+        "water_to": 300,
+        "pour_style": "spiral",
+        "kettle_temp_c": 96,
+        "plan_start": "1:40",
+        "plan_end": "2:00",
+        "plan_start_s": 70,
+        "plan_end_s": 90
+      }
+    ],
+    "grind_target_micron": 800.0,
+    "grind_setting": 39.0,
+    "grind_label": "Grinder ≈ 39 marks (~800 µm)",
+    "grind_scale": {
+      "type": "numbers",
+      "min": 0,
+      "max": 40,
+      "step": 1
+    }
+  },
+  "pours": [],
+  "events": [],
+  "rating": null,
+  "notes": null,
+  "finished_utc": 1758539926,
+  "summary": {
+    "bean": null,
+    "roaster": null,
+    "brewer": "Brewer",
+    "dose_g": null,
+    "water_g": null,
+    "ratio": "1:15"
+  }
+}

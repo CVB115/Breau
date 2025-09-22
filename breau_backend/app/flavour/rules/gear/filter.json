@@ -1,0 +1,14 @@
+{
+  "filters": [
+    { "id": "v60_02_white",      "name": "Hario V60 02 (white)",        "material": "paper",  "thickness": "std",   "permeability_factor": 1.00 },
+    { "id": "wave_185",          "name": "Kalita Wave 185",              "material": "paper",  "thickness": "std",   "permeability_factor": 0.95 },
+    { "id": "wave_155",          "name": "Kalita Wave 155",              "material": "paper",  "thickness": "std",   "permeability_factor": 0.95 },
+    { "id": "cafec_abaca_02",    "name": "CAFEC Abaca (V60 02)",         "material": "abaca",  "thickness": "std",   "permeability_factor": 1.06 },
+    { "id": "april_large",       "name": "April Paper (Large)",          "material": "paper",  "thickness": "std",   "permeability_factor": 0.97 },
+    { "id": "sibarist_fast_cone","name": "Sibarist FAST Cone (02)",      "material": "paper",  "thickness": "thin",  "permeability_factor": 1.25 },
+    { "id": "orea_type_g",       "name": "OREA Type G (O1/V4)",          "material": "paper",  "thickness": "std",   "permeability_factor": 1.02 },
+    { "id": "melitta_4",         "name": "Melitta #4",                   "material": "paper",  "thickness": "thick", "permeability_factor": 0.96 },
+    { "id": "cloth_cone",        "name": "Cloth Cone (cotton)",          "material": "cloth",  "thickness": "std",   "permeability_factor": 1.15 },
+    { "id": "metal_mesh_cone",   "name": "Metal Mesh Cone (stainless)",  "material": "metal",  "thickness": "std",   "permeability_factor": 1.35 }
+  ]
+}

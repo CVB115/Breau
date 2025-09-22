@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bean_4111c1a5",
+    "name": "Test Bean",
+    "roaster": "Dev Console",
+    "origin": null,
+    "process": null,
+    "variety": null,
+    "notes": "",
+    "roast_level": null
+  },
+  {
+    "id": "bean_896801bb",
+    "name": "Plum Season in Sindoro",
+    "roaster": "Uberall Roastery",
+    "origin": "Indonesia, Mount Sindoro",
+    "process": "Experimental Honey with Brew Yeast",
+    "variety": "Typica",
+    "notes": "Jasmine, Orange, Plum, Lychee, Melon, Lavender.",
+    "roast_level": "Light"
+  }
+]

@@ -7,6 +7,52 @@ from .note_loader import slurry_offset_c
 
 
 from .note_loader import blend_predicted_notes as _blend_predicted_notes
+# --- Filter material/thickness helper ----------------------------------------
+def _material_thickness_multiplier(material_raw: str = "", thickness: str = "") -> float:
+    """
+    Convert material+thickness into a permeability multiplier.
+    > 1.0 = faster flow (shorter drawdown), < 1.0 = slower flow.
+    """
+    material_raw = (material_raw or "").strip().lower()
+    thickness = (thickness or "").strip().lower()  # "thin|std|medium|thick" or ""
+
+    if material_raw in ("paper", "paper_bleached", "bleached"):
+        material = "paper_bleached"
+    elif material_raw in ("paper_unbleached", "unbleached", "brown"):
+        material = "paper_unbleached"
+    elif "abaca" in material_raw:
+        material = "abaca"
+    elif "hemp" in material_raw:
+        material = "hemp"
+    elif "cloth" in material_raw or "cotton" in material_raw:
+        material = "cloth_cotton"
+    elif "titanium" in material_raw:
+        material = "metal_titanium"
+    elif "metal" in material_raw or "stainless" in material_raw or "mesh" in material_raw:
+        material = "metal_stainless"
+    elif "poly" in material_raw or "synthetic" in material_raw:
+        material = "synthetic_poly"
+    else:
+        material = "paper_bleached"
+
+    MAT_MULT = {
+        "paper_bleached":   1.00,
+        "paper_unbleached": 1.10,  # often drains a bit faster
+        "abaca":            1.06,  # marketed faster
+        "hemp":             1.05,
+        "cloth_cotton":     1.15,  # faster & more oils
+        "metal_stainless":  1.35,  # much faster & most oils/fines
+        "metal_titanium":   1.35,
+        "synthetic_poly":   1.20,
+    }
+    THICK_MULT = {
+        "thin":   1.05,
+        "std":    1.00,
+        "medium": 1.00,
+        "thick":  0.93,
+        "":       1.00,
+    }
+    return MAT_MULT.get(material, 1.0) * THICK_MULT.get(thickness, 1.0)
 
 def blend_predicted_notes(*args, **kwargs):
     """
@@ -58,24 +104,58 @@ def _default_style(brewer) -> PourStyle:
 # What it does:
 # Predict a baseline drawdown based on filter permeability (fast/medium/slow).
 def _baseline_expected_drawdown(filter_) -> int:
+    """
+    Base expected drawdown seconds.
+    Step 1: use permeability tier ('fast'/'medium'/'slow').
+    Step 2: modulate by material+thickness (faster material → shorter time).
+    """
+    # Step 1 — permeability tier
     try:
         p = filter_.permeability.value if filter_ else "medium"
     except Exception:
         p = "medium"
-    return 165 if p == "fast" else (240 if p == "slow" else 195)
+
+    # sensible defaults (tweak if your project’s targets differ)
+    base = 165 if p == "fast" else (240 if p == "slow" else 195)
+
+    # Step 2 — material/thickness modulation (inverse: faster → shorter)
+    try:
+        mat = getattr(filter_, "material", None) or ""
+        thick = getattr(filter_, "thickness", None) or ""
+        eff_mult = _material_thickness_multiplier(mat, thick)
+        base = int(round(base / max(0.5, min(2.0, eff_mult))))  # clamp to avoid extremes
+    except Exception:
+        pass
+
+    return max(90, base)  # keep a sane floor
+
 
 # What it does:
 # Return a short filter blurb to surface "why" in the UI.
 def _filter_hint(filter_) -> Optional[str]:
     try:
-        p = filter_.permeability.value if filter_ else "medium"
+        p = getattr(filter_.permeability, "value", None) or "medium"
     except Exception:
         p = "medium"
+
+    mat = (getattr(filter_, "material", None) or "").replace("_", " ").strip()
+    pieces = []
     if p == "fast":
-        return "fast filter → clarity, shorter contact"
-    if p == "slow":
-        return "slow filter → more contact, fuller body"
-    return "medium filter"
+        pieces.append("fast filter → more clarity, shorter contact")
+    elif p == "slow":
+        pieces.append("slow filter → fuller body, longer contact")
+    else:
+        pieces.append("medium flow filter")
+
+    if mat:
+        pieces.append(f"material: {mat}")
+
+    thick = (getattr(filter_, "thickness", None) or "").strip().lower()
+    if thick in ("thin", "thick"):
+        pieces.append(f"thickness: {thick}")
+
+    return " · ".join(pieces) if pieces else None
+
 
 # What it does:
 # Resolve cluster components and all baselines (ratio, temp, drawdown, method, filter_hint, style).

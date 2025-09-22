@@ -1,0 +1,27 @@
+{
+  "name": "breau-root",
+  "private": true,
+  "scripts": {
+    "api": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"& { $env:PYTHONPATH=$PWD; .\\venv\\Scripts\\python.exe -m uvicorn breau_backend.app.main:app --reload --host 127.0.0.1 --port 8000 }\"",
+    "api:once": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"& { $env:PYTHONPATH=$PWD; .\\venv\\Scripts\\python.exe -m uvicorn breau_backend.app.main:app --host 127.0.0.1 --port 8000 }\"",
+    "front:install": "npm --prefix breau_frontend/app install",
+    "front:dev": "npm --prefix breau_frontend/app run dev",
+    "front:build": "npm --prefix breau_frontend/app run build",
+    "front:preview": "npm --prefix breau_frontend/app run preview",
+    "front:lint": "npm --prefix breau_frontend/app run lint || echo \"no lint script (ok)\"",
+    "dev": "concurrently -k -n API,WEB -c magenta,cyan \"npm:api\" \"npm:front:dev\"",
+    "dev:api-only": "npm run api",
+    "dev:web-only": "npm run front:dev",
+    "build": "npm run front:build",
+    "preview": "npm run front:preview",
+    "install:all": "npm run front:install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "lucide-react": "^0.544.0",
+    "tesseract.js": "^6.0.1",
+    "zod": "^4.1.8"
+  }
+}

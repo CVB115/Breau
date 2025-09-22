@@ -1,0 +1,17 @@
+{
+  "feedback": {
+    "user_id": null,
+    "session_id": "3063fcae847c43428b12a73879e40e81",
+    "beans_meta": null,
+    "protocol": null,
+    "ratings": null,
+    "goals": null,
+    "notes_confirmed": null,
+    "notes_missing": null,
+    "free_text": null,
+    "payload": null,
+    "suggest_rating": 5,
+    "suggest_comment": "Nah it was amazing on point"
+  },
+  "derived": {}
+}
